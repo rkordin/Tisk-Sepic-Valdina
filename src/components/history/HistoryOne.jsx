@@ -3,10 +3,10 @@ import $ from "jquery";
 
 export const HistoryOne = () => {
   const historyItems = [
-    { id: "1", year: "1972", title: "Journey Was Started" },
-    { id: "2", year: "2000", title: "100+ worldwide base" },
-    { id: "3", year: "2022", title: "500+ projects done" },
-    { id: "4", year: "2024", title: "archive 1000+ awards" },
+    { id: "1", year: "1980", title: "Začetek zgodbe", description: "Ustanovitelj Žare Šepic kot samostojni podjetnik začne z izdelovanjem preprostih samolepilnih nalepk. Kmalu se jim pridružijo tudi zahtevnejše tiskovine." },
+    { id: "2", year: "2001", title: "Nova tiskarna", description: "Podjetje se preoblikuje v TISK ŠEPIC d.o.o. Na območju industrijske cone Livada v Novem mestu zraste nova, sodobna tiskarna na 3000 m²." },
+    { id: "3", year: "2012", title: "ISO 9001 certifikat", description: "Pridobitev certifikata za sistem vodenja kakovosti ISO 9001 — dokaz, da je kvaliteta proizvodov in zadovoljstvo strank resnično na prvem mestu." },
+    { id: "4", year: "2022", title: "ISO 15378 certifikat", description: "Pridobitev certifikata ISO 15378 za primarne embalažne materiale za zdravila. Potrditev najvišjih standardov za farmacevtsko industrijo." },
   ];
 
   useEffect(() => {
@@ -23,10 +23,10 @@ export const HistoryOne = () => {
           <div className="col-lg-6">
             <div className="td-history-title-wrap mb-80">
               <span className="td-section-title-pre mb-10">
-                Started From 1972
+                Od leta 1980
               </span>
               <h2 className="td-section-title">
-                Our business is taking care of your business.
+                Družinsko podjetje z več kot 40-letno tradicijo.
               </h2>
             </div>
           </div>
@@ -55,9 +55,7 @@ export const HistoryOne = () => {
                   <h2 className="td-history-year mb-35">{item.year}</h2>
                   <h4 className="td-history-title mb-20">{item.title}</h4>
                   <p>
-                    We are constantly rethinking the future by creating the next
-                    generation of products, brands and services from a hybrid
-                    perspective.
+                    {item.description}
                   </p>
                 </div>
               ))}

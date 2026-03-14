@@ -6,7 +6,7 @@ import { ContactTwo } from "../../components/contact/ContactTwo";
 
 export const Service = () => {
   return (
-    <Layout breadcrumbTitle={"Our services"} breadcrumbSubtitle={"what we do"}>
+    <Layout breadcrumbTitle={"Storitve"} breadcrumbSubtitle={"Kaj ponujamo"}>
       {/* services */}
       <ServiceAreaSix />
 

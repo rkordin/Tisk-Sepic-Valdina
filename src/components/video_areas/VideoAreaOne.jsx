@@ -18,7 +18,7 @@ export const VideoAreaOne = () => {
                   data-wow-delay=".4s"
                   data-wow-duration="1s"
                 >
-                  Get amazing
+                  Odkrijte naš
                 </span>
                 <br />
                 <b
@@ -26,8 +26,8 @@ export const VideoAreaOne = () => {
                   data-wow-delay=".4s"
                   data-wow-duration="1s"
                 >
-                  <span className="td-video-title-border">experience</span>
-                  <span>with us</span>
+                  <span className="td-video-title-border">svet</span>
+                  <span>tiska</span>
                 </b>
               </h2>
 

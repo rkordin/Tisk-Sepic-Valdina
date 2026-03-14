@@ -12,7 +12,7 @@ export const FooterFive = () => {
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="td-footer-5-widget mb-45">
                   <h2 className="td-footer-5-widget-title mb-45">
-                    Head Office
+                    Sedež podjetja
                   </h2>
                   <div className="td-footer-5-widget-content">
                     <ul>
@@ -22,16 +22,16 @@ export const FooterFive = () => {
                         </a>
                       </li>
                       <li className="mb-20">
-                        <a href="tel:+(123)45678900">+(123) 456 789 00</a>
+                        <a href="tel:+38673939200">+386 7 393 92 00</a>
                       </li>
                       <li>
                         <a
-                          href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                          href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia"
                           target="_blank"
                         >
-                          2938 Bingamon Branch Road
+                          Livada 14
                           <br />
-                          Highland Park, IL 60035
+                          8000 Novo mesto, Slovenija
                         </a>
                       </li>
                     </ul>
@@ -40,25 +40,25 @@ export const FooterFive = () => {
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="td-footer-5-widget mb-45 ml-20">
-                  <h2 className="td-footer-5-widget-title mb-45">Sub Office</h2>
+                  <h2 className="td-footer-5-widget-title mb-45">Komerciala</h2>
                   <div className="td-footer-5-widget-content">
                     <ul>
                       <li>
-                        <a href="mailto:info@tisksepic.si">
-                          info@tisksepic.si
+                        <a href="mailto:komerciala@tisksepic.si">
+                          komerciala@tisksepic.si
                         </a>
                       </li>
                       <li className="mb-20">
-                        <a href="tel:+(123)45678900">+(123) 456 789 00</a>
+                        <a href="tel:+38673939200">+386 7 393 92 00</a>
                       </li>
                       <li>
                         <a
-                          href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                          href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia"
                           target="_blank"
                         >
-                          2938 Bingamon Branch Road
+                          Livada 14
                           <br />
-                          Highland Park, IL 60035
+                          8000 Novo mesto, Slovenija
                         </a>
                       </li>
                     </ul>
@@ -67,20 +67,20 @@ export const FooterFive = () => {
               </div>
               <div className="col-lg-2 col-md-4 col-sm-6">
                 <div className="td-footer-5-widget mb-45 ml-40">
-                  <h2 className="td-footer-5-widget-title mb-45">Essential</h2>
+                  <h2 className="td-footer-5-widget-title mb-45">Osnovno</h2>
                   <div className="td-footer-5-widget-content td-footer-5-widget-content-link">
                     <ul>
                       <li>
-                        <Link to="/about">About Us</Link>
+                        <Link to="/about">O nas</Link>
                       </li>
                       <li>
-                        <Link to="/what-we-do">What we do</Link>
+                        <Link to="/service">Storitve</Link>
                       </li>
                       <li>
-                        <Link to="/team">Our Team</Link>
+                        <Link to="/team">Naša ekipa</Link>
                       </li>
                       <li>
-                        <Link to="/contact">Contract us</Link>
+                        <Link to="/contact">Kontakt</Link>
                       </li>
                     </ul>
                   </div>
@@ -88,20 +88,20 @@ export const FooterFive = () => {
               </div>
               <div className="col-lg-2 col-md-4 col-sm-6">
                 <div className="td-footer-5-widget mb-45 ml-50">
-                  <h2 className="td-footer-5-widget-title mb-45">Our Pages</h2>
+                  <h2 className="td-footer-5-widget-title mb-45">Strani</h2>
                   <div className="td-footer-5-widget-content td-footer-5-widget-content-link">
                     <ul>
                       <li>
-                        <a href="#">Careers</a>
+                        <a href="/portfolio">Reference</a>
                       </li>
                       <li>
-                        <a href="#">About us</a>
+                        <a href="/blog">Blog</a>
                       </li>
                       <li>
-                        <a href="#">FAQ Page</a>
+                        <a href="/faq">Pogosta vprašanja</a>
                       </li>
                       <li>
-                        <a href="#">Our Services</a>
+                        <a href="/service">Storitve</a>
                       </li>
                     </ul>
                   </div>
@@ -109,7 +109,7 @@ export const FooterFive = () => {
               </div>
               <div className="col-lg-2 col-md-4 col-sm-6">
                 <div className="td-footer-5-widget mb-45 ml-65">
-                  <h2 className="td-footer-5-widget-title mb-45">Follow Us</h2>
+                  <h2 className="td-footer-5-widget-title mb-45">Sledite nam</h2>
                   <div className="td-footer-5-widget-content td-footer-5-widget-content-link">
                     <ul>
                       <li>
@@ -140,7 +140,7 @@ export const FooterFive = () => {
               <div className="col-12">
                 <div className="td-footer-5-bottom-content text-center">
                   <p>
-                    © 2024 <Link to="/">Example</Link>, All rights reserved.
+                    © 2024 <Link to="/">Tisk Šepic d.o.o.</Link> Vse pravice pridržane.
                   </p>
                 </div>
               </div>

@@ -7,7 +7,7 @@ import { BrandTwo } from "../../components/brands/BrandTwo";
 
 export const About = () => {
   return (
-    <Layout breadcrumbTitle={"About Us"} breadcrumbSubtitle={"About Us"}>
+    <Layout breadcrumbTitle={"O nas"} breadcrumbSubtitle={"O nas"}>
       {/* about */}
       <AboutFive />
 

@@ -9,141 +9,141 @@ import { PortfolioOneItem } from "./PortfolioOneItem";
 
 export const PortfolioOne = () => {
   const filterButtons = [
-    { id: "home", label: "Business", isActive: true },
-    { id: "profile", label: "Strategy", isActive: false },
-    { id: "messages", label: "Branding", isActive: false },
-    { id: "settings", label: "Marketing", isActive: false },
-    { id: "settings2", label: "Planning", isActive: false },
+    { id: "home", label: "Tisk", isActive: true },
+    { id: "profile", label: "Embalaža", isActive: false },
+    { id: "messages", label: "Nalepke", isActive: false },
+    { id: "settings", label: "Reklama", isActive: false },
+    { id: "settings2", label: "3D & CNC", isActive: false },
   ];
 
   const portfolioItems = {
     home: [
       {
         image: portfolioImage03,
-        categories: ["Finances", "Analysis"],
-        title: "Business Performance",
+        categories: ["Digitalni tisk", "Offset"],
+        title: "Katalogi in brošure",
         delay: 0.3,
       },
       {
         image: portfolioImage02,
-        categories: ["Economy", "Investment", "Business"],
-        title: "Vision & Direction",
+        categories: ["Flekso tisk", "Farmacija"],
+        title: "Farmacevtska embalaža",
         delay: 0.5,
       },
       {
         image: portfolioImage01,
-        categories: ["Research", "Corporate"],
-        title: "Customer Relations",
+        categories: ["UV tisk", "Sitotisk"],
+        title: "Promocijski materiali",
         delay: 0.7,
       },
       {
         image: portfolioImage04,
-        categories: ["Finances", "Analysis"],
-        title: "Business Performance",
+        categories: ["Digitalni tisk", "Personalizacija"],
+        title: "Poslovna vizitka",
         delay: 0.9,
       },
     ],
     profile: [
       {
         image: portfolioImage01,
-        categories: ["Research", "Corporate"],
-        title: "Customer Relations",
+        categories: ["Kartonska", "Embalaža"],
+        title: "Kartonska embalaža",
         delay: 0.3,
       },
       {
         image: portfolioImage04,
-        categories: ["Finances", "Analysis"],
-        title: "Business Performance",
+        categories: ["Blisterji", "Farmacija"],
+        title: "Blisterji in sasheji",
         delay: 0.5,
       },
       {
         image: portfolioImage03,
-        categories: ["Finances", "Analysis"],
-        title: "Business Performance",
+        categories: ["Večslojne", "Etikete"],
+        title: "Večslojne etikete",
         delay: 0.7,
       },
       {
         image: portfolioImage02,
-        categories: ["Economy", "Investment", "Business"],
-        title: "Vision & Direction",
+        categories: ["Darilne", "Vrečke"],
+        title: "Darilne vrečke",
         delay: 0.9,
       },
     ],
     messages: [
       {
         image: portfolioImage02,
-        categories: ["Branding", "Identity"],
-        title: "Brand Refresh",
+        categories: ["Samolepilne", "Nalepke"],
+        title: "Samolepilne nalepke",
         delay: 0.3,
       },
       {
         image: portfolioImage03,
-        categories: ["Logo", "Design"],
-        title: "Visual Identity",
+        categories: ["Stenske", "Folije"],
+        title: "Stenske in talne folije",
         delay: 0.5,
       },
       {
         image: portfolioImage04,
-        categories: ["Branding", "Strategy"],
-        title: "Brand Positioning",
+        categories: ["Vozila", "Polepitev"],
+        title: "Polepitev vozil",
         delay: 0.7,
       },
       {
         image: portfolioImage01,
-        categories: ["Messaging", "Communication"],
-        title: "Brand Voice",
+        categories: ["Steklo", "Folije"],
+        title: "Folije za steklene površine",
         delay: 0.9,
       },
     ],
     settings: [
       {
         image: portfolioImage04,
-        categories: ["Digital", "Advertising"],
-        title: "Online Campaign",
+        categories: ["Roll-up", "Stojala"],
+        title: "Reklamna stojala",
         delay: 0.3,
       },
       {
         image: portfolioImage01,
-        categories: ["Content", "Strategy"],
-        title: "Content Marketing",
+        categories: ["Transparenti", "Zastave"],
+        title: "Zastave in transparenti",
         delay: 0.5,
       },
       {
         image: portfolioImage03,
-        categories: ["Social Media", "Engagement"],
-        title: "Social Media Strategy",
+        categories: ["Pop-up", "Sejemska oprema"],
+        title: "Pop-up stene",
         delay: 0.7,
       },
       {
         image: portfolioImage02,
-        categories: ["SEO", "Analytics"],
-        title: "Search Optimization",
+        categories: ["Promocija", "Darila"],
+        title: "Promocijski pultovi",
         delay: 0.9,
       },
     ],
     settings2: [
       {
         image: portfolioImage01,
-        categories: ["Project", "Management"],
-        title: "Agile Implementation",
+        categories: ["3D", "Črke"],
+        title: "3D napisi in logotipi",
         delay: 0.3,
       },
       {
         image: portfolioImage03,
-        categories: ["Resource", "Allocation"],
-        title: "Capacity Planning",
+        categories: ["CNC", "Laser"],
+        title: "CNC in laserski izrez",
         delay: 0.5,
       },
       {
         image: portfolioImage02,
-        categories: ["Risk", "Management"],
-        title: "Risk Assessment",
+        categories: ["Graviranje", "Modeliranje"],
+        title: "Graviranje in brušenje",
         delay: 0.7,
       },
       {
         image: portfolioImage04,
-        categories: ["Strategic", "Planning"],
-        title: "Long-term Roadmap",
+        categories: ["Table", "Signalizacija"],
+        title: "Usmerjevalne table",
         delay: 0.9,
       },
     ],
@@ -191,8 +191,8 @@ export const PortfolioOne = () => {
               data-wow-delay=".3s"
               data-wow-duration="1s"
             >
-              <span className="td-section-title-pre mb-10">Case Studies</span>
-              <h2 className="td-section-title">Our work and success stories</h2>
+              <span className="td-section-title-pre mb-10">Naši izdelki</span>
+              <h2 className="td-section-title">Izbor naših del in projektov</h2>
             </div>
           </div>
         </div>
@@ -229,7 +229,7 @@ export const PortfolioOne = () => {
           <div className="col-lg-4 pb-30">
             <div className="td-portfolio-right-btn text-right">
               <Link to="/portfolio" className="td-btn td-btn-3 td-left-right">
-                More Works
+                Vsi izdelki
                 <span className="td-arrow-angle ml-10">
                   <svg
                     className="td-arrow-svg-top-right"

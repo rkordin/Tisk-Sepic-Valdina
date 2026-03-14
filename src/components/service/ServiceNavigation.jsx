@@ -13,7 +13,7 @@ export const ServiceNavigation = () => {
                     <i className="fa-solid fa-arrow-left-long"></i>
                   </div>
                   <span className="td-portfolio-more-content ml-20">
-                    Prev Post
+                    Prejšnja
                   </span>
                 </a>
               </div>
@@ -81,7 +81,7 @@ export const ServiceNavigation = () => {
               <div className="td-portfolio-more-left text-right">
                 <a href="#">
                   <span className="td-portfolio-more-content mr-20">
-                    Next Post
+                    Naslednja
                   </span>
                   <div className="td-portfolio-more-icon">
                     <i className="fa-regular fa-arrow-right-long"></i>

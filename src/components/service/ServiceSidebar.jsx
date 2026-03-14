@@ -6,41 +6,41 @@ export const ServiceSidebar = () => {
       <div className="td-service-details-right ml-50">
         {/* our services */}
         <div className="td-service-widget-item mb-30">
-          <h3 className="td-service-widget-title">Our Services</h3>
+          <h3 className="td-service-widget-title">Naše storitve</h3>
           <ul>
             <li>
               <a href="#">
-                Investments
+                Digitalni tisk
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                Online Business
+                Offset tisk
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                Tax & Declaration
+                Flekso tisk
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                Customer Strategy
+                UV tisk
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                Private Equality
+                Sitotisk
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                Corporate Solution
+                Embalaža
                 <i className="fa-regular fa-arrow-right-long"></i>
               </a>
             </li>
@@ -53,7 +53,7 @@ export const ServiceSidebar = () => {
             <li>
               <a href="#">
                 <i className="fa-sharp fa-solid fa-file-lines"></i>
-                Investments
+                Cenik storitev
               </a>
               <span>
                 <i className="fa-regular fa-arrow-right-long"></i>
@@ -62,7 +62,7 @@ export const ServiceSidebar = () => {
             <li>
               <a href="#">
                 <i className="fa-sharp fa-solid fa-file"></i>
-                Online Business
+                Katalog izdelkov
               </a>
               <span>
                 <i className="fa-regular fa-arrow-right-long"></i>
@@ -74,24 +74,24 @@ export const ServiceSidebar = () => {
         {/* contact form */}
         <div className="td-service-widget-item mb-30">
           <h3 className="td-service-widget-title td-service-widget-title-2">
-            How can we help you?
+            Kako vam lahko pomagamo?
           </h3>
 
           <form action="#">
             <div className="td-service-widget-input mb-15">
-              <input type="text" id="name" placeholder="Your name" />
+              <input type="text" id="name" placeholder="Vaše ime" />
               <label htmlFor="name">
                 <i className="fa-regular fa-user"></i>
               </label>
             </div>
             <div className="td-service-widget-input mb-15">
-              <input type="email" id="email" placeholder="Email address" />
+              <input type="email" id="email" placeholder="E-poštni naslov" />
               <label htmlFor="email">
                 <i className="fa-regular fa-envelope-open"></i>
               </label>
             </div>
             <div className="td-service-widget-textarea mb-15">
-              <textarea id="textarea" placeholder="Message"></textarea>
+              <textarea id="textarea" placeholder="Sporočilo"></textarea>
               <label htmlFor="textarea">
                 <i className="fa-sharp fa-light fa-pen"></i>
               </label>
@@ -99,7 +99,7 @@ export const ServiceSidebar = () => {
 
             <div className="td-service-widget-form-btn">
               <button type="button" className="td-btn td-left-right">
-                Get In Touch
+                Pošlji sporočilo
                 <span className="td-arrow-angle ml-10">
                   <svg
                     className="td-arrow-svg-top-right"

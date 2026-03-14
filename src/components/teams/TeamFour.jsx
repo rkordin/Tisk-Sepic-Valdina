@@ -16,8 +16,8 @@ export const TeamFour = () => {
               data-wow-delay=".3s"
               data-wow-duration="1s"
             >
-              <span className="td-section-title-pre mb-10">Our Experts</span>
-              <h2 className="td-section-title">Meet our advisors</h2>
+              <span className="td-section-title-pre mb-10">Naša ekipa</span>
+              <h2 className="td-section-title">Spoznajte naše strokovnjake</h2>
             </div>
           </div>
           <div
@@ -35,9 +35,9 @@ export const TeamFour = () => {
               </div>
               <div className="td-team-5-content">
                 <h3 className="td-team-5-title">
-                  <Link to="/team-details">Miranda H. Halim</Link>
+                  <Link to="/team-details">Tjaša Šepic</Link>
                 </h3>
-                <span className="td-team-5-position">Founder</span>
+                <span className="td-team-5-position">Direktorica</span>
               </div>
               <div className="td-team-5-social">
                 <span></span>
@@ -86,9 +86,9 @@ export const TeamFour = () => {
               </div>
               <div className="td-team-5-content">
                 <h3 className="td-team-5-title">
-                  <Link to="/team-details">Teresa L. Marion</Link>
+                  <Link to="/team-details">Gorazd Čerček</Link>
                 </h3>
-                <span className="td-team-5-position">Financial Officer</span>
+                <span className="td-team-5-position">Namestnik direktorice</span>
               </div>
               <div className="td-team-5-social">
                 <span></span>
@@ -137,10 +137,10 @@ export const TeamFour = () => {
               </div>
               <div className="td-team-5-content">
                 <h3 className="td-team-5-title">
-                  <Link to="/team-details">Donna D. Dicken</Link>
+                  <Link to="/team-details">Danijela Klemenčič</Link>
                 </h3>
                 <span className="td-team-5-position">
-                  Head of Customer Relations
+                  Direktorica kakovosti
                 </span>
               </div>
               <div className="td-team-5-social">
@@ -190,9 +190,9 @@ export const TeamFour = () => {
               </div>
               <div className="td-team-5-content">
                 <h3 className="td-team-5-title">
-                  <Link to="/team-details">Rosalina D. William</Link>
+                  <Link to="/team-details">Vanja Potočar</Link>
                 </h3>
-                <span className="td-team-5-position">Chief Executive Officer</span>
+                <span className="td-team-5-position">Računovodstvo</span>
               </div>
               <div className="td-team-5-social">
                 <span></span>
@@ -237,13 +237,13 @@ export const TeamFour = () => {
               <div className="row align-items-center">
                 <div className="col-sm-7">
                   <div className="td-team-5-bottom-para mb-20">
-                    <p>Want to work with us right away?</p>
+                    <p>Želite z nami sodelovati?</p>
                   </div>
                 </div>
                 <div className="col-sm-5">
                   <div className="td-team-5-bottom-btn text-right mb-20">
                     <Link className="td-btn td-left-right" to="/team-details">
-                      Join Our Team
+                      Kontaktirajte nas
                       <span className="td-arrow-angle ml-10">
                         <svg
                           className="td-arrow-svg-top-right"

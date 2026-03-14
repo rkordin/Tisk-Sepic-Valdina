@@ -11,78 +11,78 @@ import thumb6Img from "../../assets/img/faq/details/thumb6.jpg";
 export const Faq = () => {
   const faqItems = [
     {
-      question: "How do consultants understand client challenges?",
+      question: "Kakšna je razlika med digitalnim in offset tiskom?",
       images: [thumbImg, thumb2Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Digitalni tisk je najugodnejši za manjše naklade (do 500 kosov), saj odpade čas in strošek priprave. Offset tisk pa omogoča izdelavo najzahtevnejših tiskovin s kristalno jasnim motivom in je cenovno ugodnejši pri večjih nakladah (več kot 500 kosov). Pri nas vam svetujemo najprimernejšo tehniko glede na vaše potrebe.",
     },
     {
-      question: "What methods do they use for problem-solving?",
+      question: "Kakšne materiale lahko potiskate?",
       images: [thumb3Img, thumb4Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Tiskamo na širok spekter materialov: papir, karton, samolepilne folije, PVC transparente, ceradna platna, aluminij, steklo, les, blago, pleksi, akrilne plošče, dibond, forex, kappa plošče in mnoge druge. Z različnimi tiskarskimi tehnikami pokrijemo praktično vse zahteve.",
     },
     {
-      question: "How do they measure project success?",
+      question: "Ali ponujate tudi grafično oblikovanje?",
       images: [thumb5Img, thumb6Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Da, v naš sklop storitev smo dodali tudi grafično oblikovanje. V primeru, da želite tiskovine in še nimate grafične oblike ali potrebujete nasvet, vam bo na pomoč priskočila naša ekipa. Nudimo oblikovanje vseh vrst marketinških materialov od letakov, brošur, oglasov, panojev, promocijskih daril do sejemske opreme.",
     },
     {
-      question: "What's the role of data analysis in their work?",
+      question: "Kaj je Clean Room in zakaj je pomemben?",
       images: [thumbImg, thumb2Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Clean Room je t.i. čisti prostor, ki zahteva vzdrževanje izjemno natančnih mikro-klimatskih pogojev. Nadzor tlaka, pretok zraka, temperatura in relativna zračna vlaga so v celoti računalniško krmiljena. S certifikatom ISO 15378 naš prostor za tisk v celoti ustreza najvišjim standardom za farmacevtsko, kemično, kozmetično in prehrambeno industrijo.",
     },
     {
-      question: "How do consultants adapt for different business sizes?",
+      question: "Kakšne certifikate imate?",
       images: [thumb3Img, thumb4Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Pridobili smo certifikat ISO 9001 za sistem vodenja kakovosti, certifikat ISO 15378 za primarne embalažne materiale za zdravila, certifikat FSC (FSC-C172697) za odgovorno upravljanje z gozdovi ter ISO 14001 za okoljsko upravljanje. Ti certifikati dokazujejo našo zavezanost h kakovosti in varovanju okolja.",
     },
     {
-      question: "What challenges do businesses face during change?",
+      question: "Kakšni so roki izdelave?",
       images: [thumb5Img, thumb6Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Roki izdelave so odvisni od obsežnosti naročila, vrste tiska in dodelave. Pri digitalnem tisku je čas izdelave krajši, saj odpade priprava tiskarskih plošč. Za natančnejše informacije o rokih vas vabimo, da nas kontaktirate z opisom vašega projekta, da vam lahko podamo konkretno oceno.",
     },
     {
-      question: "How do consultants stay updated on trends?",
+      question: "Ali izvajate tudi dodelavo tiskovin?",
       images: [thumbImg, thumb2Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Da, ponujamo širok spekter dodelav: plastifikacijo (mat, sijaj, soft touch, antiscratch), lakiranje, toplotni tisk s široko paleto barv, slepi tisk, več vrst vezave, zgibanje, izsekovanje, lepljenje in še mnogo več. Skupaj z vami poiščemo optimalno rešitev za vaš končni izdelek.",
     },
     {
-      question: "What ethical rules do they follow?",
+      question: "Kakšne so možnosti za tisk embalaže?",
       images: [thumb3Img, thumb4Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Ponujamo tisk primarne in sekundarne embalaže: blisterje, sasheje, kartonsko embalažo, darilne vrečke, večslojne etikete in samolepilne nalepke. S certifikatom ISO 15378 in Clean Room-om smo posebej usposobljeni za farmacevtsko, prehrambeno in kozmetično embalažo.",
     },
     {
-      question: "What are the risks of using consultancy services?",
+      question: "Ali lahko potiskate tudi vozila?",
       images: [thumb5Img, thumb6Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Da, polepitev vozil je ena izmed naših storitev. S kvalitetnimi PVC samolepilnimi folijami lahko vaše vozilo opremimo z logotipi, napisi ali celostno grafično podobo. Polepitev vozil je učinkovita oblika mobilnega oglaševanja, ki doseže široko publiko.",
     },
     {
-      question: "Can you share a recent successful project?",
+      question: "Kako lahko pošljem povpraševanje?",
       images: [thumbImg, thumb2Img],
       answer:
-        "Business consultants employ a variety of problem-solving methods tailored to client needs and the nature of the issue. These include root cause analysis to address underlying problems, SWOT analysis for identifying strengths, weaknesses, opportunities, and threats, benchmarking against industry standards, data analysis for uncovering patterns and trends, process optimization to enhance efficiency, change management strategies to navigate organizational transitions, innovation workshops.",
+        "Povpraševanje nam lahko pošljete preko kontaktnega obrazca na naši spletni strani, po elektronski pošti na info@tisksepic.si ali nas pokličete na telefonsko številko +386 7 393 92 00. Z veseljem vam bomo svetovali in pripravili ponudbo za vaš projekt.",
     },
   ];
 
   const services = [
-    { name: "Investments", link: "#" },
-    { name: "Online Business", link: "#" },
-    { name: "Tax & Declaration", link: "#" },
-    { name: "Customer Strategy", link: "#" },
-    { name: "Private Equality", link: "#" },
-    { name: "Corporate Solution", link: "#" },
+    { name: "Digitalni tisk", link: "/service-details" },
+    { name: "Offset tisk", link: "/service-details" },
+    { name: "Flekso tisk", link: "/service-details" },
+    { name: "UV tisk", link: "/service-details" },
+    { name: "Sitotisk", link: "/service-details" },
+    { name: "Embalaža", link: "/service-details" },
   ];
 
   return (
-    <Layout breadcrumbTitle={"FAQ Page"} breadcrumbSubtitle={"FAQ"}>
+    <Layout breadcrumbTitle={"Pogosta vprašanja"} breadcrumbSubtitle={"FAQ"}>
       <div className="td-faq-area pt-140 pb-80">
         <div className="container">
           <div className="row">
@@ -149,7 +149,7 @@ export const Faq = () => {
               <div className="td-service-details-right ml-50">
                 {/* our services */}
                 <div className="td-service-widget-item mb-30">
-                  <h3 className="td-service-widget-title">Our Services</h3>
+                  <h3 className="td-service-widget-title">Naše storitve</h3>
                   <ul>
                     {services.map((service, index) => (
                       <li key={index}>
@@ -168,7 +168,7 @@ export const Faq = () => {
                     <li>
                       <Link to="#">
                         <i className="fa-sharp fa-solid fa-file-lines"></i>
-                        Investments
+                        Cenik storitev
                       </Link>
                       <span>
                         <i className="fa-regular fa-arrow-right-long"></i>
@@ -177,7 +177,7 @@ export const Faq = () => {
                     <li>
                       <Link to="#">
                         <i className="fa-sharp fa-solid fa-file"></i>
-                        Online Business
+                        Katalog izdelkov
                       </Link>
                       <span>
                         <i className="fa-regular fa-arrow-right-long"></i>
@@ -189,11 +189,11 @@ export const Faq = () => {
                 {/* form */}
                 <div className="td-service-widget-item mb-30">
                   <h3 className="td-service-widget-title td-service-widget-title-2">
-                    How can we help you?
+                    Kako vam lahko pomagamo?
                   </h3>
                   <form action="#">
                     <div className="td-service-widget-input mb-15">
-                      <input type="text" id="name" placeholder="Your name" />
+                      <input type="text" id="name" placeholder="Vaše ime" />
                       <label htmlFor="name">
                         <i className="fa-regular fa-user"></i>
                       </label>
@@ -202,21 +202,21 @@ export const Faq = () => {
                       <input
                         type="email"
                         id="email"
-                        placeholder="Email address"
+                        placeholder="E-poštni naslov"
                       />
                       <label htmlFor="email">
                         <i className="fa-regular fa-envelope-open"></i>
                       </label>
                     </div>
                     <div className="td-service-widget-textarea mb-15">
-                      <textarea id="textarea" placeholder="Message"></textarea>
+                      <textarea id="textarea" placeholder="Sporočilo"></textarea>
                       <label htmlFor="textarea">
                         <i className="fa-sharp fa-light fa-pen"></i>
                       </label>
                     </div>
                     <div className="td-service-widget-form-btn">
                       <button type="button" className="td-btn td-left-right">
-                        Get In Touch
+                        Pošlji
                         <span className="td-arrow-angle ml-10">
                           <svg
                             className="td-arrow-svg-top-right"

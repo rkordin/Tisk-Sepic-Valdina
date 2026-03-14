@@ -14,15 +14,15 @@ import img11 from "../../assets/img/portfolio/11.jpg";
 
 export const Portfolio = () => {
   const tabButtons = [
-    { id: "home", label: "Business", isActive: true },
-    { id: "profile", label: "Strategy", isActive: false },
-    { id: "messages", label: "Branding", isActive: false },
-    { id: "settings", label: "Marketing", isActive: false },
-    { id: "settings2", label: "Planning", isActive: false },
+    { id: "home", label: "Tisk", isActive: true },
+    { id: "profile", label: "Embalaža", isActive: false },
+    { id: "messages", label: "Nalepke", isActive: false },
+    { id: "settings", label: "Reklama", isActive: false },
+    { id: "settings2", label: "3D & CNC", isActive: false },
   ];
 
   return (
-    <Layout breadcrumbTitle={"Case Study"} breadcrumbSubtitle={"Portfolio"}>
+    <Layout breadcrumbTitle={"Reference"} breadcrumbSubtitle={"Naši izdelki"}>
       <div className="td-portfolio-area td-portfolio-space fix pt-140 pb-60">
         <div className="container">
           <div className="row">
@@ -74,15 +74,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Finances</Link>
+                            <Link to="#">Digitalni tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Analysis</Link>
+                            <Link to="#">Offset</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Business Performance
+                            Katalogi in brošure
                           </Link>
                         </h3>
                       </div>
@@ -94,15 +94,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Economy</Link>
+                            <Link to="#">Flekso</Link>
                           </span>
                           <span>
-                            <Link to="#">Investment</Link>
+                            <Link to="#">Embalaža</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Vision & Direction
+                            Farmacevtska embalaža
                           </Link>
                         </h3>
                       </div>
@@ -114,15 +114,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Customer Relations
+                            Promocijski materiali
                           </Link>
                         </h3>
                       </div>
@@ -134,14 +134,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Astro consultancy</Link>
+                          <Link to="/portfolio-details">Samolepilne nalepke</Link>
                         </h3>
                       </div>
                     </div>
@@ -152,15 +152,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            ROI Business Growth
+                            Polepitev vozil
                           </Link>
                         </h3>
                       </div>
@@ -172,15 +172,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            tomb finance solutions
+                            Reklamna stojala
                           </Link>
                         </h3>
                       </div>
@@ -192,14 +192,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">quick solutions</Link>
+                          <Link to="/portfolio-details">3D napisi in črke</Link>
                         </h3>
                       </div>
                     </div>
@@ -210,14 +210,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Mobile Functions</Link>
+                          <Link to="/portfolio-details">Zastave in transparenti</Link>
                         </h3>
                       </div>
                     </div>
@@ -228,15 +228,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Nelson Consultancy
+                            Kartonska embalaža
                           </Link>
                         </h3>
                       </div>
@@ -248,15 +248,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Pakso Business Growth
+                            Darilne vrečke
                           </Link>
                         </h3>
                       </div>
@@ -277,14 +277,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">quick solutions</Link>
+                          <Link to="/portfolio-details">3D napisi in črke</Link>
                         </h3>
                       </div>
                     </div>
@@ -295,14 +295,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Mobile Functions</Link>
+                          <Link to="/portfolio-details">Zastave in transparenti</Link>
                         </h3>
                       </div>
                     </div>
@@ -313,15 +313,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Nelson Consultancy
+                            Kartonska embalaža
                           </Link>
                         </h3>
                       </div>
@@ -333,15 +333,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Pakso Business Growth
+                            Darilne vrečke
                           </Link>
                         </h3>
                       </div>
@@ -362,15 +362,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Customer Relations
+                            Promocijski materiali
                           </Link>
                         </h3>
                       </div>
@@ -382,14 +382,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Astro consultancy</Link>
+                          <Link to="/portfolio-details">Samolepilne nalepke</Link>
                         </h3>
                       </div>
                     </div>
@@ -400,15 +400,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            ROI Business Growth
+                            Polepitev vozil
                           </Link>
                         </h3>
                       </div>
@@ -420,15 +420,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            tomb finance solutions
+                            Reklamna stojala
                           </Link>
                         </h3>
                       </div>
@@ -449,15 +449,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Finances</Link>
+                            <Link to="#">Digitalni tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Analysis</Link>
+                            <Link to="#">Offset</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Business Performance
+                            Katalogi in brošure
                           </Link>
                         </h3>
                       </div>
@@ -469,18 +469,18 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Economy</Link>
+                            <Link to="#">Flekso</Link>
                           </span>
                           <span>
-                            <Link to="#">Investment</Link>
+                            <Link to="#">Embalaža</Link>
                           </span>
                           <span>
-                            <Link to="#">Business</Link>
+                            <Link to="#">Industrija</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Vision & Direction
+                            Farmacevtska embalaža
                           </Link>
                         </h3>
                       </div>
@@ -492,15 +492,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            Customer Relations
+                            Promocijski materiali
                           </Link>
                         </h3>
                       </div>
@@ -512,14 +512,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Astro consultancy</Link>
+                          <Link to="/portfolio-details">Samolepilne nalepke</Link>
                         </h3>
                       </div>
                     </div>
@@ -539,15 +539,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            ROI Business Growth
+                            Polepitev vozil
                           </Link>
                         </h3>
                       </div>
@@ -559,15 +559,15 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
                           <Link to="/portfolio-details">
-                            tomb finance solutions
+                            Reklamna stojala
                           </Link>
                         </h3>
                       </div>
@@ -579,14 +579,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">quick solutions</Link>
+                          <Link to="/portfolio-details">3D napisi in črke</Link>
                         </h3>
                       </div>
                     </div>
@@ -597,14 +597,14 @@ export const Portfolio = () => {
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
-                            <Link to="#">Research</Link>
+                            <Link to="#">Tisk</Link>
                           </span>
                           <span>
-                            <Link to="#">Corporate</Link>
+                            <Link to="#">Grafika</Link>
                           </span>
                         </div>
                         <h3 className="td-portfolio-title">
-                          <Link to="/portfolio-details">Mobile Functions</Link>
+                          <Link to="/portfolio-details">Zastave in transparenti</Link>
                         </h3>
                       </div>
                     </div>

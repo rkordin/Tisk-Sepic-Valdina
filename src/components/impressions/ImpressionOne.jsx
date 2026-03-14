@@ -35,19 +35,20 @@ export const ImpressionOne = () => {
                 alt="a"
               />
               <span className="td-section-title-pre mb-10">
-                Our Business Thrives
+                Naše podjetje raste
               </span>
               <h2 className="td-section-title mb-30">
-                Accurate business progress results
+                Poslovni odnosi zgrajeni na zaupanju
               </h2>
               <p className="td-about-para pr-10">
-                Our focus is on delivering superior value to our clients for
-                company modification. Providing sustainable strategies that will
-                upgrade their business. From strategy to delivery.
+                V podjetju rastemo in se učimo že več kot 40 let. Prizadevamo si za
+                nenehne izboljšave, za delo izbiramo najkakovostnejše preverjene
+                materiale ter zagotavljamo kakovostno izdelavo v vseh fazah
+                delovnega procesa.
               </p>
               <div className="td-impressions-btn pt-50">
                 <Link className="td-btn td-btn-6 td-left-right" to="/about">
-                  View More
+                  Več o nas
                   <span className="td-arrow-angle ml-10">
                     <svg
                       className="td-arrow-svg-top-right"

@@ -5,7 +5,7 @@ import { ContactFour } from "../../components/contact/ContactFour";
 
 export const Contact = () => {
   return (
-    <Layout breadcrumbTitle={"Get In Touch"} breadcrumbSubtitle={"Contact"}>
+    <Layout breadcrumbTitle={"Kontakt"} breadcrumbSubtitle={"Kontakt"}>
       {/* map */}
       <ContactMap />
 

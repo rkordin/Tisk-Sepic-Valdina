@@ -8,50 +8,36 @@ import { ServiceDetailsCircularProgress } from "../../components/service/Service
 export const ServiceDetails = () => {
   return (
     <Layout
-      breadcrumbTitle={"Tax & Declaration"}
-      breadcrumbSubtitle={"Single Service"}
+      breadcrumbTitle={"Digitalni tisk"}
+      breadcrumbSubtitle={"Storitve"}
     >
       <ServiceLayout>
         <div className="td-service-details-wrap">
           <div className="td-service-details-thumb mb-60">
-            <img className="w-100" src={thumb} alt="details" />
+            <img className="w-100" src={thumb} alt="Digitalni tisk" />
           </div>
 
           <div className="td-service-details-content mb-60">
-            <h3 className="td-service-details-title mb-25">Intro Details</h3>
+            <h3 className="td-service-details-title mb-25">Digitalni tisk</h3>
 
             <p>
-              A consultant is a professional who provides expert advice and
-              guidance to individuals or organizations in a particular field or
-              industry. Consultants are typically hired to solve problems,
-              improve performance, or provide specialized knowledge that the
-              client lacks internally. Consultants can work independently or as
-              part of consulting firms. They may specialize in various areas
-              such as management, finance, technology, human resources,
-              marketing, or specific industries like healthcare, IT, or
-              manufacturing.
+              Digitalno tiskanje je trenutno najmodernejša in najhitrejša oblika
+              izdelave različnih večbarvnih tiskovin. Je ena izmed najugodnejših oblik
+              tiskanja za manjše naklade (do 500 kosov), v primeru večjih naklad pa je
+              primernejši offset tisk. Pri digitalnem tisku odpade čas in
+              strošek priprave (filmi, offset plošče, …) saj se pričetek dela izvede
+              neposredno iz računalnika oziroma datoteke.
             </p>
             <p>
-              With 22 years of experience and a proven track record, we have
-              become a trusted partner for startups and high-potential companies
-              seeking to disrupt industries and create lasting impact. As a
-              venture capital agency, we specialise in partnering with companies
-              at various stages of their growth journey.
+              S pomočjo naših barvnih tiskalnikov lahko tiskamo na različne materiale
+              (papir, karton, samolepilna folija, PVC transparenti in ceradna platna, …).
+              Nova pridobitev v našem podjetju in hkrati posebnost na trgu je tisk laka,
+              zlate, srebrne, bele in metalik barve v digitalni tehnologiji.
             </p>
             <p>
-              As a venture capital agency, we specialise in partnering with
-              companies at various stages of their growth journey. From seed
-              funding to growth-stage investments, we offer tailored solutions
-              that address the unique needs and challenges of each portfolio
-              company.Our track record speaks for itself. We have successfully
-              invested in and nurtured the growth of over 40 companies across
-              diverse industries, positioning our portfolio companies as market
-              leaders. Lorem ipsum dolor sit amet consectetur adipiscing diam
-              tortor sit feugiat dictum eu diam euismod ultrices convallis eget
-              vel velit posuere mi consequat leo egestas sed odio molestie non
-              imperdiet malesuada. We are a leading venture capital firm
-              committed to supporting visionary entrepreneurs and fueling the
-              growth of transformative businesses.
+              Primerno za tisk vseh vrst letakov, brošur, vizitk, zgibank, dopisnih
+              listov, cenikov, vabil, priznanj in še mnogo več. Format do 330x1200mm,
+              cenovno ugoden pri manjših nakladah in hitrejša izdelava tiskovin.
             </p>
           </div>
 
@@ -68,22 +54,16 @@ export const ServiceDetails = () => {
           {/* content */}
           <div className="td-service-details-content">
             <p>
-              With 22 years of experience and a proven track record, we have
-              become a trusted partner for startups and high-potential companies
-              seeking to disrupt industries and create lasting impact. As a
-              venture capital agency, we specialise in partnering with companies
-              at various stages of their growth journey.
+              Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+              ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+              Tiskamo na različne materiale (folija, papir, pleksi, steklo, les,
+              blago, …) z različnimi tehnikami.
             </p>
             <p>
-              A consultant is a professional who provides expert advice and
-              guidance to individuals or organizations in a particular field or
-              industry. Consultants are typically hired to solve problems,
-              improve performance, or provide specialized knowledge that the
-              client lacks internally. Consultants can work independently or as
-              part of consulting firms. They may specialize in various areas
-              such as management, finance, technology, human resources,
-              marketing, or specific industries like healthcare, IT, or
-              manufacturing.
+              V želji, da našim naročnikom ponudimo celovit paket storitev, smo v naš
+              sklop storitev dodali tudi grafično oblikovanje. V primeru, da želite
+              tiskovine in še nimate grafične oblike ali potrebujete kakšen drug
+              nasvet ali informacijo, vam bo na pomoč priskočila naša ekipa.
             </p>
           </div>
         </div>

@@ -8,29 +8,29 @@ import sidebarImage4 from "../../assets/img/blog/blogsidebar/14.jpg";
 const recentPosts = [
   {
     image: sidebarImage2,
-    date: "October 21, 2024",
-    title: "These methods are often integrated",
+    date: "15. januar 2025",
+    title: "6 prednosti tiska na steklo",
   },
   {
     image: sidebarImage3,
-    date: "October 21, 2024",
-    title: "Customized to provide comprehensive",
+    date: "8. december 2024",
+    title: "Digitalni ali offset tisk — kaj izbrati?",
   },
   {
     image: sidebarImage4,
-    date: "October 21, 2024",
-    title: "Solutions to business challenges.",
+    date: "22. november 2024",
+    title: "12 nasvetov za izbiro tiskarne",
   },
 ];
 
 const keywords = [
-  { name: "Consultancy", count: 12 },
-  { name: "Finance", count: 5 },
-  { name: "ROI Growth", count: 25 },
-  { name: "Business", count: 7 },
-  { name: "Investment", count: 19 },
-  { name: "Online Service", count: 2 },
-  { name: "Support", count: 18 },
+  { name: "Tisk", count: 24 },
+  { name: "Embalaža", count: 18 },
+  { name: "Nalepke", count: 15 },
+  { name: "Offset", count: 12 },
+  { name: "Digitalni tisk", count: 9 },
+  { name: "Certifikati", count: 7 },
+  { name: "Flekso tisk", count: 5 },
 ];
 
 export const BlogSidebar = () => {
@@ -41,11 +41,11 @@ export const BlogSidebar = () => {
           {/* search */}
           <div className="td-blog-sidebar-widget mb-50">
             <div className="td-blog-sidebar-widget-content">
-              <h3 className="td-blog-sidebar-title mb-30">Search Here</h3>
+              <h3 className="td-blog-sidebar-title mb-30">Iskanje</h3>
               <div className="td-blog-sidebar-search">
                 <form action="#">
                   <div className="td-blog-sidebar-input">
-                    <input type="email" placeholder="Keywords" />
+                    <input type="email" placeholder="Ključne besede" />
                     <button type="button">
                       <i className="fa-sharp fa-regular fa-magnifying-glass"></i>
                     </button>
@@ -58,7 +58,7 @@ export const BlogSidebar = () => {
           {/* recent post */}
           <div className="td-blog-sidebar-widget mb-50">
             <div className="td-blog-sidebar-widget-content">
-              <h3 className="td-blog-sidebar-title mb-30">Recent Post</h3>
+              <h3 className="td-blog-sidebar-title mb-30">Zadnje objave</h3>
               {recentPosts.map((post, index) => (
                 <div key={index} className="td-blog-post mb-25">
                   <div className="td-blog-post-thumb">
@@ -85,7 +85,7 @@ export const BlogSidebar = () => {
           {/* popular keyword */}
           <div className="td-blog-sidebar-widget mb-50">
             <div className="td-blog-sidebar-widget-content">
-              <h3 className="td-blog-sidebar-title mb-15">Popular Keyword</h3>
+              <h3 className="td-blog-sidebar-title mb-15">Priljubljene ključne besede</h3>
               <ul>
                 {keywords.map((keyword, index) => (
                   <li key={index}>
@@ -103,7 +103,7 @@ export const BlogSidebar = () => {
             <div className="td-blog-sidebar-ads">
               <div className="td-blog-sidebar-ads-thumb p-relative">
                 <img className="w-100" src={sidebarImage1} alt="thumb" />
-                <h4 className="td-blog-sidebar-ads-title">Ads Banner</h4>
+                <h4 className="td-blog-sidebar-ads-title">Oglas</h4>
                 <h2 className="td-blog-sidebar-ads-transparent">Tisk Šepic</h2>
               </div>
             </div>

@@ -17,75 +17,73 @@ export const Blog = () => {
   const blogs = [
     {
       src: blogImage1,
-      tag: "Finance",
+      tag: "Tisk",
       href: "/blog-details",
-      title: "Spring is a passionate and determined group of monthly givers.",
+      title: "6 prednosti tiska na steklo, ki jih morate poznati",
       description:
-        "A close-ended question is a type of survey question that restricts respondents to a set of answer-options to choose from. In other words, the researcher on it to provides options for you to choose.",
+        "Tisk na steklo je ena izmed novejših tehnik, ki ponuja izjemne možnosti za dekoracijo in označevanje steklenih površin. Odkrijte, zakaj je ta metoda vedno bolj priljubljena.",
       userImage: userImage1,
-      userName: "Miranda H.",
-      date: "November 21, 2024",
-      likes: 22,
-      shares: 8,
+      userName: "Tisk Šepic",
+      date: "2024",
+      likes: 15,
+      shares: 5,
     },
     {
       src: blogImage2,
-      tag: "Business",
+      tag: "Nasveti",
       href: "/blog-details",
-      title: "Business consultants employ a variety of problem-solving methods",
+      title: "12 notranjih nasvetov za izbiro prave tiskarne",
       description:
-        "A close-ended question is a type of survey question that restricts respondents to a set of answer-options to choose from. In other words, the researcher on it to provides options for you to choose.",
+        "Izbira tiskarne je ključna odločitev, ki vpliva na kakovost vaših tiskovin. Predstavljamo vam 12 nasvetov, ki vam bodo pomagali pri izbiri zanesljivega partnerja.",
       userImage: userImage2,
-      userName: "Miranda H.",
-      date: "November 21, 2024",
-      likes: 22,
-      shares: 8,
+      userName: "Tisk Šepic",
+      date: "2024",
+      likes: 28,
+      shares: 12,
     },
     {
       src: blogImage3,
-      tag: "Consultancy",
+      tag: "Marketing",
       href: "/blog-details",
-      title: "These include root cause analysis to address underlying problems",
+      title: "Zakaj oglaševanje ne deluje — in kako to spremeniti",
       description:
-        "A close-ended question is a type of survey question that restricts respondents to a set of answer-options to choose from. In other words, the researcher on it to provides options for you to choose.",
+        "Mnoga podjetja vlagajo v oglaševanje, a rezultati izostanejo. Razkrijemo najpogostejše razloge, zakaj oglasi ne prinašajo pričakovanih rezultatov.",
       userImage: userImage3,
-      userName: "Miranda H.",
-      date: "November 21, 2024",
-      likes: 22,
-      shares: 8,
+      userName: "Tisk Šepic",
+      date: "2024",
+      likes: 34,
+      shares: 15,
     },
     {
       src: blogImage4,
-      tag: "Investment",
+      tag: "Primerjava",
       href: "/blog-details",
-      title:
-        "SWOT analysis for identifying strengths, weaknesses, opportunities",
+      title: "Digitalni ali offset tisk — kaj je prava izbira za vas?",
       description:
-        "A close-ended question is a type of survey question that restricts respondents to a set of answer-options to choose from. In other words, the researcher on it to provides options for you to choose.",
+        "Digitalni in offset tisk imata vsak svoje prednosti. Primerjamo obe tehniki, da vam pomagamo izbrati najprimernejšo za vaš projekt in naklado.",
       userImage: userImage4,
-      userName: "Miranda H.",
-      date: "November 21, 2024",
-      likes: 22,
-      shares: 8,
+      userName: "Tisk Šepic",
+      date: "2024",
+      likes: 19,
+      shares: 7,
     },
     {
       src: blogImage5,
-      tag: "Insurance",
+      tag: "Oglaševanje",
       href: "/blog-details",
-      title:
-        "Benchmarking against industry standards, data analysis for uncovering",
+      title: "Oglaševanje na vozilih — se resnično splača?",
       description:
-        "A close-ended question is a type of survey question that restricts respondents to a set of answer-options to choose from. In other words, the researcher on it to provides options for you to choose.",
+        "Polepitev vozil je ena izmed najučinkovitejših oblik mobilnega oglaševanja. Preverite, kakšna je dejanska donosnost in za koga je ta oblika primerna.",
       userImage: userImage5,
-      userName: "Miranda H.",
-      date: "November 21, 2024",
+      userName: "Tisk Šepic",
+      date: "2024",
       likes: 22,
-      shares: 8,
+      shares: 9,
     },
   ];
 
   return (
-    <Layout breadcrumbTitle={"News Insights"} breadcrumbSubtitle={"Blog"}>
+    <Layout breadcrumbTitle={"Blog"} breadcrumbSubtitle={"Novosti in nasveti"}>
       <BlogLayout>
         {/* blogs */}
         <div className="td-postbox-wrapper td-postbox-wrapper-space">

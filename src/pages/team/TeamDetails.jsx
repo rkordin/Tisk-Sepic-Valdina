@@ -6,8 +6,8 @@ import teamDetailsImage from "../../assets/img/team/team5/details.jpg";
 export const TeamDetails = () => {
   return (
     <Layout
-      breadcrumbTitle={"Single Team"}
-      breadcrumbSubtitle={"Miranda H. Halim"}
+      breadcrumbTitle={"Naša ekipa"}
+      breadcrumbSubtitle={"Tjaša Šepic"}
     >
       <div className="td-team-details-area pt-140 pb-90">
         <div className="container">
@@ -19,8 +19,8 @@ export const TeamDetails = () => {
             </div>
             <div className="col-lg-7">
               <div className="td-team-details-content mb-40">
-                <h3 className="td-team-details-title">Miranda H. Halim</h3>
-                <span className="td-team-details-subtitle mb-35">Founder</span>
+                <h3 className="td-team-details-title">Tjaša Šepic</h3>
+                <span className="td-team-details-subtitle mb-35">Direktorica</span>
                 <div className="td-team-details-social mb-35">
                   <span className="mb-10">
                     <a href="mailto:info@tisksepic.si">
@@ -29,9 +29,8 @@ export const TeamDetails = () => {
                     </a>
                   </span>
                   <span className="mb-10">
-                    <a href="tel:+(123)45678900">
-                      <i className="fa-solid fa-phone-flip"></i> +(123) 456 789
-                      00
+                    <a href="tel:+38673939200">
+                      <i className="fa-solid fa-phone-flip"></i> +386 7 393 92 00
                     </a>
                   </span>
                   <ul className="float-right mb-10">
@@ -64,52 +63,48 @@ export const TeamDetails = () => {
                 </div>
                 <div className="td-team-details-biography mb-45">
                   <h3 className="td-team-details-biography-title mb-20">
-                    Biography
+                    Biografija
                   </h3>
                   <p>
-                    A consultant is a professional who provides expert advice
-                    and guidance to individuals or organizations in a particular
-                    field or industry. Consultants are typically hired to solve
-                    problems, improve performance, or provide specialized
-                    knowledge that the client lacks internally. Consultants can
-                    work independently or as part of consulting firms. They may
-                    specialize in various areas such as management, finance,
-                    technology, human resources, marketing, or specific
-                    industries like healthcare, IT, or manufacturing.
+                    Tjaša Šepic vodi podjetje TISK ŠEPIC d.o.o. in nadaljuje
+                    družinsko tradicijo, ki sega v leto 1980. Pod njenim
+                    vodstvom se je podjetje razvilo v sodobno tiskarno z več kot
+                    30 zaposlenimi, proizvodnjo na 3000 m² in certifikati ISO
+                    9001, ISO 15378, FSC ter ISO 14001. Njena vizija združuje
+                    tehnološko inovativnost s trajnostnim pristopom.
                   </p>
                 </div>
                 <div className="td-team-details-education mb-50">
                   <h3 className="td-team-details-biography-title mb-15">
-                    Education
+                    Izkušnje
                   </h3>
                   <ul>
                     <li>
-                      Bachelor of Science in Civil Engineering - University of
-                      Alberta
+                      Vodenje tiskarskega podjetja z več kot 40-letno tradicijo
                     </li>
                     <li>
-                      Ivey Executive Program - University of Western Ontario
+                      Uvedba sistema kakovosti ISO 9001 in ISO 15378
                     </li>
-                    <li>CCA Gold-Seal certified project manager</li>
+                    <li>Pridobitev FSC certifikata za trajnostno gospodarjenje</li>
                   </ul>
                 </div>
                 <div className="td-team-details-skill">
                   <h3 className="td-team-details-biography-title mb-15">
-                    Skillset
+                    Področja
                   </h3>
                   <ul>
                     <li>
-                      <Link to="#">Business Consultancy</Link>
+                      <Link to="#">Vodenje proizvodnje</Link>
                       <span>/</span>
                     </li>
                     <li>
-                      <Link to="#">ROI Development</Link> <span>/</span>
+                      <Link to="#">Nadzor kakovosti</Link> <span>/</span>
                     </li>
                     <li>
-                      <Link to="#">Business Growth</Link> <span>/</span>
+                      <Link to="#">Strateško načrtovanje</Link> <span>/</span>
                     </li>
                     <li>
-                      <Link to="#">UX Design</Link>
+                      <Link to="#">Odnosi s strankami</Link>
                     </li>
                   </ul>
                 </div>

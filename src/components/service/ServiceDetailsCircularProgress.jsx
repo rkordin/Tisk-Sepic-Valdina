@@ -60,7 +60,7 @@ export const ServiceDetailsCircularProgress = () => {
               disabled
             />
           </div>
-          <h3 className="td-service-quality-title">Affordable Cost</h3>
+          <h3 className="td-service-quality-title">Kakovost tiska</h3>
         </div>
         <div className="td-service-details-pogress-quality">
           <div className="td-service-details-pogress">
@@ -80,7 +80,7 @@ export const ServiceDetailsCircularProgress = () => {
               disabled
             />
           </div>
-          <h3 className="td-service-quality-title">Cost Consume</h3>
+          <h3 className="td-service-quality-title">Zadovoljstvo strank</h3>
         </div>
       </div>
     </div>

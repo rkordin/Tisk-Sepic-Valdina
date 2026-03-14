@@ -10,8 +10,8 @@ import thumb3Img from "../../assets/img/blog/details/thumb3.jpg";
 export const BlogDetails = () => {
   return (
     <Layout
-      breadcrumbTitle={"Insights Details"}
-      breadcrumbSubtitle={"Blog Details"}
+      breadcrumbTitle={"Blog"}
+      breadcrumbSubtitle={"Podrobnosti članka"}
     >
       <BlogLayout>
         <div className="td-postbox-wrapper td-postbox-wrapper-space td-postbox-wrapper-space-2">
@@ -24,37 +24,22 @@ export const BlogDetails = () => {
             {/* text */}
             <div className="td-postbox-content-2">
               <p className="mb-25">
-                Hygrometern is a minimal housing project located in Ystad,
-                Sweden, designed by Johan Sundberg Arkitektur. Twenty units
-                overall, evenly distributed between two-room and three-room
-                flats, are housed in the project’s four two-story structures.
-                The proposal is divided into several smaller built volumes
-                rather than having all the flats combined into one large volume.
-                This separation generates interstices that give the common
-                courtyard a variety of entrances and the building volumes a
-                sympathetic scale. The distinct built volumes might also take
-                advantage of the site’s varied contours helson dowson.
-                Hygrometern is a minimal housing project located in Ystad,
-                Sweden, designed by Johan Sundberg Arkitektur.
+                Digitalni tisk je v zadnjih letih doživel izjemen tehnološki
+                napredek. Sodobni digitalni tiskarski stroji dosegajo kakovost,
+                ki je primerljiva z offset tiskom, hkrati pa omogočajo tisk
+                manjših naklad brez visokih začetnih stroškov. Za podjetja, ki
+                potrebujejo hitre obrate in prilagodljive naklade, je digitalni
+                tisk idealna rešitev.
               </p>
               <p>
-                With larch-covered facades, galvanized steel balcony railings
-                and staircases, painted aluminum metalwork features, and
-                windows, the structures all speak the same language of
-                materials. Variations in the floor plan, window location, and
-                interstitial outdoor spaces enhance this material homogeneity.
-                The goal was to produce a unified whole using a modern design
-                language, where attention to materiality and detail is evident.
-                All flats have two sides and are in close proximity to the
-                outside world. Apartments on the ground floor have sizable
-                patios, while apartments on the second floor have sizable
-                balconies. Full height glass partitions ensure that both
-                apartments maintain a comfortable temperature all year long. The
-                internal courtyard, which is surrounded by an extended storage
-                building, gives residents access to both public and private
-                areas. The site’s level differences are used to divide parking
-                spaces and waste facilities from the private patios as you
-                approach the street.
+                Pri TISK ŠEPIC razpolagamo z najsodobnejšo digitalno tiskarsko
+                opremo, ki omogoča tisk na širok spekter materialov — od
+                standardnih papirjev do samolepljivih materialov in folij.
+                Digitalni tisk je posebej primeren za personalizirane tiskovine,
+                testne serije, vizitke, letake, brošure manjših naklad ter
+                embalažo za nišne izdelke. Prednost digitalnega tiska je tudi v
+                tem, da ni potrebna izdelava tiskarskih plošč, kar bistveno
+                skrajša čas od naročila do končnega izdelka.
               </p>
             </div>
           </div>
@@ -76,24 +61,20 @@ export const BlogDetails = () => {
             {/* text */}
             <div className="td-postbox-content-2">
               <p className="mb-35">
-                On the one hand, a contemporary residential building with all
-                the amenities and services essential for a modern lifestyle was
-                needed. On the other hand, they are confronted with a
-                complicated and divided structure that is challenging to
-                integrate with a protected façade and volume from the 16th
-                century.
+                Offset tisk ostaja standard za večje naklade, kjer je
+                kakovost barv in ostrino detajlov nemogoče preseči. Pri
+                offset tisku barvo nanašamo prek tiskarskih plošč, kar
+                zagotavlja izjemno enakomerno pokritost in natačnost barv
+                skozi celotno naklado.
               </p>
               <p>
-                The use of local, noble, natural materials that highlight the
-                essence of the Mediterranean has been crucial. All of the
-                project’s materials are from a limited palette of natural
-                substances. The restoration of historical aspects is combined.
-                These components are mixed with the addition of new, noble ones,
-                such as old bronze objects, regional stones, mirrored fabrics,
-                porcelain accents, and regional cotton and linen textiles. The
-                project restores the entrance courtyard to its former splendor
-                after it had been altered by reforms made in the previous
-                century.
+                Naša tiskarna ponuja obe tehnologiji — digitalni in offset
+                tisk — zato lahko stranke vedno izberejo optimalno rešitev
+                glede na naklado, rok dobave in proračun. Kombinacija obeh
+                pristopov nam omogoča, da pokrivamo vse od vizitke do
+                večstotisočne serije embalaže. Za posvet o najprimernejši
+                tehniki za vaš projekt nas kontaktirajte — z veseljem vam
+                pomagamo najti pravo rešitev.
               </p>
             </div>
           </div>

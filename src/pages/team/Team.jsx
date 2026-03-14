@@ -17,62 +17,62 @@ export const Team = () => {
       delay: 0.3,
       src: man1,
       href: "/team-details",
-      title: "Miranda H. Halim",
-      designation: "Founder",
+      title: "Tjaša Šepic",
+      designation: "Direktorica",
     },
     {
       delay: 0.4,
       src: man2,
       href: "/team-details",
-      title: "Teresa L. Marion",
-      designation: "Financial Officer",
+      title: "Gorazd Čerček",
+      designation: "Namestnik direktorice",
     },
     {
       delay: 0.5,
       src: man3,
       href: "/team-details",
-      title: "Donna D. Dicken",
-      designation: "Head of Customer Relations",
+      title: "Danijela Klemenčič",
+      designation: "Direktorica kakovosti",
     },
     {
       delay: 0.6,
       src: man4,
       href: "/team-details",
-      title: "Rosalina D. William",
-      designation: "Chief Executive Officer",
+      title: "Vanja Potočar",
+      designation: "Računovodstvo",
     },
     {
       delay: 0.3,
       src: man5,
       href: "/team-details",
-      title: "Taylor Davis",
-      designation: "Chief Technology Officer (CTO)",
+      title: "Katja Kren",
+      designation: "Administracija",
     },
     {
       delay: 0.4,
       src: man6,
       href: "/team-details",
-      title: "Riley Taylor",
-      designation: "Content Strategist",
+      title: "Ivana Jurič",
+      designation: "Nabava in prodaja",
     },
     {
       delay: 0.5,
       src: man7,
       href: "/team-details",
-      title: "Jordan Brown",
-      designation: "Marketing Director",
+      title: "Boris Mikać",
+      designation: "Komercialist",
     },
     {
       delay: 0.6,
       src: man8,
       href: "/team-details",
-      title: "Parker Martinez",
-      designation: "Sales Director",
+      title: "Marjetka Tratar",
+      designation: "Grafična oblikovalka",
     },
   ];
 
   return (
-    <Layout breadcrumbTitle={"Our Team"} breadcrumbSubtitle={"Team"}>
+    <Layout breadcrumbTitle={"Naša ekipa"} breadcrumbSubtitle={"Ekipa"}>
       {/* team members */}
       <div className="td-team-area pt-140 pb-60">
         <div className="container">

@@ -15,38 +15,37 @@ export const FooterFour = () => {
                     <img src={logoWhite} alt="logo" />
                   </Link>
                   <p className="td-footer-4-para">
-                    From strategy to delivery, we are here to make
+                    Od zasnove do končnega izdelka — tiskamo
                     <br />
-                    sure your business succeeds.
+                    prihodnost že več kot 40 let.
                   </p>
                 </div>
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6">
                 <div className="td-footer-3-widget td-footer-4-widget ml-65 mb-50">
-                  <h2 className="td-footer-3-widget-title mb-40">Menu</h2>
+                  <h2 className="td-footer-3-widget-title mb-40">Meni</h2>
                   <ul>
                     <li>
-                      <Link to="/company">Company</Link>
-                      <Link to="/careers">Careers</Link>
-                      <Link to="/press">Press Media</Link>
-                      <Link to="/blog">Our Blog</Link>
-                      <Link to="/privacy-policy">Privacy Policy</Link>
+                      <Link to="/about">O nas</Link>
+                      <Link to="/service">Storitve</Link>
+                      <Link to="/portfolio">Reference</Link>
+                      <Link to="/blog">Blog</Link>
+                      <Link to="/contact">Kontakt</Link>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="td-footer-4-widget ml-70 mb-50">
-                  <h2 className="td-footer-3-widget-title mb-40">Find us</h2>
+                  <h2 className="td-footer-3-widget-title mb-40">Kje smo</h2>
                   <div className="td-footer-4-link">
-                    <a href="mailto:info@tisksepic.si">
-                      <i className="fa-sharp fa-regular fa-location-dot"></i>71
-                      South Los Carneros Road, California
+                    <a href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia" target="_blank">
+                      <i className="fa-sharp fa-regular fa-location-dot"></i>Livada 14, 8000 Novo mesto, Slovenija
                     </a>
                     <a href="mailto:info@tisksepic.si">
                       <i className="fa-regular fa-envelope"></i>info@tisksepic.si
                     </a>
-                    <a href="tel:+51174705812">
+                    <a href="tel:+38673939200">
                       <span>
                         <svg
                           width="20"
@@ -63,18 +62,18 @@ export const FooterFour = () => {
                           </g>
                         </svg>
                       </span>
-                      +51 174 705 812
+                      +386 7 393 92 00
                     </a>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="td-footer-3-widget td-footer-4-widget ml-50 mb-50">
-                  <h2 className="td-footer-3-widget-title mb-25">Newsletter</h2>
+                  <h2 className="td-footer-3-widget-title mb-25">E-novice</h2>
                   <div className="td-footer-4-form mb-30">
                     <form action="#">
                       <div className="td-footer-4-form-input p-relative mb-15">
-                        <input type="email" placeholder="Business email" />
+                        <input type="email" placeholder="Vaš e-mail" />
                         <button
                           className="td-footer-4-form-button"
                           type="button"
@@ -96,7 +95,7 @@ export const FooterFour = () => {
                       <div className="td-footer-4-form-check">
                         <input type="checkbox" id="check" />
                         <label htmlFor="check">
-                          I agree to all terms and policies
+                          Strinjam se s pogoji uporabe
                         </label>
                       </div>
                     </form>
@@ -144,8 +143,8 @@ export const FooterFour = () => {
                     <div className="col-lg-6 col-md-5">
                       <div className="td-footer-3-bottom-copyright mb-10">
                         <p>
-                          © 2024 <Link to="/">Example</Link>, All rights
-                          reserved.
+                          © 2024 <Link to="/">Tisk Šepic d.o.o.</Link> Vse pravice
+                          pridržane.
                         </p>
                       </div>
                     </div>
@@ -153,11 +152,11 @@ export const FooterFour = () => {
                       <div className="td-footer-4-bottom-condition text-right mb-10">
                         <ul>
                           <li>
-                            <Link to="/privacy-policy">Privacy Policy</Link>
+                            <Link to="/privacy-policy">Politika zasebnosti</Link>
                           </li>
                           <li>
                             <Link to="/terms-and-conditions">
-                              Terms and conditions
+                              Pogoji uporabe
                             </Link>
                           </li>
                         </ul>

@@ -8,7 +8,7 @@ export const BlogComments = () => {
   return (
     <div className="td-postbox-comment mb-60">
       <h3 className="td-postbox-comment-title pb-10">
-        <span>User</span> Feedbacks (06)
+        <span>Komentarji</span> bralcev (06)
       </h3>
       <ul>
         <li>
@@ -19,23 +19,21 @@ export const BlogComments = () => {
             <div className="td-postbox-comment-text">
               <div className="td-postbox-comment-name mb-10 d-flex align-items-center">
                 <h5>
-                  <Link to="#">Tromas H. Hendson </Link>
+                  <Link to="#">Marko N.</Link>
                 </h5>
-                <span className="post-meta"> June 9, 2024</span>
+                <span className="post-meta"> 9. junij 2024</span>
               </div>
               <p>
-                Variations in the floor plan, window location, and interstitial
-                outdoor spaces enhance this material homogeneity. The goal was
-                to produce a unified whole using a modern design language, where
-                attention to materiality and detail is evident. All flats have
-                two sides and are in close proximity to the outside world.
+                Odlična kakovost tiska in hitra dobava. Naročili smo serijo
+                katalogov in rezultat je presegel naša pričakovanja. Barve so
+                bile natančne, papir odličen. Priporočamo!
               </p>
               <div className="td-postbox-comment-reply">
                 <Link to="#">
                   <span>
                     <i className="fa-sharp fa-solid fa-reply"></i>
                   </span>
-                  <span>Reply</span>
+                  <span>Odgovori</span>
                 </Link>
               </div>
             </div>
@@ -49,23 +47,21 @@ export const BlogComments = () => {
                 <div className="td-postbox-comment-text">
                   <div className="td-postbox-comment-name mb-10 d-flex align-items-center">
                     <h5>
-                      <Link to="#">Rosalina D.</Link>
+                      <Link to="#">Ana P.</Link>
                     </h5>
-                    <span className="post-meta"> June 9, 2024</span>
+                    <span className="post-meta"> 12. junij 2024</span>
                   </div>
                   <p>
-                    Variations in the floor plan, window location, and
-                    interstitial outdoor spaces enhance this material
-                    homogeneity. The goal was to produce a unified whole using a
-                    modern design language, where attention to materiality and
-                    detail is evident.
+                    Strinjam se! Tudi mi imamo zelo pozitivne izkušnje.
+                    Profesionalen pristop in natančno izvedeni projekti. Sodelovanje
+                    je res brezhibno.
                   </p>
                   <div className="td-postbox-comment-reply">
                     <Link to="#">
                       <span>
                         <i className="fa-sharp fa-solid fa-reply"></i>
                       </span>
-                      <span>Reply</span>
+                      <span>Odgovori</span>
                     </Link>
                   </div>
                 </div>
@@ -81,23 +77,21 @@ export const BlogComments = () => {
             <div className="td-postbox-comment-text">
               <div className="td-postbox-comment-name mb-10 d-flex align-items-center">
                 <h5>
-                  <Link to="#">Miranda H. Halim</Link>
+                  <Link to="#">Peter K.</Link>
                 </h5>
-                <span className="post-meta"> June 9, 2024</span>
+                <span className="post-meta"> 15. junij 2024</span>
               </div>
               <p>
-                Variations in the floor plan, window location, and interstitial
-                outdoor spaces enhance this material homogeneity. The goal was
-                to produce a unified whole using a modern design language, where
-                attention to materiality and detail is evident. All flats have
-                two sides and are in close proximity to the outside world.
+                Že leta sodelujemo s Tisk Šepic in vsakič znova smo navdušeni
+                nad kakovostjo. Farmacevtska embalaža zahteva izjemno natančnost
+                — in jo pri njih dobimo. Certifikati govorijo zase.
               </p>
               <div className="td-postbox-comment-reply">
                 <Link to="#">
                   <span>
                     <i className="fa-sharp fa-solid fa-reply"></i>
                   </span>
-                  <span>Reply</span>
+                  <span>Odgovori</span>
                 </Link>
               </div>
             </div>

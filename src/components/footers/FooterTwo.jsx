@@ -48,7 +48,7 @@ export const FooterTwo = () => {
                     className="td-footer-2-big-title"
                     data-parallax='{"x": -100, "smoothness": 10}'
                   >
-                    Let’s talk
+                    Pogovorimo se
                   </h2>
                 </div>
               </div>
@@ -84,21 +84,21 @@ export const FooterTwo = () => {
                     </div>
                     <div className="td-footer-2-form">
                       <h5 className="td-footer-2-form-title mb-15">
-                        Make your business boom
+                        Ostanite v stiku
                       </h5>
                       <form action="#" className="mb-20">
                         <div className="td-footer-2-input p-relative">
                           <input
                             type="email"
                             name="email"
-                            placeholder="Email adress"
+                            placeholder="E-poštni naslov"
                           />
-                          <button type="button">Send</button>
+                          <button type="button">Pošlji</button>
                         </div>
                       </form>
                       <div className="td-footer-2-info">
-                        <a className="mr-30" href="tel:+(11)2253536677">
-                          +(11) 225 353 6677
+                        <a className="mr-30" href="tel:+38673939200">
+                          +386 7 393 92 00
                         </a>
                         <a href="mailto:info@tisksepic.si">info@tisksepic.si</a>
                       </div>
@@ -107,20 +107,20 @@ export const FooterTwo = () => {
                 </div>
                 <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-50">
                   <div className="td-footer-2-widget mr-80">
-                    <h4 className="td-footer-2-widget-title mb-50">Location</h4>
+                    <h4 className="td-footer-2-widget-title mb-50">Lokacija</h4>
                     <div className="td-footer-2-location">
                       <a
                         className="mb-20"
-                        href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                        href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia"
                         target="_blank"
                       >
-                        27 west 24th St new york, NY 10010, US
+                        Livada 14, 8000 Novo mesto, Slovenija
                       </a>
                       <a
-                        href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                        href="mailto:info@tisksepic.si"
                         target="_blank"
                       >
-                        12/A, New high tower, london United Kingdom
+                        info@tisksepic.si
                       </a>
                     </div>
                   </div>
@@ -131,17 +131,17 @@ export const FooterTwo = () => {
                       <div className="td-footer-2-widget ml-15">
                         <h4 className="td-footer-2-widget-title mb-50">Info</h4>
                         <div className="td-footer-2-location">
-                          <a className="mb-15" href="#">
-                            About Us
+                          <a className="mb-15" href="/about">
+                            O nas
                           </a>
-                          <a className="mb-15" href="#">
-                            What we do
+                          <a className="mb-15" href="/service">
+                            Storitve
                           </a>
-                          <a className="mb-15" href="#">
-                            Our Team
+                          <a className="mb-15" href="/team">
+                            Naša ekipa
                           </a>
-                          <a className="mb-15" href="#">
-                            Contract us
+                          <a className="mb-15" href="/contact">
+                            Kontakt
                           </a>
                         </div>
                       </div>
@@ -149,20 +149,20 @@ export const FooterTwo = () => {
                     <div className="col-lg-6 col-md-6 col-sm-6 col-6 mb-50">
                       <div className="td-footer-2-widget ml-30">
                         <h4 className="td-footer-2-widget-title mb-50">
-                          Links
+                          Povezave
                         </h4>
                         <div className="td-footer-2-location">
-                          <a className="mb-15" href="#">
-                            Careers
+                          <a className="mb-15" href="/portfolio">
+                            Reference
                           </a>
-                          <a className="mb-15" href="#">
-                            About us
+                          <a className="mb-15" href="/blog">
+                            Blog
                           </a>
-                          <a className="mb-15" href="#">
-                            FAQ Page
+                          <a className="mb-15" href="/faq">
+                            Pogosta vprašanja
                           </a>
-                          <a className="mb-15" href="#">
-                            Our Services
+                          <a className="mb-15" href="/service">
+                            Storitve
                           </a>
                         </div>
                       </div>
@@ -180,7 +180,7 @@ export const FooterTwo = () => {
               <div className="col-lg-4 col-md-5">
                 <div className="td-footer-bottom-copyright mb-20">
                   <p>
-                    © 2024 <a href="#">Example</a>, All rights reserved.
+                    © 2024 <a href="/">Tisk Šepic d.o.o.</a> Vse pravice pridržane.
                   </p>
                 </div>
               </div>
@@ -188,13 +188,13 @@ export const FooterTwo = () => {
                 <div className="td-footer-2-bottom-menu mb-20">
                   <ul>
                     <li>
-                      <a href="#">About.</a>
+                      <a href="/about">O nas.</a>
                     </li>
                     <li>
-                      <a href="#">Careers.</a>
+                      <a href="/service">Storitve.</a>
                     </li>
                     <li>
-                      <a href="#">Get In Touch.</a>
+                      <a href="/contact">Kontakt.</a>
                     </li>
                   </ul>
                 </div>

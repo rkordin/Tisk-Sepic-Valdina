@@ -26,31 +26,31 @@ export const ContactTwo = () => {
           <div className="row align-items-end">
             <div className="col-lg-8 mb-40">
               <div className="td-contact-3-content mb-60">
-                <h2 className="td-section-title mb-20">Contact us</h2>
+                <h2 className="td-section-title mb-20">Kontaktirajte nas</h2>
                 <p>
-                  Our focus is on delivering superior value to our clients for
-                  company modification.
+                  Pošljite nam povpraševanje in odgovorili vam bomo
+                  v najkrajšem možnem času.
                   <br />
-                  Providing sustainable strategies that will upgrade.
+                  Z veseljem vam svetujemo pri izbiri tiskarskih rešitev.
                 </p>
               </div>
               <div className="td-contact-3-form-wrap">
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="td-contact-form td-contact-3-input">
-                      <input type="text" placeholder="Your name" />
+                      <input type="text" placeholder="Vaše ime" />
                       <img src={userIcon} alt="user" />
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="td-contact-form td-contact-3-input">
-                      <input type="email" placeholder="Your email" />
+                      <input type="email" placeholder="Vaš e-mail" />
                       <img src={envelopeIcon} alt="envelope" />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="td-contact-form td-contact-3-input">
-                      <textarea placeholder="Message"></textarea>
+                      <textarea placeholder="Sporočilo"></textarea>
                       <img className="envelope" src={penIcon} alt="pen" />
                     </div>
                   </div>
@@ -60,7 +60,7 @@ export const ContactTwo = () => {
             <div className="col-lg-4 mb-40">
               <div className="td-contact-3-btn">
                 <button className="td-btn-rounded" type="button">
-                  Send Messages
+                  Pošlji sporočilo
                   <i className="td-btn-circle-dot"></i>
                 </button>
               </div>

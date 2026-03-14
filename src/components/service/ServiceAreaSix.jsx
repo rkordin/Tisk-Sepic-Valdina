@@ -42,10 +42,10 @@ export const ServiceAreaSix = () => {
           </defs>
         </svg>
       ),
-      alt: "Market analysis icon",
-      title: "Market analysis",
+      alt: "Digitalni tisk",
+      title: "Digitalni tisk",
       description:
-        "From strategy to delivery, we are here to make sure your business succeeds.",
+        "Najmodernejša in najhitrejša oblika izdelave večbarvnih tiskovin. Tisk laka, zlate, srebrne, bele in metalik barve v digitalni tehnologiji.",
       className: "mr-30",
     },
     {
@@ -72,10 +72,10 @@ export const ServiceAreaSix = () => {
           />
         </svg>
       ),
-      alt: "HR research icon",
-      title: "HR researches",
+      alt: "Offset tisk",
+      title: "Offset tisk",
       description:
-        "From strategy to delivery, we are here to make sure your business succeeds.",
+        "Izdelava najzahtevnejših tiskovin s kristalno jasnim in ostrim motivom. Plastifikacija, lakiranje, toplotni in slepi tisk za srednje in velike naklade.",
       className: "ml-30",
     },
     {
@@ -123,10 +123,10 @@ export const ServiceAreaSix = () => {
           />
         </svg>
       ),
-      alt: "Online business icon",
-      title: "Online business",
+      alt: "Flekso tisk",
+      title: "Flekso tisk",
       description:
-        "From strategy to delivery, we are here to make sure your business succeeds.",
+        "Tiskanje motivov na najrazličnejše vrste materialov iz role. Samolepilne etikete, večslojne etikete in aluminijasta folija. Clean Room za farmacevtsko industrijo.",
       className: "mr-30",
     },
     {
@@ -176,10 +176,10 @@ export const ServiceAreaSix = () => {
           </defs>
         </svg>
       ),
-      alt: "Business strategy icon",
-      title: "Business strategy",
+      alt: "UV tisk",
+      title: "UV tisk",
       description:
-        "From strategy to delivery, we are here to make sure your business succeeds.",
+        "Ploski UV tiskalnik za tisk na ravne površine debeline do 4,8 cm. Izjemna fleksibilnost pri tisku na najrazličnejše materiale z dolgo obstojnostjo.",
       className: "ml-30",
     },
   ];

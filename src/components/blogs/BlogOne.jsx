@@ -15,8 +15,8 @@ export const BlogOne = () => {
               data-wow-delay=".3s"
               data-wow-duration="1s"
             >
-              <span className="td-section-title-pre mb-10">Insights</span>
-              <h2 className="td-section-title">Latest news coming</h2>
+              <span className="td-section-title-pre mb-10">Blog</span>
+              <h2 className="td-section-title">Novosti in nasveti</h2>
             </div>
           </div>
 
@@ -28,11 +28,11 @@ export const BlogOne = () => {
             >
               <div className="td-blog-qoute-wrap mb-30 td-blog-qoute-bg p-relative">
                 <span className="td-blog-qoute-meta">
-                  June 4, 2024 / Finances
+                  Tisk / Nasveti
                 </span>
                 <h3 className="td-blog-qoute-title m-0">
                   <Link to="/blog-details">
-                    There is nothing new with your old posting
+                    6 prednosti tiska na steklo
                   </Link>
                 </h3>
                 <div className="td-blog-qoute">
@@ -58,10 +58,10 @@ export const BlogOne = () => {
                 <div className="td-blog-thumb mb-30">
                   <img className="w-100" src={blog01} alt="blog" />
                 </div>
-                <span className="td-blog-meta">June 4, 2024 / Economy</span>
+                <span className="td-blog-meta">Tisk / Primerjava</span>
                 <h3 className="td-blog-title mb-65">
                   <Link to="/blog-details">
-                    Day to day work made our life simple and easy
+                    Digitalni ali offset tisk — kaj izbrati?
                   </Link>
                 </h3>
                 <div className="td-blog-btn-wrap">
@@ -97,10 +97,10 @@ export const BlogOne = () => {
                 <div className="td-blog-thumb mb-30">
                   <img className="w-100" src={blog02} alt="blog" />
                 </div>
-                <span className="td-blog-meta">June 4, 2024 / Investment</span>
+                <span className="td-blog-meta">Marketing / Nasveti</span>
                 <h3 className="td-blog-title mb-65">
                   <Link to="/blog-details">
-                    The essential steps for business success
+                    12 notranjih nasvetov za izbiro tiskarne
                   </Link>
                 </h3>
                 <div className="td-blog-btn-wrap">
@@ -126,11 +126,11 @@ export const BlogOne = () => {
               </div>
               <div className="td-blog-qoute-wrap td-blog-qoute-bg-2 p-relative">
                 <span className="td-blog-qoute-meta td-blog-qoute-meta-2">
-                  June 4, 2024 / Corporate
+                  Oglaševanje / Strategija
                 </span>
                 <h3 className="td-blog-qoute-title td-blog-qoute-title-2 m-0">
                   <Link to="/blog-details">
-                    The new way to keep track of all the projects
+                    Zakaj oglaševanje ne deluje?
                   </Link>
                 </h3>
                 <div className="td-blog-qoute td-blog-qoute-2">
@@ -162,11 +162,11 @@ export const BlogOne = () => {
             >
               <div className="td-blog-qoute-wrap mb-30 td-blog-qoute-bg p-relative">
                 <span className="td-blog-qoute-meta">
-                  June 4, 2024 / Analysis
+                  Tisk / Kakovost
                 </span>
                 <h3 className="td-blog-qoute-title m-0">
                   <Link to="/blog-details">
-                    Make your business boom with us
+                    Kako zagotoviti brezhibne tiskovine
                   </Link>
                 </h3>
                 <div className="td-blog-qoute">
@@ -192,10 +192,10 @@ export const BlogOne = () => {
                 <div className="td-blog-thumb mb-30">
                   <img className="w-100" src={blog03} alt="blog" />
                 </div>
-                <span className="td-blog-meta">June 4, 2024 / Research</span>
+                <span className="td-blog-meta">Vozila / Oglaševanje</span>
                 <h3 className="td-blog-title mb-65">
                   <Link to="/blog-details">
-                    Business management for all future successful projects
+                    Oglaševanje na vozilih — se splača?
                   </Link>
                 </h3>
                 <div className="td-blog-btn-wrap">

@@ -5,35 +5,35 @@ export const BlogForm = () => {
     <div className="td-postbox-comment-form">
       <div className="td-postbox-comment-form-content mb-40 d-flex align-items-center justify-content-between">
         <h3 className="td-postbox-comment-form-title">
-          Add Feedback & Reviews
+          Dodajte komentar
         </h3>
       </div>
       <form action="#">
         <div className="row">
           <div className="col-lg-4 col-md-4 mb-20">
             <div className="td-postbox-comment-input">
-              <input type="text" placeholder="Your name" />
+              <input type="text" placeholder="Vaše ime" />
             </div>
           </div>
           <div className="col-lg-4 col-md-4 mb-20">
             <div className="td-postbox-comment-input">
-              <input type="email" placeholder="info@webmail.com" />
+              <input type="email" placeholder="Vaš e-mail" />
             </div>
           </div>
           <div className="col-lg-4 col-md-4 mb-20">
             <div className="td-postbox-comment-input">
-              <input type="text" placeholder="Website" />
+              <input type="text" placeholder="Spletna stran" />
             </div>
           </div>
           <div className="col-12 mb-20">
             <div className="td-postbox-comment-textarea">
-              <textarea placeholder="Message"></textarea>
+              <textarea placeholder="Sporočilo"></textarea>
             </div>
           </div>
           <div className="col-12">
             <div className="td-postbox-comment-btn">
               <button type="button" className="td-btn td-left-right">
-                Submit Now
+                Pošlji
                 <span className="td-arrow-angle ml-10">
                   <svg
                     className="td-arrow-svg-top-right"

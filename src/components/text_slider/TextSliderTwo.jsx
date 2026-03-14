@@ -24,7 +24,7 @@ export const TextSliderTwo = () => {
                     <div className="swiper-slide">
                       <div className="td-hero-text-slider-content text-center">
                         <h4 className="td-testimonial-slider-title-tr">
-                          Hire Us For Project /
+                          Zaupajte nam svoj projekt /
                         </h4>
                       </div>
                     </div>
@@ -34,7 +34,7 @@ export const TextSliderTwo = () => {
                     <div className="swiper-slide">
                       <div className="td-hero-text-slider-content text-center">
                         <h4 className="td-testimonial-slider-title">
-                          Hire us For projects
+                          Zaupajte nam svoj projekt
                         </h4>
                       </div>
                     </div>

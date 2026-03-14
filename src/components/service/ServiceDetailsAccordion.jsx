@@ -17,7 +17,7 @@ export const ServiceDetailsAccordion = () => {
               aria-expanded="true"
               aria-controls="collapsecancel"
             >
-              What challenges do businesses face during change?
+              Kakšne formate tiska ponujate?
               <span className="accordion-btn"></span>
             </button>
           </h2>
@@ -29,11 +29,10 @@ export const ServiceDetailsAccordion = () => {
           >
             <div className="accordion-body">
               <p>
-                Consultants employ a variety of problem-solving methods tailored
-                to client needs and the nature of the issue. These include root
-                cause analysis to address under -lying problems, SWOT analysis
-                for identifying strengths, weaknesses, opportunities, and
-                threats, benchmarking.
+                Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+                ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+                Tiskamo na različne materiale z različnimi tehnikami za vse vrste naklad
+                in zahtev.
               </p>
             </div>
           </div>
@@ -48,7 +47,7 @@ export const ServiceDetailsAccordion = () => {
               aria-expanded="false"
               aria-controls="collapsehappen"
             >
-              How do consultants stay updated on trends?
+              Kakšni so roki izdelave?
               <span className="accordion-btn"></span>
             </button>
           </h2>
@@ -60,11 +59,10 @@ export const ServiceDetailsAccordion = () => {
           >
             <div className="accordion-body">
               <p>
-                Consultants employ a variety of problem-solving methods tailored
-                to client needs and the nature of the issue. These include root
-                cause analysis to address under -lying problems, SWOT analysis
-                for identifying strengths, weaknesses, opportunities, and
-                threats, benchmarking.
+                Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+                ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+                Tiskamo na različne materiale z različnimi tehnikami za vse vrste naklad
+                in zahtev.
               </p>
             </div>
           </div>
@@ -79,7 +77,7 @@ export const ServiceDetailsAccordion = () => {
               aria-expanded="false"
               aria-controls="collapsehave"
             >
-              What ethical rules do they follow?
+              Kakšne certifikate imate?
               <span className="accordion-btn"></span>
             </button>
           </h2>
@@ -91,11 +89,10 @@ export const ServiceDetailsAccordion = () => {
           >
             <div className="accordion-body">
               <p>
-                Consultants employ a variety of problem-solving methods tailored
-                to client needs and the nature of the issue. These include root
-                cause analysis to address under -lying problems, SWOT analysis
-                for identifying strengths, weaknesses, opportunities, and
-                threats, benchmarking.
+                Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+                ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+                Tiskamo na različne materiale z različnimi tehnikami za vse vrste naklad
+                in zahtev.
               </p>
             </div>
           </div>
@@ -110,7 +107,7 @@ export const ServiceDetailsAccordion = () => {
               aria-expanded="false"
               aria-controls="collapse4"
             >
-              What are the risks of using consultancy services?
+              Ali ponujate grafično oblikovanje?
               <span className="accordion-btn"></span>
             </button>
           </h2>
@@ -122,11 +119,10 @@ export const ServiceDetailsAccordion = () => {
           >
             <div className="accordion-body">
               <p>
-                Consultants employ a variety of problem-solving methods tailored
-                to client needs and the nature of the issue. These include root
-                cause analysis to address under -lying problems, SWOT analysis
-                for identifying strengths, weaknesses, opportunities, and
-                threats, benchmarking.
+                Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+                ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+                Tiskamo na različne materiale z različnimi tehnikami za vse vrste naklad
+                in zahtev.
               </p>
             </div>
           </div>
@@ -141,7 +137,7 @@ export const ServiceDetailsAccordion = () => {
               aria-expanded="false"
               aria-controls="collapsefive"
             >
-              Can you share a recent successful project?
+              Kakšne možnosti dodelave ponujate?
               <span className="accordion-btn"></span>
             </button>
           </h2>
@@ -153,11 +149,10 @@ export const ServiceDetailsAccordion = () => {
           >
             <div className="accordion-body">
               <p>
-                Consultants employ a variety of problem-solving methods tailored
-                to client needs and the nature of the issue. These include root
-                cause analysis to address under -lying problems, SWOT analysis
-                for identifying strengths, weaknesses, opportunities, and
-                threats, benchmarking.
+                Z najmodernejšo tehnološko opremo in visoko usposobljenimi zaposlenimi
+                ponujamo celoten spekter tiskarskih in grafičnih storitev na enem mestu.
+                Tiskamo na različne materiale z različnimi tehnikami za vse vrste naklad
+                in zahtev.
               </p>
             </div>
           </div>

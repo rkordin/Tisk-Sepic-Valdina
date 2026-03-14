@@ -7,8 +7,8 @@ import portfolioDetailsChart from "../../assets/img/portfolio/portfolio-details/
 export const PortfolioDetails = () => {
   return (
     <Layout
-      breadcrumbTitle={"Single Case"}
-      breadcrumbSubtitle={"Vision & Direction"}
+      breadcrumbTitle={"Referenca"}
+      breadcrumbSubtitle={"Podrobnosti projekta"}
     >
       <div className="td-portfolio-details-area pt-140">
         <div className="container">
@@ -21,48 +21,32 @@ export const PortfolioDetails = () => {
 
                 {/* title */}
                 <h2 className="td-portfolio-details-title mb-35">
-                  We are a leading venture capital firm committed to supporting
+                  Farmacevtska embalaža za vodilno slovensko podjetje
                 </h2>
 
                 <div className="row">
                   <div className="col-lg-8 mb-40">
                     <div className="td-portfolio-details-text mb-75 mr-20">
                       <p>
-                        A consultant is a professional who provides expert
-                        advice and guidance to individuals or organizations in a
-                        particular field or industry. Consultants are typically
-                        hired to solve problems, improve performance, or provide
-                        specialized knowledge that the client lacks internally.
-                        Consultants can work independently or as part of
-                        consulting firms. They may specialize in various areas
-                        such as management, finance, technology, human
-                        resources, marketing, or specific industries like
-                        healthcare, IT, or manufacturing.
+                        Projekt je zajemal celotno zasnovo in izvedbo embalaže
+                        za linijo farmacevtskih izdelkov. Zahteve stranke so
+                        vključevale tisk v čistem prostoru (Clean Room), uporabo
+                        materialov, ki ustrezajo standardu ISO 15378, ter
+                        natančno barvno reprodukcijo po Pantone barvni lestvici.
                       </p>
                       <p>
-                        With 22 years of experience and a proven track record,
-                        we have become a trusted partner for startups and
-                        high-potential companies seeking to disrupt industries
-                        and create lasting impact. As a venture capital agency,
-                        we specialise in partnering with companies at various
-                        stages of their growth journey.
+                        Skupaj s stranko smo razvili embalažo, ki izpolnjuje
+                        vse regulatorne zahteve, hkrati pa ohranja prepoznavnost
+                        blagovne znamke. Proizvodni proces je potekal na naših
+                        offset in flekso tiskarskih strojih z doslednim nadzorom
+                        kakovosti v vsakem koraku.
                       </p>
                       <p>
-                        As a venture capital agency, we specialise in partnering
-                        with companies at various stages of their growth
-                        journey. From seed funding to growth-stage investments,
-                        we offer tailored solutions that address the unique
-                        needs and challenges of each portfolio company.Our track
-                        record speaks for itself. We have successfully invested
-                        in and nurtured the growth of over 40 companies across
-                        diverse industries, positioning our portfolio companies
-                        as market leaders. Lorem ipsum dolor sit amet
-                        consectetur adipiscing diam tortor sit feugiat dictum eu
-                        diam euismod ultrices convallis eget vel velit posuere
-                        mi consequat leo egestas sed odio molestie non imperdiet
-                        malesuada. We are a leading venture capital firm
-                        committed to supporting visionary entrepreneurs and
-                        fueling the growth of transformative businesses.
+                        Končni izdelek — serija škatel in navodil za uporabo —
+                        je bil dobavljen v dogovorjenem roku. Stranka je
+                        pohvalila natančnost tiska, kakovost materialov in
+                        brezhibno komunikacijo skozi celoten projekt. Sodelovanje
+                        se nadaljuje z novimi linijami izdelkov.
                       </p>
                     </div>
 
@@ -84,7 +68,7 @@ export const PortfolioDetails = () => {
                           aria-controls="v-pills-home"
                           aria-selected="true"
                         >
-                          Our Mission
+                          Izziv
                         </button>
                         <button
                           className="td-portfolio-tab-btn nav-link mb-10"
@@ -96,7 +80,7 @@ export const PortfolioDetails = () => {
                           aria-controls="v-pills-profile"
                           aria-selected="false"
                         >
-                          How It Works
+                          Postopek
                         </button>
                         <button
                           className="td-portfolio-tab-btn nav-link mb-10"
@@ -108,7 +92,7 @@ export const PortfolioDetails = () => {
                           aria-controls="v-pills-messages"
                           aria-selected="false"
                         >
-                          Result
+                          Rezultat
                         </button>
                       </div>
                       <div
@@ -123,23 +107,12 @@ export const PortfolioDetails = () => {
                         >
                           <div className="td-portfolio-details-tab-content">
                             <p>
-                              As a venture capital agency, we specialise in
-                              partnering with companies at various stages of
-                              their growth journey. From seed funding to
-                              growth-stage investments, we offer tailored
-                              solutions that address the unique needs and
-                              challenges of each portfolio company.Our track
-                              record speaks for itself. We have successfully
-                              invested in and nurtured the growth of over 40
-                              companies across diverse industries, positioning
-                              our portfolio companies as market leaders. Lorem
-                              ipsum dolor sit amet consectetur adipiscing diam
-                              tortor sit feugiat dictum eu diam euismod ultrices
-                              convallis eget vel velit posuere mi consequat leo
-                              egestas sed odio molestie non imperdiet malesuada.
-                              We are a leading venture capital firm committed to
-                              supporting visionary entrepreneurs and fueling the
-                              growth of transformative businesses.
+                              Stranka je potrebovala embalažo za novo linijo
+                              farmacevtskih izdelkov, ki mora ustrezati strogim
+                              regulatornim zahtevam. Izziv je bil zagotoviti
+                              brezhibno kakovost tiska v čistem prostoru, natančno
+                              barvno ujemanje ter skladnost z ISO 15378 standardom
+                              za primarno embalažo zdravil.
                             </p>
                             <div className="td-portfolio-details-tab-chart">
                               <img
@@ -158,23 +131,12 @@ export const PortfolioDetails = () => {
                         >
                           <div className="td-portfolio-details-tab-content">
                             <p>
-                              As a venture capital agency, we specialise in
-                              partnering with companies at various stages of
-                              their growth journey. From seed funding to
-                              growth-stage investments, we offer tailored
-                              solutions that address the unique needs and
-                              challenges of each portfolio company.Our track
-                              record speaks for itself. We have successfully
-                              invested in and nurtured the growth of over 40
-                              companies across diverse industries, positioning
-                              our portfolio companies as market leaders. Lorem
-                              ipsum dolor sit amet consectetur adipiscing diam
-                              tortor sit feugiat dictum eu diam euismod ultrices
-                              convallis eget vel velit posuere mi consequat leo
-                              egestas sed odio molestie non imperdiet malesuada.
-                              We are a leading venture capital firm committed to
-                              supporting visionary entrepreneurs and fueling the
-                              growth of transformative businesses.
+                              Začeli smo s posvetom o materialih in tiskarskih
+                              tehnikah. Po odobritvi prototipov smo zagnali
+                              proizvodnjo na offset stroju z doslednim nadzorom
+                              barv prek spektrofotometra. Vsaka serija je bila
+                              preverjena v našem laboratoriju za kakovost pred
+                              dobavo.
                             </p>
                             <div className="td-portfolio-details-tab-chart">
                               <img
@@ -193,23 +155,12 @@ export const PortfolioDetails = () => {
                         >
                           <div className="td-portfolio-details-tab-content">
                             <p>
-                              As a venture capital agency, we specialise in
-                              partnering with companies at various stages of
-                              their growth journey. From seed funding to
-                              growth-stage investments, we offer tailored
-                              solutions that address the unique needs and
-                              challenges of each portfolio company.Our track
-                              record speaks for itself. We have successfully
-                              invested in and nurtured the growth of over 40
-                              companies across diverse industries, positioning
-                              our portfolio companies as market leaders. Lorem
-                              ipsum dolor sit amet consectetur adipiscing diam
-                              tortor sit feugiat dictum eu diam euismod ultrices
-                              convallis eget vel velit posuere mi consequat leo
-                              egestas sed odio molestie non imperdiet malesuada.
-                              We are a leading venture capital firm committed to
-                              supporting visionary entrepreneurs and fueling the
-                              growth of transformative businesses.
+                              Dobavljenih je bilo 500.000 enot embalaže v
+                              dogovorjenem roku. Stranka je potrdila 100%
+                              skladnost z regulatornimi zahtevami. Barvna
+                              odstopanja so bila pod 1 deltaE, kar presega
+                              industrijski standard. Projekt je odprl vrata
+                              za dolgoročno sodelovanje.
                             </p>
                             <div className="td-portfolio-details-tab-chart">
                               <img
@@ -228,19 +179,19 @@ export const PortfolioDetails = () => {
                   <div className="col-lg-4 mb-40">
                     <div className="td-portfolio-case-details-wrap">
                       <h3 className="td-portfolio-case-title mb-25">
-                        Case Details
+                        Podrobnosti projekta
                       </h3>
                       <div className="td-portfolio-case-list">
                         <div className="td-portfolio-case-list-item">
                           <div className="row align-items-center">
                             <div className="col-4">
                               <div className="td-portfolio-case-info">
-                                <span>Client</span>
+                                <span>Stranka</span>
                               </div>
                             </div>
                             <div className="col-8">
                               <div className="td-portfolio-case-location">
-                                <span>Miranda H. Halim</span>
+                                <span>Farmacevtsko podjetje</span>
                               </div>
                             </div>
                           </div>
@@ -249,13 +200,13 @@ export const PortfolioDetails = () => {
                           <div className="row align-items-center">
                             <div className="col-4">
                               <div className="td-portfolio-case-info">
-                                <span>Location</span>
+                                <span>Lokacija</span>
                               </div>
                             </div>
                             <div className="col-8">
                               <div className="td-portfolio-case-location">
                                 <span>
-                                  <Link to="#">New York, US</Link>
+                                  <Link to="#">Slovenija</Link>
                                 </span>
                               </div>
                             </div>
@@ -265,12 +216,12 @@ export const PortfolioDetails = () => {
                           <div className="row align-items-center">
                             <div className="col-4">
                               <div className="td-portfolio-case-info">
-                                <span>Category</span>
+                                <span>Kategorija</span>
                               </div>
                             </div>
                             <div className="col-8">
                               <div className="td-portfolio-case-location">
-                                <span>Business, Finance</span>
+                                <span>Embalaža, Farmacija</span>
                               </div>
                             </div>
                           </div>
@@ -279,12 +230,12 @@ export const PortfolioDetails = () => {
                           <div className="row align-items-center">
                             <div className="col-4">
                               <div className="td-portfolio-case-info">
-                                <span>Date</span>
+                                <span>Datum</span>
                               </div>
                             </div>
                             <div className="col-8">
                               <div className="td-portfolio-case-location">
-                                <span>June 21, 2024</span>
+                                <span>Junij 2024</span>
                               </div>
                             </div>
                           </div>
@@ -293,7 +244,7 @@ export const PortfolioDetails = () => {
                           <div className="row align-items-center">
                             <div className="col-4">
                               <div className="td-portfolio-case-info">
-                                <span>Share</span>
+                                <span>Deli</span>
                               </div>
                             </div>
                             <div className="col-8">
@@ -345,7 +296,7 @@ export const PortfolioDetails = () => {
                           <i className="fa-solid fa-arrow-left-long"></i>
                         </div>
                         <span className="td-portfolio-more-content ml-20">
-                          Prev Post
+                          Prejšnja
                         </span>
                       </Link>
                     </div>
@@ -411,7 +362,7 @@ export const PortfolioDetails = () => {
                     <div className="td-portfolio-more-left text-right">
                       <Link to="#">
                         <span className="td-portfolio-more-content mr-20">
-                          Next Post
+                          Naslednja
                         </span>
                         <div className="td-portfolio-more-icon">
                           <i className="fa-regular fa-arrow-right-long"></i>

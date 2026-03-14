@@ -25,7 +25,7 @@ export const ContactFour = () => {
 
                       <div className="col-xl-5 col-lg-6 col-md-6 col-sm-7">
                         <div className="td-contact-4-content">
-                          <h3 className="td-contact-4-title mb-30">London</h3>
+                          <h3 className="td-contact-4-title mb-30">Sedež podjetja</h3>
                           <ul>
                             <li>
                               <a
@@ -38,19 +38,18 @@ export const ContactFour = () => {
                             <li className="mb-10">
                               <a
                                 className="td-contact-4-phone"
-                                href="tel:+(123)45678900"
+                                href="tel:+38673939200"
                               >
-                                +(123) 456 789 00
+                                +386 7 393 92 00
                               </a>
                             </li>
                             <li>
                               <a
                                 className="td-contact-4-addres"
-                                href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                                href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia"
                                 target="_blank"
                               >
-                                2938 Bingamon Branch Road Highland Park, IL
-                                60035
+                                Livada 14, 8000 Novo mesto, Slovenija
                               </a>
                             </li>
                           </ul>
@@ -73,32 +72,31 @@ export const ContactFour = () => {
 
                       <div className="col-xl-5 col-lg-6 col-md-6 col-sm-7">
                         <div className="td-contact-4-content">
-                          <h3 className="td-contact-4-title mb-30">New York</h3>
+                          <h3 className="td-contact-4-title mb-30">Komerciala</h3>
                           <ul>
                             <li>
                               <a
                                 className="td-contact-4-email"
-                                href="mailto:info@tisksepic.si"
+                                href="mailto:komerciala@tisksepic.si"
                               >
-                                info@tisksepic.si
+                                komerciala@tisksepic.si
                               </a>
                             </li>
                             <li className="mb-10">
                               <a
                                 className="td-contact-4-phone"
-                                href="tel:+(123)45678900"
+                                href="tel:+38673939200"
                               >
-                                +(123) 456 789 00
+                                +386 7 393 92 00
                               </a>
                             </li>
                             <li>
                               <a
                                 className="td-contact-4-addres"
-                                href="https://www.google.com/maps/@41.6758525,-86.2531698,18.17z"
+                                href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto,+Slovenia"
                                 target="_blank"
                               >
-                                2938 Bingamon Branch Road Highland Park, IL
-                                60035
+                                Livada 14, 8000 Novo mesto, Slovenija
                               </a>
                             </li>
                           </ul>
@@ -112,8 +110,8 @@ export const ContactFour = () => {
               <div className="col-xl-6 col-lg-5">
                 <div className="td-contact-4-form ml-100">
                   <div className="td-chose-title-wrap mb-40">
-                    <span className="td-section-title-pre mb-10">Contact</span>
-                    <h2 className="td-section-title">Get a free quote.</h2>
+                    <span className="td-section-title-pre mb-10">Kontakt</span>
+                    <h2 className="td-section-title">Pošljite povpraševanje.</h2>
                   </div>
 
                   {/* contact form */}
@@ -128,22 +126,22 @@ export const ContactFour = () => {
                           className="mb-10"
                           type="text"
                           name="name"
-                          placeholder="Your name"
+                          placeholder="Vaše ime"
                           required
                         />
                         <input
                           className="mb-10"
                           type="email"
                           name="email"
-                          placeholder="Your email"
+                          placeholder="Vaš e-mail"
                           required
                         />
                         <textarea
                           className="mb-30"
                           name="message"
-                          placeholder="Massage"
+                          placeholder="Vaše sporočilo"
                         ></textarea>
-                        <button type="submit">Send Messages</button>
+                        <button type="submit">Pošlji sporočilo</button>
                         <p className="ajax-response pt-20"></p>
                       </form>
                     </div>
