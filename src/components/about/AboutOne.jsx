@@ -5,38 +5,35 @@ import About1 from "../../assets/img/about/01.jpg";
 import About2 from "../../assets/img/about/02.jpg";
 import About3 from "../../assets/img/about/03.jpg";
 import { Link } from "react-router-dom";
+import { useCmsContent } from "../../hooks/useCmsContent";
+
+const PANEL_IMAGES = [About1, About2, About3];
+const CHILD_CLASSES = ["child-one", "child-two", "child-three"];
+
+const DEFAULT_ABOUT = {
+  section_label: "O nas",
+  heading: "Družinsko podjetje z več kot 40-letno tradicijo",
+  paragraph:
+    "V podjetju Tisk Šepic rastemo in se učimo že več kot 40 let. Z visokimi standardi kakovosti želimo zadovoljiti potrebe vsakega kupca. Naša tiskarna ponuja celoten spekter tiskarskih in grafičnih storitev na enem mestu.",
+  panels: [
+    { id: "01", title: "Tradicija", link_title: "Več kot 40 let izkušenj v tiskarski industriji.", description: "Družinsko podjetje, ki raste in se uči že od leta 1980." },
+    { id: "02", title: "Tehnologija", link_title: "Sodobna oprema za najzahtevnejše projekte.", description: "Clean Room, CNC, laser in najsodobnejša tiskarska tehnologija." },
+    { id: "03", title: "Kakovost", link_title: "Certificirana kakovost na vsakem koraku.", description: "ISO 9001, ISO 15378, FSC in ISO 14001 certificirani procesi." },
+  ],
+};
 
 export const AboutOne = () => {
-  const panelData = [
-    {
-      id: "01",
-      title: "Tradicija",
-      image: About1,
-      linkTitle: "Več kot 40 let izkušenj v tiskarski industriji.",
-      description:
-        "Družinsko podjetje, ki raste in se uči že od leta 1980.",
-      childClass: "child-one",
-    },
-    {
-      id: "02",
-      title: "Tehnologija",
-      image: About2,
-      linkTitle: "Sodobna oprema za najzahtevnejše projekte.",
-      description:
-        "Clean Room, CNC, laser in najsodobnejša tiskarska tehnologija.",
-      childClass: "child-two",
-    },
-    {
-      id: "03",
-      title: "Kakovost",
-      image: About3,
-      linkTitle: "Certificirana kakovost na vsakem koraku.",
-      description:
-        "ISO 9001, ISO 15378, FSC in ISO 14001 certificirani procesi.",
-      childClass: "child-three",
-      isActive: true,
-    },
-  ];
+  const { content } = useCmsContent("home");
+  const about = content?.about || DEFAULT_ABOUT;
+
+  const panelData = (about.panels || DEFAULT_ABOUT.panels).map((p, i) => ({
+    id: p.id,
+    title: p.title,
+    image: PANEL_IMAGES[i] || PANEL_IMAGES[0],
+    linkTitle: p.link_title,
+    description: p.description,
+    childClass: CHILD_CLASSES[i] || "child-one",
+  }));
 
   useEffect(() => {
     function mediaSize() {
@@ -141,15 +138,14 @@ export const AboutOne = () => {
                 src={AboutA}
                 alt="a"
               />
-              <span className="td-section-title-pre mb-10">O nas</span>
+              <span className="td-section-title-pre mb-10">
+                {about.section_label || "O nas"}
+              </span>
               <h2 className="td-section-title td-about-right-space">
-                Družinsko podjetje z več kot 40-letno tradicijo
+                {about.heading}
               </h2>
               <p className="td-about-para pr-10">
-                V podjetju Tisk Šepic rastemo in se učimo že več kot 40 let.
-                Z visokimi standardi kakovosti želimo zadovoljiti potrebe
-                vsakega kupca. Naša tiskarna ponuja celoten spekter tiskarskih
-                in grafičnih storitev na enem mestu.
+                {about.paragraph}
               </p>
             </div>
           </div>
