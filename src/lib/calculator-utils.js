@@ -54,6 +54,7 @@ function getSourceName(source) {
     demago: "Demago",
     tiskarna: "Tiskarna Online",
     etiskarna: "eTiskarna",
+    vizitka: "Vizitka.com",
   };
   return names[source] || source;
 }

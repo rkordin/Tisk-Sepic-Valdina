@@ -36,13 +36,21 @@ import imgPisalniBloki from "../../assets/img/products/pisalni-bloki.jpg";
 import imgPredstavitvene from "../../assets/img/products/predstavitvene-mape.png";
 import imgBeleznice from "../../assets/img/products/beleznice.png";
 
+// New products (reuse closest matching image until dedicated ones are added)
+const imgZlozljiveVizitke = imgVizitke; // folded business cards — reuse vizitke image
+const imgVabila = imgRazglednice; // invitations — reuse razglednice image
+const imgZlozenke = imgBrosure; // folded brochures — reuse brosure image
+
 const PRODUCT_IMAGES = {
   letaki: imgLetaki,
   vizitke: imgVizitke,
+  "zlozljive-vizitke": imgZlozljiveVizitke,
+  vabila: imgVabila,
   razglednice: imgRazglednice,
   plakati: imgPlakati,
   "dopisni-listi": imgDopisniListi,
   brosure: imgBrosure,
+  zlozenke: imgZlozenke,
   knjige: imgKnjige,
   revije: imgRevije,
   koledarji: imgKoledarji,
