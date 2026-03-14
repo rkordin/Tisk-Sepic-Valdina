@@ -65,6 +65,10 @@ export const Navbar = ({ hidePortfolio = false }) => {
         )}
 
         <li>
+          <Link to="/kalkulator">Kalkulator</Link>
+        </li>
+
+        <li>
           <Link to="/contact">Kontakt</Link>
         </li>
       </ul>
