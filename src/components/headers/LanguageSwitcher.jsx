@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 
 const LANGUAGES = [
   { code: "sl", label: "SL", flag: "🇸🇮" },
-  { code: "en", label: "EN", flag: "🇬🇧" },
-  { code: "de", label: "DE", flag: "🇩🇪" },
-  { code: "it", label: "IT", flag: "🇮🇹" },
   { code: "hr", label: "HR", flag: "🇭🇷" },
+  { code: "cs", label: "CS", flag: "🇨🇿" },
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "fr", label: "FR", flag: "🇫🇷" },
+  { code: "de", label: "DE", flag: "🇩🇪" },
+  { code: "hu", label: "HU", flag: "🇭🇺" },
+  { code: "ru", label: "RU", flag: "🇷🇺" },
 ];
 
 export const LanguageSwitcher = () => {
