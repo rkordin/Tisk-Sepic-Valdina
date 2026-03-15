@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const LANGUAGES = [
-  { code: "sl", label: "SL", flag: "🇸🇮", name: "Slovenščina" },
-  { code: "en", label: "EN", flag: "🇬🇧", name: "English" },
-  { code: "de", label: "DE", flag: "🇩🇪", name: "Deutsch" },
-  { code: "it", label: "IT", flag: "🇮🇹", name: "Italiano" },
-  { code: "hr", label: "HR", flag: "🇭🇷", name: "Hrvatski" },
+  { code: "sl", label: "SL", name: "Slovenščina" },
+  { code: "en", label: "EN", name: "English" },
+  { code: "de", label: "DE", name: "Deutsch" },
+  { code: "it", label: "IT", name: "Italiano" },
+  { code: "hr", label: "HR", name: "Hrvatski" },
 ];
 
 export const LanguageSwitcher = () => {
@@ -46,46 +46,33 @@ export const LanguageSwitcher = () => {
 
   return (
     <div className="td-lang-switcher" ref={dropdownRef}>
-      <button
+      <a
+        href="#"
         className="td-lang-trigger"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Izberi jezik"
+        onClick={(e) => {
+          e.preventDefault();
+          setIsOpen(!isOpen);
+        }}
       >
-        <span className="td-lang-flag">{active.flag}</span>
-        <span className="td-lang-code">{active.label}</span>
-        <svg
-          className={`td-lang-chevron ${isOpen ? "open" : ""}`}
-          width="10"
-          height="6"
-          viewBox="0 0 10 6"
-          fill="none"
-        >
-          <path
-            d="M1 1L5 5L9 1"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+        {active.label}
+      </a>
 
       {isOpen && (
-        <div className="td-lang-dropdown">
-          {LANGUAGES.map((lang) => (
-            <button
-              key={lang.code}
-              className={`td-lang-option ${
-                lang.code === currentLang ? "active" : ""
-              }`}
-              onClick={() => switchLanguage(lang.code)}
-            >
-              <span className="td-lang-flag">{lang.flag}</span>
-              <span className="td-lang-name">{lang.name}</span>
-              <span className="td-lang-code-small">{lang.label}</span>
-            </button>
+        <ul className="td-lang-dropdown submenu">
+          {LANGUAGES.filter((l) => l.code !== currentLang).map((lang) => (
+            <li key={lang.code}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  switchLanguage(lang.code);
+                }}
+              >
+                {lang.label}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );
