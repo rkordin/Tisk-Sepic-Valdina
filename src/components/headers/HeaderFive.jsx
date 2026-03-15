@@ -4,7 +4,6 @@ import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { NavImgGallery } from "./NavImgGallery";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const HeaderFive = () => {
   useHeaderSticky();
@@ -121,7 +120,6 @@ export const HeaderFive = () => {
                               </div>
                             </form>
                           </div>
-                          <LanguageSwitcher />
                           <div className="td-header-5-menubar">
                             <button className="td-menu-bar" aria-label="Odpri meni">
                               <svg

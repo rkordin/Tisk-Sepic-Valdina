@@ -2719,6 +2719,16 @@ input[type="color"] {
   line-height: 1;
   color: var(--td-grey-2);
 }
+/* ── Language Switcher in Nav ── */
+.td-nav-lang-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin-left: 8px;
+}
+.td-nav-lang-item > a {
+  display: none !important;
+}
 /* ── Language Switcher ── */
 .td-lang-switcher {
   position: relative;
