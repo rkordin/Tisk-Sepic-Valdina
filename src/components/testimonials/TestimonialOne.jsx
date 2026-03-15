@@ -147,11 +147,12 @@ export const TestimonialOne = () => {
       {/* rotating images */}
       <div className="td-testimonial-qoute-wrap">
         <div className="td-testimonial-qoute-thumb p-relative">
-          <img className="td-testimonial-qoute" src={logoImage} alt="logo" />
+          <img className="td-testimonial-qoute" src={logoImage} alt="Company logo" loading="lazy" />
           <img
             className="td-testimonial-qoute-2"
             src={quoteImage}
-            alt="quote"
+            alt="Quote icon"
+            loading="lazy"
           />
         </div>
       </div>
@@ -255,6 +256,6 @@ const AuthorThumbnail = ({ imageSrc, isOffset }) => (
         ></circle>
       </svg>
     </div>
-    <img src={imageSrc} alt="" />
+    <img src={imageSrc} alt="Testimonial author" loading="lazy" />
   </div>
 );

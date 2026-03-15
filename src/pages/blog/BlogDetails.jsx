@@ -18,7 +18,7 @@ export const BlogDetails = () => {
           <div className="td-postbox-item mb-60">
             {/* cover img */}
             <div className="td-postbox-thumb mb-60">
-              <img className="w-100" src={thumbImg} alt="thumb" />
+              <img className="w-100" src={thumbImg} alt="Blog article" loading="lazy" />
             </div>
 
             {/* text */}
@@ -48,12 +48,12 @@ export const BlogDetails = () => {
             <div className="row">
               <div className="col-sm-6">
                 <div className="td-postbox-thumb mb-60">
-                  <img className="w-100" src={thumb2Img} alt="thumb" />
+                  <img className="w-100" src={thumb2Img} alt="Blog article" loading="lazy" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="td-postbox-thumb mb-60">
-                  <img className="w-100" src={thumb3Img} alt="thumb" />
+                  <img className="w-100" src={thumb3Img} alt="Blog article" loading="lazy" />
                 </div>
               </div>
             </div>

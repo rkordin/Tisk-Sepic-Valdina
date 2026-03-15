@@ -30,7 +30,7 @@ export const FaqThree = () => {
               data-wow-delay=".3s"
               data-wow-duration="1s"
             >
-              <img src={faqImage} alt="" />
+              <img src={faqImage} alt="FAQ section illustration" loading="lazy" />
             </div>
           </div>
           <div

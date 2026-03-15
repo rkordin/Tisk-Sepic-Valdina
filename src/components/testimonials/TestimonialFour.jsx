@@ -83,7 +83,7 @@ export const TestimonialFour = () => {
                             <div className="col-lg-3 col-md-3">
                               <div className="td-testimonial-avater">
                                 <div className="td-testimonial-avater-thumb mb-40">
-                                  <img src={testimonial.src} alt="thumb" />
+                                  <img src={testimonial.src} alt={`${testimonial.title} portrait`} loading="lazy" />
                                 </div>
                                 <div className="td-testimonial-avater-info">
                                   <h5 className="td-testimonial-avater-title">
@@ -101,7 +101,8 @@ export const TestimonialFour = () => {
                                 <img
                                   className="mb-40 d-none d-md-block"
                                   src={pattern}
-                                  alt="pattern"
+                                  alt="Decorative quote pattern"
+                                  loading="lazy"
                                 />
                                 <p>"{testimonial.description}"</p>
                               </div>

@@ -7,13 +7,13 @@ import brand5 from "../../assets/img/brands/05.png";
 import { Swiper, SwiperSlide } from "../swiper/SwiperRoot";
 
 const brandList = [
-  { id: 1, link: "#", imageSrc: brand1, alt: "Brand 1" },
-  { id: 2, link: "#", imageSrc: brand2, alt: "Brand 2" },
-  { id: 3, link: "#", imageSrc: brand3, alt: "Brand 3" },
-  { id: 4, link: "#", imageSrc: brand4, alt: "Brand 4" },
-  { id: 5, link: "#", imageSrc: brand5, alt: "Brand 5" },
-  { id: 6, link: "#", imageSrc: brand2, alt: "Brand 6" },
-  { id: 7, link: "#", imageSrc: brand3, alt: "Brand 7" },
+  { id: 1, link: "#", imageSrc: brand1, alt: "ISO 9001 certifikat" },
+  { id: 2, link: "#", imageSrc: brand2, alt: "ISO 14001 certifikat" },
+  { id: 3, link: "#", imageSrc: brand3, alt: "ISO 15378 certifikat" },
+  { id: 4, link: "#", imageSrc: brand4, alt: "FSC certifikat" },
+  { id: 5, link: "#", imageSrc: brand5, alt: "Tisk Šepic" },
+  { id: 6, link: "#", imageSrc: brand1, alt: "ISO 9001 certifikat" },
+  { id: 7, link: "#", imageSrc: brand4, alt: "FSC certifikat" },
 ];
 
 export const BrandOne = ({ className = "" }) => {
@@ -49,7 +49,7 @@ export const BrandOne = ({ className = "" }) => {
                       <SwiperSlide key={brand.id}>
                         <div className="td-brand-single-logo text-center">
                           <a href={brand.link}>
-                            <img src={brand.imageSrc} alt={brand.alt} />
+                            <img src={brand.imageSrc} alt={brand.alt} loading="lazy" />
                           </a>
                         </div>
                       </SwiperSlide>

@@ -17,6 +17,7 @@
     "imagesloaded": "^5.0.0",
     "jquery": "^3.6.0",
     "parallax-js": "^3.1.0",
+    "playwright": "^1.58.2",
     "react": "^18.3.1",
     "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",

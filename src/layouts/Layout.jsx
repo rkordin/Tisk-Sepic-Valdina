@@ -22,6 +22,9 @@ export const Layout = ({
 }) => {
   return (
     <>
+      {/* Skip to content (accessibility) */}
+      <a className="skip-to-content" href="#main-content">Preskoči na vsebino</a>
+
       {/* Scroll-top  */}
       <ScrollToTopButton />
 
@@ -41,7 +44,7 @@ export const Layout = ({
       )}
 
       {/* children */}
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
 
       {/* footers */}
       {footer === 1 && <FooterOne />}

@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 export const CounterAreaOne = () => {
   return (
     <div className="td-counter-area fix p-relative">
-      <img className="td-counter-map" src={IMG} alt="map" />
+      <img className="td-counter-map" src={IMG} alt="map" loading="lazy" />
       <div className="container-fluid g-0">
         <div className="row gx-0">
           <div className="col-xl-4 col-lg-6">
             <div className="td-counter-thumb p-relative">
-              <img className="w-100" src={IMG2} alt="thumb" />
+              <img className="w-100" src={IMG2} alt="Counter section background" loading="lazy" />
               <div className="td-counter-logo d-none d-sm-block td-pulse-border">
                 <h3>TŠ</h3>
               </div>

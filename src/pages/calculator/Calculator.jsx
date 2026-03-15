@@ -76,21 +76,23 @@ export const Calculator = () => {
   const [lamination, setLamination] = useState("none");
   const [quantity, setQuantity] = useState(100);
   const [customQty, setCustomQty] = useState("");
+  const [variations, setVariations] = useState(1);
   const [deliveryTier, setDeliveryTier] = useState("standard");
   const [showPerUnit, setShowPerUnit] = useState(false);
   const [showNet, setShowNet] = useState(false);
 
   const product = useMemo(() => getProductById(productId), [productId]);
   const categoryProducts = useMemo(() => getProductsByCategory(categoryId), [categoryId]);
+  const totalQty = product?.supportsVariations ? quantity * variations : quantity;
   const availableTiers = useMemo(() => (product ? getAvailableTiers(product.pricing) : ["standard"]), [product]);
   const prices = useMemo(() => {
     if (!product) return [];
-    return calculatePrices(product.pricing, quantity, deliveryTier);
-  }, [product, quantity, deliveryTier]);
+    return calculatePrices(product.pricing, totalQty, deliveryTier);
+  }, [product, totalQty, deliveryTier]);
   const diskPrice = useMemo(() => {
     if (!product) return null;
-    return calculateDiskPrice(product.id, quantity, deliveryTier);
-  }, [product, quantity, deliveryTier]);
+    return calculateDiskPrice(product.id, totalQty, deliveryTier);
+  }, [product, totalQty, deliveryTier]);
 
   const available = prices.filter((p) => p.available);
   const laminationOptions = product
@@ -109,6 +111,7 @@ export const Calculator = () => {
       setLamination("none");
       setQuantity(first.qtyBreaks[0] || first.minQty);
       setCustomQty("");
+      setVariations(1);
       setDeliveryTier("standard");
     }
   }
@@ -123,6 +126,7 @@ export const Calculator = () => {
       setLamination("none");
       setQuantity(p.qtyBreaks[0] || p.minQty);
       setCustomQty("");
+      setVariations(1);
       setDeliveryTier("standard");
     }
   }
@@ -151,14 +155,16 @@ export const Calculator = () => {
       izdelek: product.name, format: fmt?.label || formatCode,
       papir: pap?.label || paperId, tisk: sides,
       plastifikacija: lamination !== "none" ? lam?.label || "" : "Brez",
-      kolicina: quantity, dostava: DELIVERY_TIERS[deliveryTier].label,
+      variante: product.supportsVariations && variations > 1 ? variations : null,
+      kolicinaNaVarianto: quantity,
+      kolicina: totalQty, dostava: DELIVERY_TIERS[deliveryTier].label,
       cenaNetTotal: formatPrice(diskPrice.netTotal),
       cenaBrutoTotal: formatPrice(diskPrice.grossTotal),
       cenaNetKos: formatPrice(diskPrice.netPerUnit),
       cenaBrutoKos: formatPrice(diskPrice.grossPerUnit),
       dobavniRok: diskPrice.deliveryDays,
     };
-    const html = `<!DOCTYPE html><html lang="sl"><head><meta charset="UTF-8"><title>Ponudba — Tisk Šepic</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;padding:60px;background:#fff}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:50px;padding-bottom:30px;border-bottom:2px solid #e8e6e3}.logo{font-size:28px;font-weight:700}.logo span{color:#F79C18}.date{font-size:13px;color:#7a7572;text-align:right}.title{font-size:36px;font-weight:300;margin-bottom:8px}.subtitle{font-size:14px;color:#7a7572;margin-bottom:50px}table{width:100%;border-collapse:collapse;margin-bottom:40px}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#9e9a96;padding:12px 16px;border-bottom:1px solid #e8e6e3}td{padding:16px;font-size:15px;border-bottom:1px solid #f5f2ef}td:first-child{font-weight:600;color:#7a7572;font-size:13px}.price-row{background:#f9f8f6}.price-row td{font-weight:700;font-size:18px}.price-row td:first-child{font-size:13px;font-weight:600;color:#7a7572}.footer{margin-top:60px;padding-top:30px;border-top:1px solid #e8e6e3;font-size:12px;color:#9e9a96;line-height:1.8}</style></head><body><div class="header"><div><div class="logo">Tisk <span>Šepic</span></div></div><div class="date">Datum: ${new Date().toLocaleDateString("sl-SI")}<br>Ref: KAL-${Date.now().toString(36).toUpperCase()}</div></div><h1 class="title">Informativna ponudba</h1><p class="subtitle">Izračun na podlagi izbranih parametrov</p><table><thead><tr><th>Parameter</th><th>Vrednost</th></tr></thead><tbody><tr><td>Izdelek</td><td>${s.izdelek}</td></tr><tr><td>Format</td><td>${s.format}</td></tr><tr><td>Papir</td><td>${s.papir}</td></tr><tr><td>Tisk</td><td>${s.tisk}</td></tr><tr><td>Plastifikacija</td><td>${s.plastifikacija}</td></tr><tr><td>Količina</td><td>${s.kolicina.toLocaleString("sl-SI")} kosov</td></tr><tr><td>Dostava</td><td>${s.dostava}</td></tr><tr><td>Dobavni rok</td><td>${s.dobavniRok}</td></tr><tr class="price-row"><td>Cena (neto)</td><td>${s.cenaNetTotal} &euro;</td></tr><tr class="price-row"><td>Cena (bruto z DDV)</td><td>${s.cenaBrutoTotal} &euro;</td></tr><tr><td>Na kos (neto)</td><td>${s.cenaNetKos} &euro;</td></tr><tr><td>Na kos (bruto)</td><td>${s.cenaBrutoKos} &euro;</td></tr></tbody></table><div class="footer"><p><strong>Tisk Šepic d.o.o.</strong></p><p>Livada 14, 8000 Novo mesto · Tel: +386 7 39 42 669 · komerciala@tisksepic.si</p><p style="margin-top:16px">Cene so informativne. Za dokončno ponudbo nas kontaktirajte.</p></div></body></html>`;
+    const html = `<!DOCTYPE html><html lang="sl"><head><meta charset="UTF-8"><title>Ponudba — Tisk Šepic</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;padding:60px;background:#fff}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:50px;padding-bottom:30px;border-bottom:2px solid #e8e6e3}.logo{font-size:28px;font-weight:700}.logo span{color:#F79C18}.date{font-size:13px;color:#7a7572;text-align:right}.title{font-size:36px;font-weight:300;margin-bottom:8px}.subtitle{font-size:14px;color:#7a7572;margin-bottom:50px}table{width:100%;border-collapse:collapse;margin-bottom:40px}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#9e9a96;padding:12px 16px;border-bottom:1px solid #e8e6e3}td{padding:16px;font-size:15px;border-bottom:1px solid #f5f2ef}td:first-child{font-weight:600;color:#7a7572;font-size:13px}.price-row{background:#f9f8f6}.price-row td{font-weight:700;font-size:18px}.price-row td:first-child{font-size:13px;font-weight:600;color:#7a7572}.footer{margin-top:60px;padding-top:30px;border-top:1px solid #e8e6e3;font-size:12px;color:#9e9a96;line-height:1.8}</style></head><body><div class="header"><div><div class="logo">Tisk <span>Šepic</span></div></div><div class="date">Datum: ${new Date().toLocaleDateString("sl-SI")}<br>Ref: KAL-${Date.now().toString(36).toUpperCase()}</div></div><h1 class="title">Informativna ponudba</h1><p class="subtitle">Izračun na podlagi izbranih parametrov</p><table><thead><tr><th>Parameter</th><th>Vrednost</th></tr></thead><tbody><tr><td>Izdelek</td><td>${s.izdelek}</td></tr><tr><td>Format</td><td>${s.format}</td></tr><tr><td>Papir</td><td>${s.papir}</td></tr><tr><td>Tisk</td><td>${s.tisk}</td></tr><tr><td>Plastifikacija</td><td>${s.plastifikacija}</td></tr>${s.variante ? `<tr><td>Variante</td><td>${s.variante} × ${s.kolicinaNaVarianto.toLocaleString("sl-SI")} kosov</td></tr>` : ""}<tr><td>Količina skupaj</td><td>${s.kolicina.toLocaleString("sl-SI")} kosov</td></tr><tr><td>Dostava</td><td>${s.dostava}</td></tr><tr><td>Dobavni rok</td><td>${s.dobavniRok}</td></tr><tr class="price-row"><td>Cena (neto)</td><td>${s.cenaNetTotal} &euro;</td></tr><tr class="price-row"><td>Cena (bruto z DDV)</td><td>${s.cenaBrutoTotal} &euro;</td></tr><tr><td>Na kos (neto)</td><td>${s.cenaNetKos} &euro;</td></tr><tr><td>Na kos (bruto)</td><td>${s.cenaBrutoKos} &euro;</td></tr></tbody></table><div class="footer"><p><strong>Tisk Šepic d.o.o.</strong></p><p>Livada 14, 8000 Novo mesto · Tel: +386 7 39 42 669 · komerciala@tisksepic.si</p><p style="margin-top:16px">Cene so informativne. Za dokončno ponudbo nas kontaktirajte.</p></div></body></html>`;
     const blob = new Blob([html], { type: "text/html" });
     const url = URL.createObjectURL(blob);
     const w = window.open(url, "_blank");
@@ -254,7 +260,7 @@ export const Calculator = () => {
                     background: "#f8f8f8",
                   }}>
                     {img && (
-                      <img src={img} alt={p.name} style={{
+                      <img src={img} alt={p.name} loading="lazy" style={{
                         width: "100%", height: "100%", objectFit: "cover",
                       }} />
                     )}
@@ -291,7 +297,7 @@ export const Calculator = () => {
                   overflow: "hidden", flexShrink: 0, background: "#f8f8f8",
                 }}>
                   {PRODUCT_IMAGES[product.id] && (
-                    <img src={PRODUCT_IMAGES[product.id]} alt={product.name}
+                    <img src={PRODUCT_IMAGES[product.id]} alt={product.name} loading="lazy"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   )}
                 </div>
@@ -374,6 +380,51 @@ export const Calculator = () => {
                     </div>
                   </div>
 
+                  {/* Variations */}
+                  {product.supportsVariations && (
+                    <div style={{ marginBottom: "16px" }}>
+                      <label style={labelStyle}>{product.variationLabel || "Variante"}</label>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "6px" }}>
+                        <div style={{ display: "flex", gap: "6px" }}>
+                          {[1, 2, 3, 5, 10].map((v) => (
+                            <button
+                              key={v}
+                              onClick={() => setVariations(v)}
+                              style={{
+                                padding: "6px 14px", fontSize: "12px", border: "1px solid #ddd",
+                                borderRadius: "4px", cursor: "pointer",
+                                fontWeight: variations === v ? 700 : 400,
+                                background: variations === v ? "#1a1a1a" : "#fff",
+                                color: variations === v ? "#fff" : "#333",
+                              }}
+                            >
+                              {v}
+                            </button>
+                          ))}
+                          <input
+                            type="number"
+                            min="1"
+                            placeholder="Drugo"
+                            value={variations > 10 || ![1, 2, 3, 5, 10].includes(variations) ? variations : ""}
+                            onChange={(e) => {
+                              const num = parseInt(e.target.value, 10);
+                              if (!isNaN(num) && num >= 1) setVariations(num);
+                            }}
+                            style={{
+                              padding: "6px 10px", fontSize: "12px", border: "1px solid #ddd",
+                              borderRadius: "4px", width: "70px", outline: "none",
+                            }}
+                          />
+                        </div>
+                      </div>
+                      {variations > 1 && (
+                        <p style={{ fontSize: "11px", color: "#888", marginTop: "6px" }}>
+                          {variations} × {quantity.toLocaleString("sl-SI")} = <strong>{totalQty.toLocaleString("sl-SI")} kos skupaj</strong>
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   {/* Delivery */}
                   <div>
                     <label style={labelStyle}>Dostava</label>
@@ -424,7 +475,7 @@ export const Calculator = () => {
                       </p>
                       <p style={{ fontSize: "12px", color: "#777", marginBottom: "16px" }}>
                         {showNet ? "brez DDV" : "z DDV (22%)"}
-                        {showPerUnit ? " / kos" : ` za ${quantity.toLocaleString("sl-SI")} kos`}
+                        {showPerUnit ? " / kos" : ` za ${totalQty.toLocaleString("sl-SI")} kos`}
                       </p>
 
                       {/* Toggles */}
@@ -445,7 +496,9 @@ export const Calculator = () => {
                         {[
                           { l: "Format", v: product.formats.find((f) => f.code === formatCode)?.label || formatCode },
                           { l: "Papir", v: product.papers.find((p) => p.id === paperId)?.label || paperId },
-                          { l: "Količina", v: `${quantity.toLocaleString("sl-SI")} kos` },
+                          { l: "Količina", v: product.supportsVariations && variations > 1
+                            ? `${variations} × ${quantity.toLocaleString("sl-SI")} = ${totalQty.toLocaleString("sl-SI")} kos`
+                            : `${totalQty.toLocaleString("sl-SI")} kos` },
                           { l: "Rok", v: diskPrice.deliveryDays },
                         ].map((item) => (
                           <div key={item.l} style={{

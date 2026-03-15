@@ -10,7 +10,8 @@ export const AboutThree = () => {
       <img
         className="td-about-3-shape-2 d-none d-sm-block tpupdown"
         src={shape2}
-        alt="shape"
+        alt="Decorative shape"
+        loading="lazy"
       />
       <div className="container">
         <div className="row">
@@ -23,9 +24,10 @@ export const AboutThree = () => {
               <img
                 className="td-about-3-shape d-none d-md-block tpswing"
                 src={shape}
-                alt="shape"
+                alt="Decorative shape"
+                loading="lazy"
               />
-              <img className="w-100" src={thumb2} alt="thumb" />
+              <img className="w-100" src={thumb2} alt="About us section photo" loading="lazy" />
             </div>
           </div>
           <div
@@ -34,7 +36,7 @@ export const AboutThree = () => {
             data-wow-duration="1s"
           >
             <div className="td-about-3-thumb pt-80">
-              <img className="w-100" src={thumb} alt="thumb" />
+              <img className="w-100" src={thumb} alt="About us section photo" loading="lazy" />
             </div>
           </div>
           <div

@@ -1,5 +1,5 @@
 -- ═══════════════════════════════════════════════════════════════
--- Supabase CMS Migration — Tisk Šepic (adina_react)
+-- Supabase CMS Migration — Tisk Šepic
 -- Run this in your Supabase SQL Editor
 -- ═══════════════════════════════════════════════════════════════
 
@@ -37,7 +37,7 @@ CREATE POLICY "Allow all access" ON page_content
   FOR ALL USING (true) WITH CHECK (true);
 
 -- ═══════════════════════════════════════════════════════════════
--- Seed content (matches hardcoded values in adina_react components)
+-- Seed content (matches hardcoded values in Tisk Šepic components)
 -- ═══════════════════════════════════════════════════════════════
 
 INSERT INTO page_content (page, section, content) VALUES

@@ -79,7 +79,7 @@ export const PortfolioThree = () => {
                       <div className="td-portfolio-4-item">
                         <div className="td-portfolio-4-thumb mb-40">
                           <Link to={item.href}>
-                            <img className="w-100" src={item.src} alt="thumb" />
+                            <img className="w-100" src={item.src} alt={item.title || "Portfolio project"} loading="lazy" />
                           </Link>
                         </div>
                         <div className="td-portfolio-4-content">

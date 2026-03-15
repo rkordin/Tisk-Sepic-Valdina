@@ -140,7 +140,7 @@ export const TestimonialFive = () => {
                           <div className="row">
                             <div className="col-lg-4 col-md-4">
                               <div className="td-testimonial-5-thumb mt-10">
-                                <img src={x.image} alt="" />
+                                <img src={x.image} alt={`${x.name} portrait`} loading="lazy" />
                               </div>
                             </div>
                             <div className="col-lg-8 col-md-8">
@@ -187,7 +187,7 @@ export const TestimonialFive = () => {
                             <div className="swiper-slide">
                               <div className="td-testimonial-3-profile-logo">
                                 <Link to="#">
-                                  <img src={logo} alt={`Brand ${index + 1}`} />
+                                  <img src={logo} alt={`Brand ${index + 1}`} loading="lazy" />
                                 </Link>
                               </div>
                             </div>

@@ -14,7 +14,7 @@ export const BlogComments = () => {
         <li>
           <div className="td-postbox-comment-box d-flex mb-55">
             <div className="td-postbox-comment-avatar mr-30">
-              <img src={thumb4} alt="" />
+              <img src={thumb4} alt="Commenter avatar" loading="lazy" />
             </div>
             <div className="td-postbox-comment-text">
               <div className="td-postbox-comment-name mb-10 d-flex align-items-center">
@@ -42,7 +42,7 @@ export const BlogComments = () => {
             <li>
               <div className="td-postbox-comment-box d-flex">
                 <div className="td-postbox-comment-avatar mr-30">
-                  <img src={thumb5} alt="" />
+                  <img src={thumb5} alt="Commenter avatar" loading="lazy" />
                 </div>
                 <div className="td-postbox-comment-text">
                   <div className="td-postbox-comment-name mb-10 d-flex align-items-center">
@@ -72,7 +72,7 @@ export const BlogComments = () => {
         <li>
           <div className="td-postbox-comment-box d-flex">
             <div className="td-postbox-comment-avatar mr-30">
-              <img src={thumb6} alt="" />
+              <img src={thumb6} alt="Commenter avatar" loading="lazy" />
             </div>
             <div className="td-postbox-comment-text">
               <div className="td-postbox-comment-name mb-10 d-flex align-items-center">

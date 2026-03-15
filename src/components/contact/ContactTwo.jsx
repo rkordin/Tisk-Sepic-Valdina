@@ -39,19 +39,19 @@ export const ContactTwo = () => {
                   <div className="col-lg-6">
                     <div className="td-contact-form td-contact-3-input">
                       <input type="text" placeholder="Vaše ime" />
-                      <img src={userIcon} alt="user" />
+                      <img src={userIcon} alt="Name field icon" loading="lazy" />
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="td-contact-form td-contact-3-input">
                       <input type="email" placeholder="Vaš e-mail" />
-                      <img src={envelopeIcon} alt="envelope" />
+                      <img src={envelopeIcon} alt="Email field icon" loading="lazy" />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="td-contact-form td-contact-3-input">
                       <textarea placeholder="Sporočilo"></textarea>
-                      <img className="envelope" src={penIcon} alt="pen" />
+                      <img className="envelope" src={penIcon} alt="Message field icon" loading="lazy" />
                     </div>
                   </div>
                 </div>

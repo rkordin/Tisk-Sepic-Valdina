@@ -127,7 +127,7 @@ export const TestimonialThree = () => {
                             </p>
                             <div className="td-testimonial-3-avater">
                               <div className="td-testimonial-3-avater-thumb">
-                                <img src={thumb1} alt="" />
+                                <img src={thumb1} alt="Emila Parker" loading="lazy" />
                               </div>
                               <div className="td-testimonial-3-avater-info">
                                 <h3 className="td-testimonial-3-avater-title">
@@ -172,7 +172,7 @@ export const TestimonialThree = () => {
                             </p>
                             <div className="td-testimonial-3-avater">
                               <div className="td-testimonial-3-avater-thumb">
-                                <img src={thumb2} alt="" />
+                                <img src={thumb2} alt="Dianne Ameter" loading="lazy" />
                               </div>
                               <div className="td-testimonial-3-avater-info">
                                 <h3 className="td-testimonial-3-avater-title">
@@ -211,7 +211,7 @@ export const TestimonialThree = () => {
                           <div className="swiper-slide">
                             <div className="td-testimonial-3-profile-logo">
                               <a href="#">
-                                <img src={brand.src} alt="Brand logo" />
+                                <img src={brand.src} alt="Brand logo" loading="lazy" />
                               </a>
                             </div>
                           </div>

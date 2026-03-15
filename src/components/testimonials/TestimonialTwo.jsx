@@ -81,7 +81,7 @@ export const TestimonialTwo = () => {
 
           <div className="col-lg-12">
             <div className="td-testimonial-2-bottom td-black-bg">
-              <img className="td-testimonial-2-qoute" src={QOUTE} alt="qoute" />
+              <img className="td-testimonial-2-qoute" src={QOUTE} alt="Quote decoration" loading="lazy" />
 
               <div className="row">
                 {/* slider */}
@@ -100,7 +100,8 @@ export const TestimonialTwo = () => {
                       <img
                         className="td-testimonial-2-qoute-2 d-none d-sm-block"
                         src={QOUTE2}
-                        alt="qoute"
+                        alt="Quote decoration"
+                        loading="lazy"
                       />
                       <div className="swiper-container td-testimonial-2-slide-active">
                         <div className="swiper-wrapper">
@@ -113,7 +114,8 @@ export const TestimonialTwo = () => {
                                     <div className="td-testimonial-2-avater-thumb">
                                       <img
                                         src={testimonial.imgSrc}
-                                        alt="user"
+                                        alt={`${testimonial.title} avatar`}
+                                        loading="lazy"
                                       />
                                     </div>
                                     <div className="td-testimonial-2-avater-info">
@@ -138,7 +140,7 @@ export const TestimonialTwo = () => {
                 {/* video */}
                 <div className="col-lg-6">
                   <div className="td-testimonial-2-thumb p-relative">
-                    <img className="w-100" src={THUMB} alt="" />
+                    <img className="w-100" src={THUMB} alt="Testimonial video preview" loading="lazy" />
                     <div className="td-testimonial-video">
                       <Popup
                         trigger={

@@ -22,23 +22,25 @@ export const AboutFour = () => {
                   <img
                     className="td-testimonial-qoute"
                     src={logo}
-                    alt="badge"
+                    alt="Company badge"
+                    loading="lazy"
                   />
                   <img
                     className="td-testimonial-qoute-2"
                     src={aboutA}
-                    alt="badge"
+                    alt="About decorative element"
+                    loading="lazy"
                   />
                 </div>
               </div>
               <div className="td-about-4-thumb-2">
-                <img src={aboutBg2} alt="thumb" />
+                <img src={aboutBg2} alt="About us secondary photo" loading="lazy" />
               </div>
               <div className="td-about-4-thumb">
-                <img className="w-100" src={aboutBg} alt="thumb" />
+                <img className="w-100" src={aboutBg} alt="About us main photo" loading="lazy" />
               </div>
               <div className="td-about-4-thumb-shape">
-                <img src={aboutPattern} alt="shape" />
+                <img src={aboutPattern} alt="Decorative pattern" loading="lazy" />
               </div>
             </div>
           </div>

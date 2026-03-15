@@ -10,7 +10,7 @@ export const TeamMember = ({ delay, src, href, title, designation }) => {
     >
       <div className="td-team-5-wrap mb-75">
         <div className="td-team-5-thumb mb-40">
-          <img className="w-100" src={src} alt="team" />
+          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" />
         </div>
         <div className="td-team-5-content">
           <h3 className="td-team-5-title">

@@ -88,7 +88,7 @@ export const AboutOne = () => {
                       <div className="td-panel-item-2">
                         <div className="td-panel-content-2">
                           <div className="td-panel-thumb">
-                            <img className="w-100" src={x.image} alt="thumb" />
+                            <img className="w-100" src={x.image} alt={x.title || "About panel"} loading="lazy" />
                           </div>
                           <div className="td-panel-content-inner fix p-relative">
                             <span className="td-panel-shape">{x.id}</span>
@@ -136,7 +136,8 @@ export const AboutOne = () => {
               <img
                 className="td-about-text-big d-none d-xl-block"
                 src={AboutA}
-                alt="a"
+                alt="Decorative letter"
+                loading="lazy"
               />
               <span className="td-section-title-pre mb-10">
                 {about.section_label || "O nas"}

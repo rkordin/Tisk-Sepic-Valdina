@@ -95,7 +95,7 @@ export const HeroFour = () => {
                               boom <br />
                               with
                             </span>
-                            <a href="#">Adina</a>
+                            <a href="#">Tisk Šepic</a>
                           </h3>
                           <div className="td-hero-4-btn">
                             <Link
@@ -154,7 +154,7 @@ export const HeroFour = () => {
                               boom <br />
                               with
                             </span>
-                            <a href="#">Adina</a>
+                            <a href="#">Tisk Šepic</a>
                           </h3>
                           <div className="td-hero-4-btn">
                             <Link
@@ -213,7 +213,7 @@ export const HeroFour = () => {
                               boom <br />
                               with
                             </span>
-                            <a href="#">Adina</a>
+                            <a href="#">Tisk Šepic</a>
                           </h3>
                           <div className="td-hero-4-btn">
                             <Link
@@ -263,7 +263,7 @@ export const HeroFour = () => {
                     <div className="td-hero-4-nav-content">
                       <span>01.</span>
                       <h3 className="td-hero-4-nav-title">
-                        Make your business boom with Adina
+                        Make your business boom with Tisk Šepic
                       </h3>
                     </div>
                     <div className="td-hero-4-nav-thumb">
@@ -276,7 +276,7 @@ export const HeroFour = () => {
                     <div className="td-hero-4-nav-content">
                       <span>02.</span>
                       <h3 className="td-hero-4-nav-title">
-                        Make your business boom with Adina
+                        Make your business boom with Tisk Šepic
                       </h3>
                     </div>
                     <div className="td-hero-4-nav-thumb">
@@ -289,7 +289,7 @@ export const HeroFour = () => {
                     <div className="td-hero-4-nav-content">
                       <span>03.</span>
                       <h3 className="td-hero-4-nav-title">
-                        Make your business boom with Adina
+                        Make your business boom with Tisk Šepic
                       </h3>
                     </div>
                     <div className="td-hero-4-nav-thumb">

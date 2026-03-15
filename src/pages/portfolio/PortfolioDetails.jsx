@@ -16,7 +16,7 @@ export const PortfolioDetails = () => {
             <div className="col-lg-12">
               <div className="td-portfolio-details-content-wrap mb-40">
                 <div className="td-portfolio-details-thumb mb-80">
-                  <img className="w-100" src={portfolioDetailsBg} alt="thumb" />
+                  <img className="w-100" src={portfolioDetailsBg} alt="Portfolio project" loading="lazy" />
                 </div>
 
                 {/* title */}
@@ -118,7 +118,8 @@ export const PortfolioDetails = () => {
                               <img
                                 className="w-100"
                                 src={portfolioDetailsChart}
-                                alt=""
+                                alt="Portfolio project chart"
+                                loading="lazy"
                               />
                             </div>
                           </div>
@@ -142,7 +143,8 @@ export const PortfolioDetails = () => {
                               <img
                                 className="w-100"
                                 src={portfolioDetailsChart}
-                                alt=""
+                                alt="Portfolio project chart"
+                                loading="lazy"
                               />
                             </div>
                           </div>
@@ -166,7 +168,8 @@ export const PortfolioDetails = () => {
                               <img
                                 className="w-100"
                                 src={portfolioDetailsChart}
-                                alt=""
+                                alt="Portfolio project chart"
+                                loading="lazy"
                               />
                             </div>
                           </div>

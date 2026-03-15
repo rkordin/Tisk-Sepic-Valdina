@@ -102,6 +102,7 @@ export const HeaderFive = () => {
                                 <button
                                   className="td-header-search-btn"
                                   type="button"
+                                  aria-label="Iskanje"
                                 >
                                   <svg
                                     width="20"
@@ -120,7 +121,7 @@ export const HeaderFive = () => {
                             </form>
                           </div>
                           <div className="td-header-5-menubar">
-                            <button className="td-menu-bar">
+                            <button className="td-menu-bar" aria-label="Odpri meni">
                               <svg
                                 width="24"
                                 height="24"

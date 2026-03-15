@@ -1,9 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// Tisk (print products)
 import portfolioImage01 from "../../assets/img/portfolio/01.jpg";
-import portfolioImage02 from "../../assets/img/portfolio/02.jpg";
 import portfolioImage03 from "../../assets/img/portfolio/03.jpg";
+import portfolioImage05 from "../../assets/img/portfolio/05.jpg";
+import portfolioImage06 from "../../assets/img/portfolio/06.jpg";
+// Embalaža (packaging)
+import portfolioImage09 from "../../assets/img/portfolio/09.jpg";
+import portfolioImage10 from "../../assets/img/portfolio/10.jpg";
+import portfolioImage11 from "../../assets/img/portfolio/11.jpg";
+import portfolioImage12 from "../../assets/img/portfolio/12.jpg";
+// Nalepke (stickers/foils)
+import portfolioImage02 from "../../assets/img/portfolio/02.jpg";
+import portfolioImage07 from "../../assets/img/portfolio/07.jpg";
+import portfolioImage13 from "../../assets/img/portfolio/13.jpg";
+import portfolioImage14 from "../../assets/img/portfolio/14.jpg";
+// Reklama (promotional)
+import portfolioImage16 from "../../assets/img/portfolio/16.jpg";
+import portfolioImage17 from "../../assets/img/portfolio/17.jpg";
+import portfolioImage18 from "../../assets/img/portfolio/18.jpg";
+import portfolioImage19 from "../../assets/img/portfolio/19.jpg";
+// 3D & CNC
 import portfolioImage04 from "../../assets/img/portfolio/04.jpg";
+import portfolioImage15 from "../../assets/img/portfolio/15.jpg";
+import portfolioImage08 from "../../assets/img/portfolio/08.jpg";
+import portfolioImage20 from "../../assets/img/portfolio/20.jpg";
 import { Swiper, SwiperSlide } from "../swiper/SwiperRoot";
 import { PortfolioOneItem } from "./PortfolioOneItem";
 
@@ -19,77 +40,77 @@ export const PortfolioOne = () => {
   const portfolioItems = {
     home: [
       {
-        image: portfolioImage03,
+        image: portfolioImage01,
         categories: ["Digitalni tisk", "Offset"],
         title: "Katalogi in brošure",
         delay: 0.3,
       },
       {
-        image: portfolioImage02,
-        categories: ["Flekso tisk", "Farmacija"],
-        title: "Farmacevtska embalaža",
+        image: portfolioImage03,
+        categories: ["Plakati", "Posterji"],
+        title: "Plakati in posterji",
         delay: 0.5,
       },
       {
-        image: portfolioImage01,
-        categories: ["UV tisk", "Sitotisk"],
-        title: "Promocijski materiali",
+        image: portfolioImage05,
+        categories: ["Zloženke", "Letaki"],
+        title: "Zloženke in letaki",
         delay: 0.7,
       },
       {
-        image: portfolioImage04,
+        image: portfolioImage06,
         categories: ["Digitalni tisk", "Personalizacija"],
-        title: "Poslovna vizitka",
+        title: "Letaki in flyerji",
         delay: 0.9,
       },
     ],
     profile: [
       {
-        image: portfolioImage01,
+        image: portfolioImage09,
         categories: ["Kartonska", "Embalaža"],
         title: "Kartonska embalaža",
         delay: 0.3,
       },
       {
-        image: portfolioImage04,
+        image: portfolioImage10,
         categories: ["Blisterji", "Farmacija"],
         title: "Blisterji in sasheji",
         delay: 0.5,
       },
       {
-        image: portfolioImage03,
+        image: portfolioImage11,
         categories: ["Večslojne", "Etikete"],
         title: "Večslojne etikete",
         delay: 0.7,
       },
       {
-        image: portfolioImage02,
-        categories: ["Darilne", "Vrečke"],
-        title: "Darilne vrečke",
+        image: portfolioImage12,
+        categories: ["Vrečke", "Pakiranje"],
+        title: "Vrečke in pakiranje",
         delay: 0.9,
       },
     ],
     messages: [
       {
-        image: portfolioImage02,
+        image: portfolioImage07,
         categories: ["Samolepilne", "Nalepke"],
         title: "Samolepilne nalepke",
         delay: 0.3,
       },
       {
-        image: portfolioImage03,
+        image: portfolioImage14,
         categories: ["Stenske", "Folije"],
         title: "Stenske in talne folije",
         delay: 0.5,
       },
       {
-        image: portfolioImage04,
+        image: portfolioImage02,
         categories: ["Vozila", "Polepitev"],
         title: "Polepitev vozil",
         delay: 0.7,
       },
       {
-        image: portfolioImage01,
+        image: portfolioImage13,
         categories: ["Steklo", "Folije"],
         title: "Folije za steklene površine",
         delay: 0.9,
@@ -97,53 +118,53 @@ export const PortfolioOne = () => {
     ],
     settings: [
       {
-        image: portfolioImage04,
+        image: portfolioImage16,
         categories: ["Roll-up", "Stojala"],
         title: "Reklamna stojala",
         delay: 0.3,
       },
       {
-        image: portfolioImage01,
+        image: portfolioImage17,
         categories: ["Transparenti", "Zastave"],
         title: "Zastave in transparenti",
         delay: 0.5,
       },
       {
-        image: portfolioImage03,
-        categories: ["Pop-up", "Sejemska oprema"],
-        title: "Pop-up stene",
+        image: portfolioImage18,
+        categories: ["Zastave", "Reklamni"],
+        title: "Reklamne zastave",
         delay: 0.7,
       },
       {
-        image: portfolioImage02,
-        categories: ["Promocija", "Darila"],
+        image: portfolioImage19,
+        categories: ["Promocija", "Pulti"],
         title: "Promocijski pultovi",
         delay: 0.9,
       },
     ],
     settings2: [
       {
-        image: portfolioImage01,
+        image: portfolioImage04,
         categories: ["3D", "Črke"],
         title: "3D napisi in logotipi",
         delay: 0.3,
       },
       {
-        image: portfolioImage03,
+        image: portfolioImage20,
         categories: ["CNC", "Laser"],
         title: "CNC in laserski izrez",
         delay: 0.5,
       },
       {
-        image: portfolioImage02,
-        categories: ["Graviranje", "Modeliranje"],
-        title: "Graviranje in brušenje",
+        image: portfolioImage15,
+        categories: ["Stenske", "Grafike"],
+        title: "Stenske grafike",
         delay: 0.7,
       },
       {
-        image: portfolioImage04,
-        categories: ["Table", "Signalizacija"],
-        title: "Usmerjevalne table",
+        image: portfolioImage08,
+        categories: ["Jedilniki", "Ceniki"],
+        title: "Jedilniki in ceniki",
         delay: 0.9,
       },
     ],

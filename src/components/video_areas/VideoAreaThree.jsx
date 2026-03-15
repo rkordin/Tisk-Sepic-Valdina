@@ -15,7 +15,7 @@ export const VideoAreaThree = () => {
           </div>
           <div className="col-lg-12">
             <div className="td-video-4-thumb fix p-relative">
-              <img className="w-100" src={videoThumb} alt="thumb" />
+              <img className="w-100" src={videoThumb} alt="Video preview" loading="lazy" />
               <div className="td-video-4-popup">
                 <VideoPlayer
                   trigger={
