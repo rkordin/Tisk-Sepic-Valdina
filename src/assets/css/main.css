@@ -2415,16 +2415,19 @@ input[type="color"] {
   margin: auto;
   top: 0;
   width: 100%;
-  box-shadow: var(--td-shadow-lg);
   z-index: 99;
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-  -webkit-box-shadow: var(--td-shadow-sm);
-  box-shadow: var(--td-shadow-sm) !important;
-  background: var(--td-common-white);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04) !important;
 }
 .td-header-sticky.td-header-sticky-black {
-  background: #1a1a1a;
+  background: rgba(26, 26, 26, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 }
 .td-header-sticky .border-bottom-2 {
   border-bottom: 0;
@@ -2445,7 +2448,7 @@ input[type="color"] {
   margin-right: 30px;
 }
 .td-header-top-menu ul li a {
-  padding: 10px 0;
+  padding: 6px 0;
   display: inline-block;
 }
 .td-header-top-social ul li {
@@ -2574,7 +2577,7 @@ input[type="color"] {
   }
 }
 .td-header-logo img {
-  max-height: 60px;
+  max-height: 48px;
   width: auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -2764,6 +2767,7 @@ input[type="color"] {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 100;
 }
 
 /*----------------------------------------*/
@@ -2785,7 +2789,7 @@ input[type="color"] {
 .td-main-menu nav ul li {
   list-style: none;
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 28px;
   position: relative;
 }
 @media only screen and (min-width: 1600px) and (max-width: 1700px),
@@ -2793,7 +2797,7 @@ input[type="color"] {
   only screen and (min-width: 1200px) and (max-width: 1399px),
   only screen and (min-width: 992px) and (max-width: 1199px) {
   .td-main-menu nav ul li {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 }
 .td-main-menu nav ul li:hover > .submenu {
@@ -2803,7 +2807,7 @@ input[type="color"] {
 }
 .td-main-menu nav ul li a {
   font-weight: 600;
-  padding: 34px 0;
+  padding: 16px 0;
   display: inline-block;
   text-transform: capitalize;
 }
@@ -12509,4 +12513,493 @@ input[type="color"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ═══════════════════════════════════════════════════
+   TISK ŠEPIC — Scroll Animation System
+   ═══════════════════════════════════════════════════ */
+
+/* ── Preloader ── */
+.ts-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ts-preloader--hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.ts-preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.ts-preloader__logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ts-preloader__logo {
+  width: 80px;
+  height: auto;
+  animation: ts-pulse 1.5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+.ts-preloader__glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(247, 156, 24, 0.15) 0%, transparent 70%);
+  animation: ts-glow-pulse 2s ease-in-out infinite;
+}
+@keyframes ts-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+@keyframes ts-glow-pulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+.ts-preloader__text {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--td-grey-4);
+}
+.ts-preloader__bar {
+  width: 200px;
+  height: 2px;
+  background: var(--td-common-bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ts-preloader__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--td-accent), #ffb84d);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+.ts-preloader__pct {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 11px;
+  color: var(--td-grey-4);
+  letter-spacing: 1px;
+}
+
+/* ── Scroll Progress Bar ── */
+.ts-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--td-accent), #ffb84d, var(--td-accent));
+  z-index: 99999;
+  pointer-events: none;
+  will-change: width;
+}
+
+/* ── Hero Intro ── */
+/* ── Combined Hero + Scroll Section ── */
+.ts-scroll-combined {
+  position: relative;
+  height: 550vh; /* extra height for hero + animation */
+}
+.ts-scroll-combined__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .ts-scroll-combined { height: 450vh; }
+}
+@media (max-width: 768px) {
+  .ts-scroll-combined { height: 380vh; }
+}
+
+/* Hero overlay on top of canvas */
+.ts-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 120px;
+  padding-right: 20%;
+  transition: none; /* controlled by JS inline styles */
+  will-change: transform, opacity;
+}
+.ts-hero-overlay__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(245, 242, 239, 0.92) 0%, rgba(255, 255, 255, 0.88) 60%, rgba(255, 255, 255, 0.4) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hero badge */
+.ts-hero-badge {
+  display: inline-block;
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--td-accent);
+  border: 1px solid rgba(247, 156, 24, 0.25);
+  background: rgba(247, 156, 24, 0.05);
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  animation: ts-badge-float 3s ease-in-out infinite, ts-fade-in-up 0.8s ease-out both;
+}
+@keyframes ts-badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Hero title */
+.ts-hero-content {
+  position: relative;
+  z-index: 2;
+}
+.ts-hero-title {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--td-theme-primary);
+}
+.ts-hero-title__line {
+  display: block;
+  animation: ts-fade-in-up 0.7s ease-out both;
+}
+.ts-hero-title__line:nth-child(1) { animation-delay: 0.15s; }
+.ts-hero-title__line:nth-child(2) { animation-delay: 0.3s; }
+.ts-hero-title__line:nth-child(3) { animation-delay: 0.45s; }
+
+@keyframes ts-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ts-hero-title__line--accent {
+  position: relative;
+  display: inline-block;
+}
+.ts-hero-title__line--accent::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(247, 156, 24, 0.2);
+  z-index: -1;
+  border-radius: 2px;
+  animation: ts-underline-grow 0.6s ease-out 0.7s both;
+}
+@keyframes ts-underline-grow {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+@media (max-width: 1199px) {
+  .ts-hero-title { font-size: 56px; }
+  .ts-hero-overlay { padding-right: 10%; }
+}
+@media (max-width: 767px) {
+  .ts-hero-title { font-size: 36px; letter-spacing: -1px; }
+  .ts-hero-overlay { padding-bottom: 100px; padding-right: 5%; }
+}
+
+/* Hero CTA block */
+.ts-hero-cta {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 10px;
+  animation: ts-fade-in-up 0.7s ease-out 0.6s both;
+}
+.ts-hero-cta__text {
+  font-family: var(--td-ff-inter), sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--td-grey-2);
+  margin-bottom: 24px;
+}
+.ts-hero-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--td-theme-primary);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.ts-hero-cta__btn:hover {
+  background: var(--td-accent);
+  color: #fff;
+  border-color: var(--td-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(247, 156, 24, 0.25);
+}
+.ts-hero-cta__btn svg {
+  transition: transform 0.3s ease;
+}
+.ts-hero-cta__btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* Scroll hint */
+.ts-scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  animation: ts-float 2.5s ease-in-out infinite;
+}
+.ts-scroll-hint span {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--td-grey-4);
+}
+.ts-scroll-hint__mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.ts-scroll-hint__dot {
+  width: 3px;
+  height: 8px;
+  background: var(--td-accent);
+  border-radius: 2px;
+  margin-top: 8px;
+  animation: ts-scroll-dot 1.5s ease-in-out infinite;
+}
+@keyframes ts-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+@keyframes ts-scroll-dot {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+.ts-scroll-animation__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Annotation Cards ── */
+.ts-annotation {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.ts-annotation--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.ts-annotation__inner {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(240, 230, 245, 0.15) 100%
+  );
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  padding: 24px 28px;
+  max-width: 320px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.08);
+}
+.ts-annotation__label {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--td-accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ts-annotation__title {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--td-theme-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.ts-annotation__desc {
+  font-family: var(--td-ff-inter), sans-serif;
+  font-size: 14px;
+  color: var(--td-grey-2);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.ts-annotation__stat {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.ts-annotation__num {
+  font-family: var(--td-ff-manrope), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--td-accent);
+  line-height: 1;
+}
+.ts-annotation__stat-label {
+  font-family: var(--td-ff-inter), sans-serif;
+  font-size: 13px;
+  color: var(--td-grey-4);
+}
+
+/* Card positions — desktop */
+.ts-annotation--left-top { top: 15%; left: 4%; }
+.ts-annotation--right-top { top: 18%; right: 4%; }
+.ts-annotation--left-bottom { bottom: 22%; left: 5%; }
+.ts-annotation--right-bottom { bottom: 18%; right: 4%; }
+.ts-annotation--center-bottom { bottom: 12%; left: 50%; transform: translateX(-50%) translateY(24px) scale(0.96); }
+.ts-annotation--center-bottom.ts-annotation--visible { transform: translateX(-50%) translateY(0) scale(1); }
+
+/* Card positions — mobile */
+@media (max-width: 768px) {
+  .ts-annotation__inner {
+    padding: 14px 18px;
+    max-width: 260px;
+    border-radius: 14px;
+  }
+  .ts-annotation__desc { display: none; }
+  .ts-annotation__stat { display: none; }
+  .ts-annotation__title { font-size: 16px; margin-bottom: 0; }
+
+  .ts-annotation--left-top,
+  .ts-annotation--right-top,
+  .ts-annotation--left-bottom,
+  .ts-annotation--right-bottom,
+  .ts-annotation--center-bottom {
+    top: auto;
+    bottom: 3vh;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(24px) scale(0.96);
+  }
+  .ts-annotation--left-top.ts-annotation--visible,
+  .ts-annotation--right-top.ts-annotation--visible,
+  .ts-annotation--left-bottom.ts-annotation--visible,
+  .ts-annotation--right-bottom.ts-annotation--visible,
+  .ts-annotation--center-bottom.ts-annotation--visible {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ── Logo & Brand Fixes ── */
+
+/* Footer logo sizing */
+.td-footer-3-logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Offcanvas sidebar logo */
+.tdoffcanvas__logo img {
+  max-height: 48px;
+  width: auto;
+}
+
+/* Brand slider - constrain certification logos */
+.td-brand-single-logo img {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+.td-brand-single-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+/* Brand grid (BrandTwo) logos */
+.td-brand-logo-2 {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+.td-brand-logo-wrap-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Awards section - constrain hover thumbnail */
+.td-awards-thumb img {
+  max-width: 280px;
+  height: auto;
+}
+
+/* Testimonial rotating logo icon */
+.td-testimonial-qoute {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Preloader logo for SVG */
+.ts-preloader__logo {
+  max-height: 120px;
+  width: auto;
 }

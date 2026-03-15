@@ -2,7 +2,7 @@ import React from "react";
 import { useHeaderSticky } from "./useHeader";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { NavImgGallery } from "./NavImgGallery";
 
 export const HeaderFive = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import logoImg from "../../assets/img/testimonial/logo.png";
+import logoImg from "../../assets/img/logo/logo-icon.svg";
 import aboutImg from "../../assets/img/about/about4/a.png";
 import thumb1 from "../../assets/img/about/about5/thumb.jpg";
 import thumb2 from "../../assets/img/about/about5/thumb2.jpg";

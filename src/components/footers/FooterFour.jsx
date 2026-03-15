@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logoWhite from "../../assets/img/logo/logo-white.png";
+import logoWhite from "../../assets/img/logo/logo-horizontal-white.svg";
 
 export const FooterFour = () => {
   return (

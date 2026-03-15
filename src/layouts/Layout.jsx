@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
+import { Preloader } from "../components/preloader/Preloader";
+import { ScrollProgress } from "../components/scroll_progress/ScrollProgress";
 import { HeaderOne } from "../components/headers/HeaderOne";
 import { MobileNavbar } from "../components/headers/MobileNavbar";
 import { FooterOne } from "../components/footers/FooterOne";
@@ -20,8 +22,16 @@ export const Layout = ({
   breadcrumbTitle,
   breadcrumbSubtitle,
 }) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
+      {/* Preloader */}
+      {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
+
+      {/* Scroll progress bar */}
+      <ScrollProgress />
+
       {/* Skip to content (accessibility) */}
       <a className="skip-to-content" href="#main-content">Preskoči na vsebino</a>
 
