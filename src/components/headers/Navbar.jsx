@@ -73,7 +73,7 @@ export const Navbar = ({ hidePortfolio = false }) => {
           <Link to="/contact">Kontakt</Link>
         </li>
 
-        <li className="td-nav-lang-item">
+        <li className="has-dropdown">
           <LanguageSwitcher />
         </li>
       </ul>
