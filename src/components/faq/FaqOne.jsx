@@ -3,7 +3,7 @@ import $ from "jquery";
 import patternImg from "../../assets/img/faq/pattern.png";
 import shapeImg from "../../assets/img/about/about3/shape.png";
 import bgImg from "../../assets/img/faq/bg.jpg";
-import logoImg from "../../assets/img/testimonial/logo.png";
+import logoImg from "../../assets/img/logo/logo-icon.svg";
 import quoteImg from "../../assets/img/testimonial/qoute.png";
 
 export const FaqOne = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LOGO_WHITE from "../../assets/img/logo/logo-white.png";
+import LOGO_WHITE from "../../assets/img/logo/logo-horizontal-white.svg";
 
 export const FooterThree = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import facebookIcon from "../../assets/img/footer/social-icon/facebook.png";
 import twitterIcon from "../../assets/img/footer/social-icon/twitter.png";
 import behanceIcon from "../../assets/img/footer/social-icon/behance.png";

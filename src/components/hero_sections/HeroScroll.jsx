@@ -58,7 +58,7 @@ const ANNOTATIONS = [
     desc: "Končni izdelek, ki govori vaš jezik. Embalaža, nalepke, tiskovine — vse pod eno streho.",
     stat: "1000+",
     statLabel: "zadovoljnih strank",
-    position: "center-bottom",
+    position: "right-bottom",
   },
 ];
 

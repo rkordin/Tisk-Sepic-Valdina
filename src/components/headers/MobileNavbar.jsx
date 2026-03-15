@@ -1,5 +1,5 @@
 import React from "react";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { Link } from "react-router-dom";
 
 export const MobileNavbar = () => {
