@@ -2719,6 +2719,13 @@ input[type="color"] {
   line-height: 1;
   color: var(--td-grey-2);
 }
+/* ── Hide Weglot default switcher ── */
+.weglot-container,
+#weglot-switcher,
+.wg-default,
+.wg-drop {
+  display: none !important;
+}
 /* ── Language Switcher (uses native nav submenu) ── */
 
 .td-header-5-menubar {
