@@ -14,6 +14,7 @@ import { FooterFour } from "../components/footers/FooterFour";
 import { HeaderFive } from "../components/headers/HeaderFive";
 import { FooterFive } from "../components/footers/FooterFive";
 import { Breadcrumb } from "../components/breadcrumb/Breadcrumb";
+import { ThemeSwitcher } from "../components/theme_switcher/ThemeSwitcher";
 
 export const Layout = ({
   children,
@@ -34,6 +35,9 @@ export const Layout = ({
 
       {/* Skip to content (accessibility) */}
       <a className="skip-to-content" href="#main-content">Preskoči na vsebino</a>
+
+      {/* Theme switcher */}
+      <ThemeSwitcher />
 
       {/* Scroll-top  */}
       <ScrollToTopButton />
