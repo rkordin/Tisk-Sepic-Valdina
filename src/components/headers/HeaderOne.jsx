@@ -1,5 +1,5 @@
 import React from "react";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { useHeaderLang, useHeaderSticky } from "./useHeader";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
@@ -81,6 +81,7 @@ export const HeaderOne = () => {
                               <button
                                 className="td-header-search-btn"
                                 type="button"
+                                aria-label="Iskanje"
                               >
                                 <svg
                                   width="20"
@@ -113,7 +114,7 @@ export const HeaderOne = () => {
 
                         {/* mobile icon */}
                         <div className="td-header-bar d-block d-lg-none text-right">
-                          <button className="td-offcanvas-open-btn td-menu-bar">
+                          <button className="td-offcanvas-open-btn td-menu-bar" aria-label="Odpri meni">
                             <span></span>
                             <span></span>
                             <span></span>

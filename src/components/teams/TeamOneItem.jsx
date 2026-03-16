@@ -10,7 +10,7 @@ export const TeamOneItem = ({ delay, src, title, designation }) => {
         data-wow-duration="1s"
       >
         <div className="td-team-thumb mb-35 p-relative">
-          <img className="w-100" src={src} alt="thumb" />
+          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" />
 
           {/* icons */}
           <div className="td-team-social">

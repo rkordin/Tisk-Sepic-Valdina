@@ -14,7 +14,7 @@ export const TeamDetails = () => {
           <div className="row">
             <div className="col-lg-5">
               <div className="td-team-details-thumb mb-40 mr-20">
-                <img className="w-100" src={teamDetailsImage} alt="thumb" />
+                <img className="w-100" src={teamDetailsImage} alt="Team member" loading="lazy" />
               </div>
             </div>
             <div className="col-lg-7">

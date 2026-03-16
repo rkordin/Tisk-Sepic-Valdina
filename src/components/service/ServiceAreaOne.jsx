@@ -6,10 +6,11 @@ import bg2 from "../../assets/img/service/bg2.jpg";
 import bg3 from "../../assets/img/service/bg3.jpg";
 import bg4 from "../../assets/img/service/bg4.jpg";
 import bg5 from "../../assets/img/service/bg5.jpg";
+import { useCmsContent } from "../../hooks/useCmsContent";
 
 const bgImages = [bg1, bg2, bg3, bg4, bg5];
 
-const serviceItems = [
+const DEFAULT_SERVICES = [
   {
     category: "Tisk",
     number: "01",
@@ -17,7 +18,6 @@ const serviceItems = [
     description:
       "Katalogi, brošure, letaki, vizitke, plakati in druge tiskovine vrhunske kakovosti.",
     link: "/service-details",
-    bgClass: "service-img-1",
   },
   {
     category: "Nalepke",
@@ -26,7 +26,6 @@ const serviceItems = [
     description:
       "Samolepilne nalepke, etikete, talne in stenske nalepke, tapete ter dekorativne folije.",
     link: "/service-details",
-    bgClass: "service-img-2",
   },
   {
     category: "Reklama",
@@ -35,7 +34,6 @@ const serviceItems = [
     description:
       "Transparenti, zastave, roll-up stojala, pop-up stene in druga reklamna oprema.",
     link: "/service-details",
-    bgClass: "service-img-3",
   },
   {
     category: "3D napisi",
@@ -44,7 +42,6 @@ const serviceItems = [
     description:
       "3D napisi, table iz pleksi stekla, reklamne table, CNC izrez in laserski razrez.",
     link: "/service-details",
-    bgClass: "service-img-4",
   },
   {
     category: "Embalaža",
@@ -53,11 +50,16 @@ const serviceItems = [
     description:
       "Kartonska embalaža, blistri, večslojne etikete, darilne vrečke in promocijska darila.",
     link: "/service-details",
-    bgClass: "service-img-5",
   },
 ];
 
 export const ServiceAreaOne = () => {
+  const { content } = useCmsContent("home");
+  const serviceItems = (content?.services?.items || DEFAULT_SERVICES).map((item, i) => ({
+    ...item,
+    bgClass: `service-img-${i + 1}`,
+  }));
+
   useEffect(() => {
     $(".service__item-8").on("mouseenter", function () {
       $(this).addClass("active").siblings().removeClass("active");

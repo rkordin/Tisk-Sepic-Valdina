@@ -1,5 +1,5 @@
 import React from "react";
-import LOGO from "../../assets/img/logo/logo-2.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { useHeaderLang, useHeaderSticky } from "./useHeader";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
@@ -40,7 +40,7 @@ export const HeaderTwo = () => {
                   <div className="col-xl-4 d-none d-xl-block">
                     <div className="td-header-endeavos text-center">
                       <p>
-                        Adina - for All <a href="#"> your business</a> endeavors
+                        Tisk Šepic - for All <a href="#"> your business</a> endeavors
                       </p>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export const HeaderTwo = () => {
 
                       {/* mobile icon */}
                       <div className="td-header-bar d-block d-lg-none text-right">
-                        <button className="td-offcanvas-open-btn td-menu-bar">
+                        <button className="td-offcanvas-open-btn td-menu-bar" aria-label="Odpri meni">
                           <span></span>
                           <span></span>
                           <span></span>

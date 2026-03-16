@@ -19,7 +19,7 @@ export const AboutWorkOne = () => {
               data-wow-delay=".4s"
               data-wow-duration="1s"
             >
-              <img className="w-100" src={workThumb} alt="work" />
+              <img className="w-100" src={workThumb} alt="Work progress showcase" loading="lazy" />
             </div>
           </div>
 

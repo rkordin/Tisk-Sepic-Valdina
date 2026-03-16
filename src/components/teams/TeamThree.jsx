@@ -33,7 +33,7 @@ export const TeamThree = () => {
                 >
                   <div className="td-team-5-wrap mb-40">
                     <div className="td-team-5-thumb mb-40">
-                      <img className="w-100" src={man1} alt="team" />
+                      <img className="w-100" src={man1} alt="Team member Miranda H. Halim" loading="lazy" />
                     </div>
                     <div className="td-team-5-content">
                       <h3 className="td-team-5-title">
@@ -80,7 +80,7 @@ export const TeamThree = () => {
                 >
                   <div className="td-team-5-wrap mb-40">
                     <div className="td-team-5-thumb mb-40">
-                      <img className="w-100" src={man2} alt="team" />
+                      <img className="w-100" src={man2} alt="Team member Teresa L. Marion" loading="lazy" />
                     </div>
                     <div className="td-team-5-content">
                       <h3 className="td-team-5-title">
@@ -129,7 +129,7 @@ export const TeamThree = () => {
                 >
                   <div className="td-team-5-wrap mb-40">
                     <div className="td-team-5-thumb mb-40">
-                      <img className="w-100" src={man3} alt="team" />
+                      <img className="w-100" src={man3} alt="Team member Donna D. Dicken" loading="lazy" />
                     </div>
                     <div className="td-team-5-content">
                       <h3 className="td-team-5-title">
@@ -178,7 +178,7 @@ export const TeamThree = () => {
                 >
                   <div className="td-team-5-wrap mb-40">
                     <div className="td-team-5-thumb mb-40">
-                      <img className="w-100" src={man4} alt="team" />
+                      <img className="w-100" src={man4} alt="Team member Rosalina D. William" loading="lazy" />
                     </div>
                     <div className="td-team-5-content">
                       <h3 className="td-team-5-title">

@@ -1,8 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-vertical.svg";
+import { useCmsContent } from "../../hooks/useCmsContent";
+
+const DEFAULT_FOOTER = {
+  tagline: "Tiskamo prihodnost.",
+  subtitle: "Z vami že več kot 40 let.",
+  cta_text: "Pišite nam",
+  company: "Tisk Šepic d.o.o.",
+  address: "Livada 14, 8000 Novo Mesto",
+  phone: "+386 7 393 7100",
+  email: "info@tisksepic.si",
+  hours: "Pon–Pet 07:00–15:00",
+};
 
 export const FooterOne = () => {
+  const { content } = useCmsContent("footer");
+  const info = content?.info || DEFAULT_FOOTER;
   return (
     <>
       <footer>
@@ -39,13 +53,13 @@ export const FooterOne = () => {
                   </div>
                   <div className="td-footer-widget-content">
                     <p className="td-footer-widget-para mb-30">
-                      Tiskamo prihodnost.
+                      {info.tagline}
                       <br />
-                      Z vami že več kot 40 let.
+                      {info.subtitle}
                     </p>
                     <div className="td-footer-btn">
                       <Link className="td-btn td-left-right" to="/contact">
-                        Pišite nam
+                        {info.cta_text}
                         <span className="td-arrow-angle ml-10">
                           <svg
                             className="td-arrow-svg-top-right"
@@ -107,7 +121,7 @@ export const FooterOne = () => {
                     </ul>
                     <div className="td-footer-bottom-copyright">
                       <p>
-                        © 2024 <Link to="/">Tisk Šepic d.o.o.</Link> Vse pravice pridržane.
+                        © 2024 <Link to="/">{info.company}</Link> Vse pravice pridržane.
                       </p>
                     </div>
                   </div>
@@ -121,15 +135,15 @@ export const FooterOne = () => {
                           href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto"
                           target="_blank"
                         >
-                          Livada 14, 8000 Novo Mesto
+                          {info.address}
                         </a>
                         <span>
                           Telefon:
                           <a
                             className="td-footer-bottom-phone"
-                            href="tel:+38673937100"
+                            href={`tel:${info.phone.replace(/\s/g, "")}`}
                           >
-                            +386 7 393 7100
+                            {info.phone}
                           </a>
                         </span>
                       </div>
@@ -140,15 +154,15 @@ export const FooterOne = () => {
                           Email
                         </h5>
                         <a
-                          href="mailto:info@tisksepic.si"
+                          href={`mailto:${info.email}`}
                           target="_blank"
                         >
-                          info@tisksepic.si
+                          {info.email}
                         </a>
                         <span>
                           Delovni čas:
                           <span className="td-footer-bottom-phone">
-                            Pon–Pet 07:00–15:00
+                            {info.hours}
                           </span>
                         </span>
                       </div>

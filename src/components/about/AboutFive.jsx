@@ -1,5 +1,5 @@
 import React from "react";
-import logoImg from "../../assets/img/testimonial/logo.png";
+import logoImg from "../../assets/img/logo/logo-icon.svg";
 import aboutImg from "../../assets/img/about/about4/a.png";
 import thumb1 from "../../assets/img/about/about5/thumb.jpg";
 import thumb2 from "../../assets/img/about/about5/thumb2.jpg";
@@ -52,8 +52,8 @@ export const AboutFive = () => {
           className="td-testimonial-qoute-thumb z-index-11 p-relative"
           data-parallax='{"x": -100, "smoothness": 10}'
         >
-          <img className="td-testimonial-qoute" src={logoImg} alt="badge" />
-          <img className="td-testimonial-qoute-2" src={aboutImg} alt="badge" />
+          <img className="td-testimonial-qoute" src={logoImg} alt="Company badge" loading="lazy" />
+          <img className="td-testimonial-qoute-2" src={aboutImg} alt="About decorative element" loading="lazy" />
         </div>
       </div>
 
@@ -74,7 +74,8 @@ export const AboutFive = () => {
                           <img
                             className="w-100"
                             src={slide.imgSrc}
-                            alt="thumb"
+                            alt="Portfolio slide"
+                            loading="lazy"
                           />
                         </div>
                       </div>

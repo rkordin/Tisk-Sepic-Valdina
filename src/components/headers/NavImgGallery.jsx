@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo/logo.png";
+import logo from "../../assets/img/logo/logo-horizontal.svg";
 import sidebar01 from "../../assets/img/sidebar/01.jpg";
 import sidebar02 from "../../assets/img/sidebar/02.jpg";
 import sidebar03 from "../../assets/img/sidebar/03.jpg";

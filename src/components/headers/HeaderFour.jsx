@@ -2,7 +2,7 @@ import React from "react";
 import { useHeaderLang, useHeaderSticky } from "./useHeader";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
-import LOGO_WHITE from "../../assets/img/logo/logo-white.png";
+import LOGO_WHITE from "../../assets/img/logo/logo-horizontal-white.svg";
 
 export const HeaderFour = () => {
   useHeaderLang();
@@ -124,7 +124,7 @@ export const HeaderFour = () => {
 
                       {/* mobile icon */}
                       <div className="td-header-bar td-header-bar-white d-block d-lg-none text-right">
-                        <button className="td-offcanvas-open-btn td-menu-bar">
+                        <button className="td-offcanvas-open-btn td-menu-bar" aria-label="Odpri meni">
                           <span></span>
                           <span></span>
                           <span></span>

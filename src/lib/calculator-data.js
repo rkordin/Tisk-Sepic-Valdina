@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 // PRINTING CALCULATOR — Complete Product & Pricing Data
-// Sources: Demago (NET), Tiskarna Online (GROSS), eTiskarna (GROSS)
-// VAT: 22% DDV
+// Sources: Demago (NET), Tiskarna Online (GROSS), eTiskarna (GROSS), Vizitka.com (GROSS, 0% DDV)
+// VAT: 22% DDV (except Vizitka.com which is DDV-exempt)
 // ═══════════════════════════════════════════════════════════════
 
 // ── Categories ──────────────────────────────────────────────
@@ -10,13 +10,13 @@ export const CATEGORIES = [
     id: "tiskalni-izdelki",
     name: "Tiskalni izdelki",
     icon: "fa-regular fa-file-lines",
-    products: ["letaki", "vizitke", "razglednice", "plakati", "dopisni-listi"],
+    products: ["letaki", "vizitke", "zlozljive-vizitke", "razglednice", "plakati", "dopisni-listi", "vabila"],
   },
   {
     id: "publikacije",
     name: "Publikacije",
     icon: "fa-regular fa-book-open",
-    products: ["brosure", "knjige", "revije", "koledarji"],
+    products: ["brosure", "zlozenke", "knjige", "revije", "koledarji"],
   },
   {
     id: "nalepke-embalaza",
@@ -79,6 +79,8 @@ export const PRODUCTS = [
     ],
     sides: ["4/0 enostransko", "4/4 obojestransko"],
     lamination: ["none", "matt", "gloss", "anti-scratch", "soft-touch"],
+    supportsVariations: true,
+    variationLabel: "Različni motivi",
     minQty: 10,
     maxQty: 100000,
     qtyBreaks: [10, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000],
@@ -112,6 +114,16 @@ export const PRODUCTS = [
           ],
         },
       },
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 50, price: 29.99 }, { qty: 100, price: 38.99 },
+            { qty: 300, price: 53.98 }, { qty: 500, price: 65.98 },
+            { qty: 1000, price: 89.97 },
+          ],
+        },
+      },
     ],
   },
   {
@@ -129,6 +141,8 @@ export const PRODUCTS = [
     ],
     sides: ["4/0 enostransko", "4/4 obojestransko"],
     lamination: ["none", "matt", "gloss", "anti-scratch", "soft-touch"],
+    supportsVariations: true,
+    variationLabel: "Število oseb",
     minQty: 100,
     maxQty: 10000,
     qtyBreaks: [100, 125, 150, 200, 250, 500, 1000, 2000, 5000],
@@ -143,6 +157,89 @@ export const PRODUCTS = [
           standard: [{ qty: 100, price: 21.31 }, { qty: 125, price: 21.82 }, { qty: 150, price: 21.98 }, { qty: 200, price: 22.31 }],
           express: [{ qty: 100, price: 30.14 }, { qty: 125, price: 30.79 }, { qty: 150, price: 30.99 }, { qty: 200, price: 31.40 }],
           priority: [{ qty: 100, price: 46.45 }, { qty: 125, price: 47.17 }, { qty: 150, price: 47.40 }, { qty: 200, price: 47.85 }],
+        },
+      },
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 100, price: 21.99 }, { qty: 300, price: 43.98 },
+            { qty: 500, price: 48.38 }, { qty: 1000, price: 65.97 },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "zlozljive-vizitke",
+    name: "Zložljive vizitke",
+    category: "tiskalni-izdelki",
+    icon: "fa-regular fa-clone",
+    formats: [
+      { code: "standard", width: 170, height: 55, label: "85×55 mm (zaprto) / 170×55 mm (odprto)" },
+    ],
+    papers: [
+      { id: "splendorgel-300", label: "Fedrigoni Splendorgel Extra White 300 g/m²", weight: 300 },
+      { id: "astroprint-canvas-280", label: "Astroprint Canvas 280 g/m²", weight: 280 },
+      { id: "constellation-lime-280", label: "Constellation Lime 280 g/m²", weight: 280 },
+      { id: "constellation-fiandra-280", label: "Constellation Snow Fiandra 280 g/m²", weight: 280 },
+      { id: "constellation-raster-350", label: "Constellation Snow Raster 350 g/m²", weight: 350 },
+      { id: "rives-tradition-250", label: "Rives Tradition Ice White 250 g/m²", weight: 250 },
+    ],
+    sides: ["4/4 obojestransko"],
+    lamination: ["none", "matt", "gloss"],
+    supportsVariations: true,
+    variationLabel: "Število oseb",
+    minQty: 50,
+    maxQty: 1000,
+    qtyBreaks: [50, 100, 300, 500, 1000],
+    pricing: [
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 50, price: 39.99 }, { qty: 100, price: 55.99 },
+            { qty: 300, price: 71.98 }, { qty: 500, price: 93.98 },
+            { qty: 1000, price: 131.97 },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "vabila",
+    name: "Vabila",
+    category: "tiskalni-izdelki",
+    icon: "fa-regular fa-envelope-open-text",
+    formats: [
+      { code: "A6", width: 148, height: 105, label: "A6 (148×105 mm)" },
+      { code: "DL", width: 210, height: 100, label: "DL (210×100 mm)" },
+      { code: "A5", width: 148, height: 210, label: "A5 (148×210 mm)" },
+      { code: "A5-folded", width: 210, height: 148, label: "A5 zloženo (210×148 mm)" },
+    ],
+    papers: [
+      { id: "symbol-matt-300", label: "Fedrigoni Symbol Matt 300 g/m²", weight: 300 },
+      { id: "splendorgel-300", label: "Fedrigoni Splendorgel Extra White 300 g/m²", weight: 300 },
+      { id: "astroprint-canvas-280", label: "Astroprint Canvas 280 g/m²", weight: 280 },
+      { id: "constellation-lime-280", label: "Constellation Lime 280 g/m²", weight: 280 },
+      { id: "rives-tradition-250", label: "Rives Tradition Ice White 250 g/m²", weight: 250 },
+    ],
+    sides: ["4/0 enostransko", "4/4 obojestransko"],
+    lamination: ["none", "matt", "gloss"],
+    supportsVariations: true,
+    variationLabel: "Različni motivi",
+    minQty: 25,
+    maxQty: 500,
+    qtyBreaks: [25, 50, 100, 250, 500],
+    pricing: [
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 25, price: 34.50 }, { qty: 50, price: 41.40 },
+            { qty: 100, price: 48.30 }, { qty: 250, price: 62.10 },
+            { qty: 500, price: 79.35 },
+          ],
         },
       },
     ],
@@ -162,6 +259,8 @@ export const PRODUCTS = [
     ],
     sides: ["4/0 enostransko", "4/4 obojestransko"],
     lamination: ["none", "matt", "gloss"],
+    supportsVariations: true,
+    variationLabel: "Različni motivi",
     minQty: 5,
     maxQty: 10000,
     qtyBreaks: [5, 10, 25, 50, 100, 250, 500, 1000],
@@ -198,6 +297,8 @@ export const PRODUCTS = [
     ],
     sides: ["4/0 enostransko"],
     lamination: ["none", "matt", "gloss"],
+    supportsVariations: true,
+    variationLabel: "Različni motivi",
     minQty: 1,
     maxQty: 5000,
     qtyBreaks: [1, 5, 10, 25, 50, 100, 250, 500],
@@ -212,6 +313,16 @@ export const PRODUCTS = [
           standard: [{ qty: 1, price: 23.01 }, { qty: 5, price: 68.96 }],
           express: [{ qty: 1, price: 32.26 }, { qty: 5, price: 89.71 }],
           priority: [{ qty: 1, price: 48.83 }, { qty: 5, price: 113.16 }],
+        },
+      },
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 10, price: 35.00 }, { qty: 25, price: 45.50 },
+            { qty: 50, price: 52.50 }, { qty: 100, price: 70.00 },
+            { qty: 250, price: 105.00 }, { qty: 500, price: 157.50 },
+          ],
         },
       },
     ],
@@ -275,6 +386,43 @@ export const PRODUCTS = [
           standard: [{ qty: 1, price: 10.94 }, { qty: 2, price: 19.94 }, { qty: 3, price: 20.19 }, { qty: 5, price: 30.49 }],
           express: [{ qty: 1, price: 17.18 }, { qty: 2, price: 28.44 }, { qty: 3, price: 28.75 }, { qty: 5, price: 41.62 }],
           priority: [{ qty: 1, price: 31.93 }, { qty: 2, price: 44.54 }, { qty: 3, price: 44.89 }, { qty: 5, price: 59.31 }],
+        },
+      },
+    ],
+  },
+  {
+    id: "zlozenke",
+    name: "Zloženke",
+    category: "publikacije",
+    icon: "fa-regular fa-layer-group",
+    formats: [
+      { code: "A5-1fold", width: 210, height: 148, label: "A5 (1 pregib)" },
+      { code: "DL-1fold", width: 200, height: 210, label: "Double DL (1 pregib)" },
+      { code: "A4-1fold", width: 297, height: 210, label: "A4 (1 pregib)" },
+      { code: "A4-2fold", width: 297, height: 210, label: "A4 (2 pregiba)" },
+      { code: "A3-1fold", width: 420, height: 297, label: "A3 (1 pregib)" },
+      { code: "A3-2fold", width: 420, height: 297, label: "A3 (2 pregiba)" },
+    ],
+    papers: [
+      { id: "coated-matt-150", label: "Premazni Matt 150 g/m²", weight: 150 },
+      { id: "coated-matt-200", label: "Premazni Matt 200 g/m²", weight: 200 },
+      { id: "coated-matt-250", label: "Premazni Matt 250 g/m²", weight: 250 },
+      { id: "coated-matt-300", label: "Premazni Matt 300 g/m²", weight: 300 },
+    ],
+    sides: ["4/4 obojestransko"],
+    lamination: ["none"],
+    minQty: 50,
+    maxQty: 1000,
+    qtyBreaks: [50, 100, 300, 500, 1000],
+    pricing: [
+      {
+        source: "vizitka", priceType: "gross", deliveryDays: "1 dan",
+        tiers: {
+          standard: [
+            { qty: 50, price: 64.90 }, { qty: 100, price: 84.37 },
+            { qty: 300, price: 136.29 }, { qty: 500, price: 162.25 },
+            { qty: 1000, price: 298.54 },
+          ],
         },
       },
     ],
@@ -649,4 +797,5 @@ export const SOURCE_LABELS = {
   demago: { name: "Demago", color: "#e74c3c" },
   tiskarna: { name: "Tiskarna Online", color: "#3498db" },
   etiskarna: { name: "eTiskarna", color: "#2ecc71" },
+  vizitka: { name: "Vizitka.com", color: "#9b59b6" },
 };

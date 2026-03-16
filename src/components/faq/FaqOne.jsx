@@ -3,7 +3,7 @@ import $ from "jquery";
 import patternImg from "../../assets/img/faq/pattern.png";
 import shapeImg from "../../assets/img/about/about3/shape.png";
 import bgImg from "../../assets/img/faq/bg.jpg";
-import logoImg from "../../assets/img/testimonial/logo.png";
+import logoImg from "../../assets/img/logo/logo-icon.svg";
 import quoteImg from "../../assets/img/testimonial/qoute.png";
 
 export const FaqOne = () => {
@@ -19,7 +19,7 @@ export const FaqOne = () => {
 
   return (
     <div className="td-faq-area pt-140 pb-100 p-relative fix">
-      <img className="td-faq-bg-pattern tpupdown" src={patternImg} alt="" />
+      <img className="td-faq-bg-pattern tpupdown" src={patternImg} alt="Decorative pattern" loading="lazy" />
 
       <div className="container">
         <div className="row">
@@ -45,20 +45,23 @@ export const FaqOne = () => {
               <img
                 className="td-faq-shape d-none d-lg-block"
                 src={shapeImg}
-                alt="shape"
+                alt="Decorative shape"
+                loading="lazy"
               />
-              <img className="w-100" src={bgImg} alt="thumb" />
+              <img className="w-100" src={bgImg} alt="FAQ section illustration" loading="lazy" />
               <div className="td-faq-badge">
                 <div className="td-testimonial-qoute-thumb p-relative">
                   <img
                     className="td-testimonial-qoute"
                     src={logoImg}
-                    alt="badge"
+                    alt="Company badge"
+                    loading="lazy"
                   />
                   <img
                     className="td-testimonial-qoute-2"
                     src={quoteImg}
-                    alt="badge"
+                    alt="Quote icon"
+                    loading="lazy"
                   />
                 </div>
               </div>

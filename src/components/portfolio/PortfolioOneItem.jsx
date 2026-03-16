@@ -15,7 +15,7 @@ export const PortfolioOneItem = ({
     >
       <div className="td-portfolio-wrap">
         <div className="td-poerfolio-thumb mb-30">
-          <img className="w-100" src={imageSrc} alt={title} />
+          <img className="w-100" src={imageSrc} alt={title} loading="lazy" />
         </div>
 
         <div className="td-portfolio-cetagory mb-20">

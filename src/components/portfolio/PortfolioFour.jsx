@@ -102,7 +102,7 @@ export const PortfolioFour = () => {
                     >
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb} alt="" />
+                          <img src={thumb} alt="Life insurance portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">
@@ -124,7 +124,7 @@ export const PortfolioFour = () => {
                     >
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb2} alt="" />
+                          <img src={thumb2} alt="Business performance portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">
@@ -151,7 +151,7 @@ export const PortfolioFour = () => {
                     <div className="col-lg-6 mb-30">
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb3} alt="" />
+                          <img src={thumb3} alt="Vision and direction portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">
@@ -169,7 +169,7 @@ export const PortfolioFour = () => {
                     <div className="col-lg-6 mb-30">
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb4} alt="" />
+                          <img src={thumb4} alt="Business insurance portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">
@@ -196,7 +196,7 @@ export const PortfolioFour = () => {
                     <div className="col-lg-6 mb-30">
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb5} alt="" />
+                          <img src={thumb5} alt="Family insurance portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">
@@ -214,7 +214,7 @@ export const PortfolioFour = () => {
                     <div className="col-lg-6 mb-30">
                       <div className="td-portfolio-5-item p-relative">
                         <div className="td-portfolio-5-thumb">
-                          <img src={thumb6} alt="" />
+                          <img src={thumb6} alt="Business performance portfolio project" loading="lazy" />
                           <span></span>
                         </div>
                         <div className="td-portfolio-5-content">

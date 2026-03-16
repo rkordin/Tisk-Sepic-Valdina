@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import logoImage from "../../assets/img/testimonial/logo.png";
+import logoImage from "../../assets/img/logo/logo-icon.svg";
 import quoteImage from "../../assets/img/testimonial/qoute.png";
 import authorImage01 from "../../assets/img/testimonial/01.png";
 import authorImage02 from "../../assets/img/testimonial/02.png";
@@ -9,58 +9,46 @@ import authorImage05 from "../../assets/img/testimonial/05.png";
 import authorImage06 from "../../assets/img/testimonial/06.png";
 import authorImage07 from "../../assets/img/testimonial/07.png";
 import { SlickSlider } from "../slick_slider/SlickSlider";
+import { useCmsContent } from "../../hooks/useCmsContent";
+
+const DEFAULT_TESTIMONIALS = [
+  {
+    name: "Marko Kovač",
+    designation: "Direktor, Adria Mobil",
+    content:
+      "S Tisk Šepic sodelujemo že vrsto let. Njihova zanesljivost in kakovost tiska sta izjemni. Vedno znova nas presenetijo s hitrostjo in natančnostjo izvedbe, tudi pri najzahtevnejših projektih embalaže in katalogov.",
+  },
+  {
+    name: "Ana Novak",
+    designation: "Vodja marketinga, Krka d.d.",
+    content:
+      "Za farmacevtsko embalažo potrebujemo najvišje standarde kakovosti. Clean Room certificirana proizvodnja pri Tisk Šepic nam zagotavlja skladnost z vsemi regulatornimi zahtevami. Odlično partnerstvo.",
+  },
+  {
+    name: "Peter Zupančič",
+    designation: "Lastnik, Zupančič Gradnje",
+    content:
+      "Od vizitk do velikoformatnih plakatov — pri Tisk Šepic dobimo vse na enem mestu. Kakovost je vedno vrhunska, roki so kratki, ekipa pa izjemno odzivna. Priporočam brez zadržkov.",
+  },
+  {
+    name: "Maja Horvat",
+    designation: "Kreativna direktorica, Studio MH",
+    content:
+      "Kot oblikovalska agencija potrebujemo tiskarskega partnerja, ki razume naše zahteve. Tisk Šepic to odlično obvladuje — od posebnih UV efektov do slepega tiska. Rezultati so vedno nad pričakovanji.",
+  },
+  {
+    name: "Tomaž Dolenc",
+    designation: "Direktor prodaje, TPV Group",
+    content:
+      "Polepitve naših vozil in reklamne table so vedno brezhibne. Profesionalen pristop, korektni odnosi in zanesljiva dobava. Tisk Šepic je naš dolgoletni partner in to z razlogom.",
+  },
+];
 
 export const TestimonialOne = () => {
-  const testimonials = [
-    {
-      name: "Marko Kovač",
-      designation: "Direktor, Adria Mobil",
-      content:
-        "S Tisk Šepic sodelujemo že vrsto let. Njihova zanesljivost in kakovost tiska sta izjemni. Vedno znova nas presenetijo s hitrostjo in natančnostjo izvedbe, tudi pri najzahtevnejših projektih embalaže in katalogov.",
-    },
-    {
-      name: "Ana Novak",
-      designation: "Vodja marketinga, Krka d.d.",
-      content:
-        "Za farmacevtsko embalažo potrebujemo najvišje standarde kakovosti. Clean Room certificirana proizvodnja pri Tisk Šepic nam zagotavlja skladnost z vsemi regulatornimi zahtevami. Odlično partnerstvo.",
-    },
-    {
-      name: "Peter Zupančič",
-      designation: "Lastnik, Zupančič Gradnje",
-      content:
-        "Od vizitk do velikoformatnih plakatov — pri Tisk Šepic dobimo vse na enem mestu. Kakovost je vedno vrhunska, roki so kratki, ekipa pa izjemno odzivna. Priporočam brez zadržkov.",
-    },
-    {
-      name: "Maja Horvat",
-      designation: "Kreativna direktorica, Studio MH",
-      content:
-        "Kot oblikovalska agencija potrebujemo tiskarskega partnerja, ki razume naše zahteve. Tisk Šepic to odlično obvladuje — od posebnih UV efektov do slepega tiska. Rezultati so vedno nad pričakovanji.",
-    },
-    {
-      name: "Tomaž Dolenc",
-      designation: "Direktor prodaje, TPV Group",
-      content:
-        "Polepitve naših vozil in reklamne table so vedno brezhibne. Profesionalen pristop, korektni odnosi in zanesljiva dobava. Tisk Šepic je naš dolgoletni partner in to z razlogom.",
-    },
-    {
-      name: "Marko Kovač",
-      designation: "Direktor, Adria Mobil",
-      content:
-        "S Tisk Šepic sodelujemo že vrsto let. Njihova zanesljivost in kakovost tiska sta izjemni. Vedno znova nas presenetijo s hitrostjo in natančnostjo izvedbe, tudi pri najzahtevnejših projektih embalaže in katalogov.",
-    },
-    {
-      name: "Ana Novak",
-      designation: "Vodja marketinga, Krka d.d.",
-      content:
-        "Za farmacevtsko embalažo potrebujemo najvišje standarde kakovosti. Clean Room certificirana proizvodnja pri Tisk Šepic nam zagotavlja skladnost z vsemi regulatornimi zahtevami. Odlično partnerstvo.",
-    },
-    {
-      name: "Peter Zupančič",
-      designation: "Lastnik, Zupančič Gradnje",
-      content:
-        "Od vizitk do velikoformatnih plakatov — pri Tisk Šepic dobimo vse na enem mestu. Kakovost je vedno vrhunska, roki so kratki, ekipa pa izjemno odzivna. Priporočam brez zadržkov.",
-    },
-  ];
+  const { content } = useCmsContent("home");
+  const cmsItems = content?.testimonials?.items || DEFAULT_TESTIMONIALS;
+  // Duplicate to fill the slider (needs 8 items for the author thumbnails)
+  const testimonials = [...cmsItems, ...cmsItems.slice(0, 3)];
 
   const authorImages = [
     { src: authorImage01, offset: false },
@@ -159,11 +147,12 @@ export const TestimonialOne = () => {
       {/* rotating images */}
       <div className="td-testimonial-qoute-wrap">
         <div className="td-testimonial-qoute-thumb p-relative">
-          <img className="td-testimonial-qoute" src={logoImage} alt="logo" />
+          <img className="td-testimonial-qoute" src={logoImage} alt="Company logo" loading="lazy" />
           <img
             className="td-testimonial-qoute-2"
             src={quoteImage}
-            alt="quote"
+            alt="Quote icon"
+            loading="lazy"
           />
         </div>
       </div>
@@ -267,6 +256,6 @@ const AuthorThumbnail = ({ imageSrc, isOffset }) => (
         ></circle>
       </svg>
     </div>
-    <img src={imageSrc} alt="" />
+    <img src={imageSrc} alt="Testimonial author" loading="lazy" />
   </div>
 );

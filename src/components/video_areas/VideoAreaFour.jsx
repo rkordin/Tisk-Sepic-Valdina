@@ -87,7 +87,7 @@ export const VideoAreaFour = () => {
                 <div className="row">
                   <div className="col-lg-5 col-md-5">
                     <div className="td-video-cta-thumb">
-                      <img className="w-100" src={ctaImage} alt="cta" />
+                      <img className="w-100" src={ctaImage} alt="Estimation and planning illustration" loading="lazy" />
                     </div>
                   </div>
                   <div className="col-lg-7 col-md-7">
@@ -150,7 +150,7 @@ export const VideoAreaFour = () => {
                   </div>
                   <div className="col-lg-5 col-md-6">
                     <div className="td-video-cta-thumb td-video-cta-thumb-2">
-                      <img className="w-100" src={ctaImage2} alt="cta" />
+                      <img className="w-100" src={ctaImage2} alt="Expert consultation illustration" loading="lazy" />
                     </div>
                   </div>
                 </div>

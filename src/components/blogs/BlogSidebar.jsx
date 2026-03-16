@@ -63,7 +63,7 @@ export const BlogSidebar = () => {
                 <div key={index} className="td-blog-post mb-25">
                   <div className="td-blog-post-thumb">
                     <Link to="/blog-details">
-                      <img src={post.image} alt="" />
+                      <img src={post.image} alt={post.title} loading="lazy" />
                     </Link>
                   </div>
                   <div className="td-blog-post-content">
@@ -102,7 +102,7 @@ export const BlogSidebar = () => {
           <div className="td-blog-sidebar-widget">
             <div className="td-blog-sidebar-ads">
               <div className="td-blog-sidebar-ads-thumb p-relative">
-                <img className="w-100" src={sidebarImage1} alt="thumb" />
+                <img className="w-100" src={sidebarImage1} alt="Sidebar advertisement banner" loading="lazy" />
                 <h4 className="td-blog-sidebar-ads-title">Oglas</h4>
                 <h2 className="td-blog-sidebar-ads-transparent">Tisk Šepic</h2>
               </div>

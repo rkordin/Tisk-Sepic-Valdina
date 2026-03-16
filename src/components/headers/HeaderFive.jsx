@@ -2,7 +2,7 @@ import React from "react";
 import { useHeaderSticky } from "./useHeader";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
-import LOGO from "../../assets/img/logo/logo.png";
+import LOGO from "../../assets/img/logo/logo-horizontal.svg";
 import { NavImgGallery } from "./NavImgGallery";
 
 export const HeaderFive = () => {
@@ -102,6 +102,7 @@ export const HeaderFive = () => {
                                 <button
                                   className="td-header-search-btn"
                                   type="button"
+                                  aria-label="Iskanje"
                                 >
                                   <svg
                                     width="20"
@@ -120,7 +121,7 @@ export const HeaderFive = () => {
                             </form>
                           </div>
                           <div className="td-header-5-menubar">
-                            <button className="td-menu-bar">
+                            <button className="td-menu-bar" aria-label="Odpri meni">
                               <svg
                                 width="24"
                                 height="24"

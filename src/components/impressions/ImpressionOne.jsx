@@ -10,7 +10,8 @@ export const ImpressionOne = () => {
       <img
         className="td-impressions-shape tpleftright d-none d-lg-block"
         src={SHAPE}
-        alt="shape"
+        alt="Decorative shape"
+        loading="lazy"
       />
       <div className="container">
         <div className="row">
@@ -20,7 +21,7 @@ export const ImpressionOne = () => {
               data-wow-delay=".4s"
               data-wow-duration="1s"
             >
-              <img className="w-100" src={CHART} alt="chart" />
+              <img className="w-100" src={CHART} alt="Business growth chart" loading="lazy" />
             </div>
           </div>
           <div className="col-xl-6 col-lg-6 mb-40">
@@ -32,7 +33,8 @@ export const ImpressionOne = () => {
               <img
                 className="td-about-text-big td-about-text-big-2 d-none d-xl-block"
                 src={A}
-                alt="a"
+                alt="Decorative letter"
+                loading="lazy"
               />
               <span className="td-section-title-pre mb-10">
                 Naše podjetje raste

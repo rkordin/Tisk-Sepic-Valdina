@@ -60,7 +60,7 @@ export const ServiceAreaThree = () => {
                 data-wow-duration="1s"
               >
                 <div className="td-service-3-thumb">
-                  <img className="w-100" src={item.imgSrc} alt="service" />
+                  <img className="w-100" src={item.imgSrc} alt="service" loading="lazy" />
                 </div>
                 <div className="td-service-3-content">
                   <h3 className="td-service-3-title mb-15">

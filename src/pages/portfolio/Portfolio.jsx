@@ -70,7 +70,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img12} alt="thumb" />
+                          <img className="w-100" src={img12} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -90,7 +90,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img13} alt="thumb" />
+                          <img className="w-100" src={img13} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -110,7 +110,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img14} alt="thumb" />
+                          <img className="w-100" src={img14} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -130,7 +130,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img05} alt="thumb" />
+                          <img className="w-100" src={img05} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -148,7 +148,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img06} alt="thumb" />
+                          <img className="w-100" src={img06} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -168,7 +168,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img07} alt="thumb" />
+                          <img className="w-100" src={img07} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -188,7 +188,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img08} alt="thumb" />
+                          <img className="w-100" src={img08} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -206,7 +206,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img09} alt="thumb" />
+                          <img className="w-100" src={img09} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -224,7 +224,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img10} alt="thumb" />
+                          <img className="w-100" src={img10} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -244,7 +244,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 col-md-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img11} alt="thumb" />
+                          <img className="w-100" src={img11} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -273,7 +273,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img08} alt="thumb" />
+                          <img className="w-100" src={img08} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -291,7 +291,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img09} alt="thumb" />
+                          <img className="w-100" src={img09} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -309,7 +309,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img10} alt="thumb" />
+                          <img className="w-100" src={img10} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -329,7 +329,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img11} alt="thumb" />
+                          <img className="w-100" src={img11} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -358,7 +358,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img14} alt="thumb" />
+                          <img className="w-100" src={img14} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -378,7 +378,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img05} alt="thumb" />
+                          <img className="w-100" src={img05} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -396,7 +396,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img06} alt="thumb" />
+                          <img className="w-100" src={img06} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -416,7 +416,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img07} alt="thumb" />
+                          <img className="w-100" src={img07} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -445,7 +445,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img12} alt="thumb" />
+                          <img className="w-100" src={img12} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -465,7 +465,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img13} alt="thumb" />
+                          <img className="w-100" src={img13} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -488,7 +488,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img14} alt="thumb" />
+                          <img className="w-100" src={img14} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -508,7 +508,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img05} alt="thumb" />
+                          <img className="w-100" src={img05} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -535,7 +535,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img06} alt="thumb" />
+                          <img className="w-100" src={img06} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -555,7 +555,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img07} alt="thumb" />
+                          <img className="w-100" src={img07} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -575,7 +575,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap mr-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img08} alt="thumb" />
+                          <img className="w-100" src={img08} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>
@@ -593,7 +593,7 @@ export const Portfolio = () => {
                     <div className="col-lg-6 mb-70">
                       <div className="td-portfolio-wrap ml-30">
                         <div className="td-poerfolio-thumb mb-30">
-                          <img className="w-100" src={img09} alt="thumb" />
+                          <img className="w-100" src={img09} alt="Portfolio project" loading="lazy" />
                         </div>
                         <div className="td-portfolio-cetagory mb-20">
                           <span>

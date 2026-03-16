@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "../../layouts/Layout";
-import { HeroOne } from "../../components/hero_sections/HeroOne";
+import { HeroScroll } from "../../components/hero_sections/HeroScroll";
 import { ServiceAreaOne } from "../../components/service/ServiceAreaOne";
 import { AboutOne } from "../../components/about/AboutOne";
 import { AwardsOne } from "../../components/awards/AwardsOne";
@@ -15,8 +15,8 @@ import { BlogOne } from "../../components/blogs/BlogOne";
 export const HomeOne = () => {
   return (
     <Layout header={1} footer={1}>
-      {/* hero section */}
-      <HeroOne />
+      {/* hero + scroll animation */}
+      <HeroScroll />
 
       {/* about section */}
       <AboutOne />

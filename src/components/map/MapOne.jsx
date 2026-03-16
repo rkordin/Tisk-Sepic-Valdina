@@ -35,7 +35,7 @@ export const MapOne = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="td-map-thumb p-relative">
-              <img className="w-100" src={mapImage} alt="map" />
+              <img className="w-100" src={mapImage} alt="World map with location markers" loading="lazy" />
               <span className="td-map-lucation-dot one td-pulse-border"></span>
               <span className="td-map-lucation-dot two td-pulse-border"></span>
               <span className="td-map-lucation-dot three td-pulse-border"></span>

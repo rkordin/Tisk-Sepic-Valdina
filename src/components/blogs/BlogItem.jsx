@@ -16,7 +16,7 @@ export const BlogItem = ({
   return (
     <article className="td-postbox-item mb-60">
       <div className="td-postbox-thumb p-relative mb-40">
-        <img className="w-100" src={src} alt="thumb" />
+        <img className="w-100" src={src} alt={title || "Blog post"} loading="lazy" />
         <span className="td-postbox-badge">{tag}</span>
       </div>
       <div className="td-postbox-content">
@@ -31,7 +31,7 @@ export const BlogItem = ({
         <div className="td-postbox-meta">
           <div className="td-postbox-user">
             <a href="#">
-              <img src={userImage} alt="uder" />
+              <img src={userImage} alt={`Author ${userName}`} loading="lazy" />
               By <span>{userName}</span>
             </a>
           </div>

@@ -2,8 +2,19 @@ import React from "react";
 import BG_IMG from "../../assets/img/hero/bg.jpg";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "../swiper/SwiperRoot";
+import { useCmsContent } from "../../hooks/useCmsContent";
+
+const DEFAULTS = {
+  tagline_line1: "ČISTA tehnologija.",
+  tagline_line2: "ČISTI odnosi.",
+  tagline_line3: "ČISTO zadovoljstvo.",
+  expertise: "Celoten spekter tiskarskih in grafičnih storitev",
+  slider_words: ["Tisk", "Grafika", "Embalaža", "Inovacija", "Tisk", "Grafika"],
+};
 
 export const HeroOne = () => {
+  const { content } = useCmsContent("home");
+  const hero = content?.hero || DEFAULTS;
   return (
     <>
       <div
@@ -26,7 +37,7 @@ export const HeroOne = () => {
                   data-wow-duration="1s"
                 >
                   <h3 className="td-hero-achive-title">
-                    ČISTA tehnologija.
+                    {hero.tagline_line1}
                     <br />
                     <Link className="td-left-right" to="/contact">
                       <span className="td-arrow-angle">
@@ -55,9 +66,9 @@ export const HeroOne = () => {
                         </svg>
                       </span>
                     </Link>
-                    ČISTI odnosi.
+                    {hero.tagline_line2}
                     <br />
-                    <span className="td-title-border">ČISTO zadovoljstvo.</span>
+                    <span className="td-title-border">{hero.tagline_line3}</span>
                   </h3>
                 </div>
               </div>
@@ -70,9 +81,7 @@ export const HeroOne = () => {
                 >
                   <i className="fa-sharp fa-light fa-print"></i>
                   <h5>
-                    Celoten spekter tiskarskih
-                    <br />
-                    in grafičnih storitev
+                    {hero.expertise}
                   </h5>
                 </div>
               </div>
@@ -85,14 +94,7 @@ export const HeroOne = () => {
 };
 
 const TextSlider = () => {
-  const LIST_OF_TEXT_SLIDES = [
-    "Tisk",
-    "Grafika",
-    "Embalaža",
-    "Inovacija",
-    "Tisk",
-    "Grafika",
-  ];
+  const LIST_OF_TEXT_SLIDES = DEFAULTS.slider_words;
 
   const swiper_settings = {
     loop: true,

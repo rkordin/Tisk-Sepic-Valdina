@@ -14,7 +14,7 @@ export const ServiceDetails = () => {
       <ServiceLayout>
         <div className="td-service-details-wrap">
           <div className="td-service-details-thumb mb-60">
-            <img className="w-100" src={thumb} alt="Digitalni tisk" />
+            <img className="w-100" src={thumb} alt="Digitalni tisk" loading="lazy" />
           </div>
 
           <div className="td-service-details-content mb-60">

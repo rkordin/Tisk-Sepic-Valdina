@@ -109,7 +109,7 @@ export const ExperienceOne = () => {
             >
               <div className="td-expreance-content-wrap p-relative">
                 <div className="td-expreance-thumb">
-                  <img className="w-100" src={thumbImage2} alt="thumb" />
+                  <img className="w-100" src={thumbImage2} alt="Startup investment project" loading="lazy" />
                 </div>
                 <div className="td-expreance-item">
                   <div className="row">
@@ -168,7 +168,7 @@ export const ExperienceOne = () => {
             >
               <div className="td-expreance-content-wrap p-relative">
                 <div className="td-expreance-thumb">
-                  <img className="w-100" src={thumbImage1} alt="thumb" />
+                  <img className="w-100" src={thumbImage1} alt="Cryptocurrency investment project" loading="lazy" />
                 </div>
                 <div className="td-expreance-item">
                   <div className="row">
@@ -227,7 +227,7 @@ export const ExperienceOne = () => {
             >
               <div className="td-expreance-content-wrap p-relative">
                 <div className="td-expreance-thumb">
-                  <img className="w-100" src={thumbImage3} alt="thumb" />
+                  <img className="w-100" src={thumbImage3} alt="Business development project" loading="lazy" />
                 </div>
                 <div className="td-expreance-item">
                   <div className="row">
@@ -286,7 +286,7 @@ export const ExperienceOne = () => {
             >
               <div className="td-expreance-content-wrap p-relative">
                 <div className="td-expreance-thumb">
-                  <img className="w-100" src={thumbImage2} alt="thumb" />
+                  <img className="w-100" src={thumbImage2} alt="Market compliance project" loading="lazy" />
                 </div>
                 <div className="td-expreance-item">
                   <div className="row">
@@ -345,7 +345,7 @@ export const ExperienceOne = () => {
             >
               <div className="td-expreance-content-wrap p-relative">
                 <div className="td-expreance-thumb">
-                  <img className="w-100" src={thumbImage4} alt="thumb" />
+                  <img className="w-100" src={thumbImage4} alt="Business transformation project" loading="lazy" />
                 </div>
                 <div className="td-expreance-item">
                   <div className="row">

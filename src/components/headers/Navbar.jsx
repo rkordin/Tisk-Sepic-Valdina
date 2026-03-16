@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Navbar = ({ hidePortfolio = false }) => {
   return (
@@ -70,6 +71,10 @@ export const Navbar = ({ hidePortfolio = false }) => {
 
         <li>
           <Link to="/contact">Kontakt</Link>
+        </li>
+
+        <li className="has-dropdown">
+          <LanguageSwitcher />
         </li>
       </ul>
     </nav>

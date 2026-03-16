@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
+import { Preloader } from "../components/preloader/Preloader";
+import { ScrollProgress } from "../components/scroll_progress/ScrollProgress";
 import { HeaderOne } from "../components/headers/HeaderOne";
 import { MobileNavbar } from "../components/headers/MobileNavbar";
 import { FooterOne } from "../components/footers/FooterOne";
@@ -12,6 +14,7 @@ import { FooterFour } from "../components/footers/FooterFour";
 import { HeaderFive } from "../components/headers/HeaderFive";
 import { FooterFive } from "../components/footers/FooterFive";
 import { Breadcrumb } from "../components/breadcrumb/Breadcrumb";
+import { ThemeSwitcher } from "../components/theme_switcher/ThemeSwitcher";
 
 export const Layout = ({
   children,
@@ -20,8 +23,22 @@ export const Layout = ({
   breadcrumbTitle,
   breadcrumbSubtitle,
 }) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
+      {/* Preloader */}
+      {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
+
+      {/* Scroll progress bar */}
+      <ScrollProgress />
+
+      {/* Skip to content (accessibility) */}
+      <a className="skip-to-content" href="#main-content">Preskoči na vsebino</a>
+
+      {/* Theme switcher */}
+      <ThemeSwitcher />
+
       {/* Scroll-top  */}
       <ScrollToTopButton />
 
@@ -41,7 +58,7 @@ export const Layout = ({
       )}
 
       {/* children */}
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
 
       {/* footers */}
       {footer === 1 && <FooterOne />}
