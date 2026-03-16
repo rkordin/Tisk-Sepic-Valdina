@@ -26,3 +26,12 @@ createRoot(document.getElementById("root")).render(
     <App />
   </BrowserRouter>
 );
+
+// Initialize Weglot AFTER React has rendered the DOM content
+setTimeout(() => {
+  if (window.Weglot) {
+    window.Weglot.initialize({
+      api_key: "wg_cd39013438de4532905891097b92e18b1",
+    });
+  }
+}, 500);
