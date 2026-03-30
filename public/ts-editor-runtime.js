@@ -1,22 +1,17 @@
 /**
- * Tisk Šepic Editor Runtime — lightweight content override loader
- * Include on every page: <script src="/ts-editor-runtime.js" defer></script>
- *
- * On page load, fetches saved content overrides from the API
- * and patches the DOM so visitors see the edited content.
- * ~2KB, no dependencies, fails silently for visitors.
+ * Tisk Šepic Editor Runtime — content override loader
+ * Waits for React to render (even after preloader), then patches the DOM.
  */
 (function () {
   "use strict";
 
   var API = "/api/frontend-editor";
+  var _overrides = null;
 
   function getPageId() {
     var path = location.pathname.replace(/\/+$/, "") || "/";
     return path.replace(/\.html$/, "");
   }
-
-  var _pendingOverrides = null;
 
   function applyOverride(elementId, override) {
     var el = document.querySelector('[data-editable="' + elementId + '"]');
@@ -45,36 +40,42 @@
     return true;
   }
 
-  function applyOverrides(overrides) {
-    if (!overrides || typeof overrides !== "object") return;
-    _pendingOverrides = overrides;
-
-    var keys = Object.keys(overrides);
+  function applyAll(overrides) {
+    if (!overrides) return {};
     var remaining = {};
+    var keys = Object.keys(overrides);
     for (var i = 0; i < keys.length; i++) {
       if (!applyOverride(keys[i], overrides[keys[i]])) {
         remaining[keys[i]] = overrides[keys[i]];
       }
     }
+    return remaining;
+  }
 
-    // Retry for elements not yet in DOM (React async rendering)
-    if (Object.keys(remaining).length > 0) {
-      var retries = 0;
-      var retryInterval = setInterval(function () {
-        retries++;
-        var stillRemaining = {};
-        var rKeys = Object.keys(remaining);
-        for (var j = 0; j < rKeys.length; j++) {
-          if (!applyOverride(rKeys[j], remaining[rKeys[j]])) {
-            stillRemaining[rKeys[j]] = remaining[rKeys[j]];
-          }
-        }
-        remaining = stillRemaining;
-        if (Object.keys(remaining).length === 0 || retries >= 10) {
-          clearInterval(retryInterval);
-        }
-      }, 500);
-    }
+  function startApplying(overrides) {
+    if (!overrides || typeof overrides !== "object") return;
+    _overrides = overrides;
+
+    var remaining = applyAll(overrides);
+    if (Object.keys(remaining).length === 0) return;
+
+    // Use MutationObserver to catch React rendering new elements
+    var observer = new MutationObserver(function () {
+      remaining = applyAll(remaining);
+      if (Object.keys(remaining).length === 0) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Safety: disconnect after 30 seconds regardless
+    setTimeout(function () {
+      observer.disconnect();
+    }, 30000);
   }
 
   function loadOverrides() {
@@ -82,9 +83,9 @@
     fetch(API + "?page=" + encodeURIComponent(pageId))
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (data) {
-        if (data && data.overrides) applyOverrides(data.overrides);
+        if (data && data.overrides) startApplying(data.overrides);
       })
-      .catch(function () { /* silent fail for visitors */ });
+      .catch(function () { /* silent fail */ });
   }
 
   function checkEditorMode() {
