@@ -1,26 +1,33 @@
 /* ============================================
-   40 Years Anniversary Section
-   Scroll-reveal word highlighting on white
+   40 Years Anniversary — 3-panel scroll reveal
    ============================================ */
 
 .a40-section {
-  position: relative;
   background: #fff;
-  padding: 160px 0 140px;
   overflow: hidden;
 }
 
-/* Giant background "40" */
-.a40-bg-number {
+/* Each panel = near full viewport height */
+.a40-panel {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* Background decorative element */
+.a40-panel-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(280px, 40vw, 600px);
+  font-size: clamp(300px, 45vw, 700px);
   font-weight: 900;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.04);
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.03);
   letter-spacing: -0.04em;
   pointer-events: none;
   user-select: none;
@@ -28,101 +35,94 @@
   font-family: var(--td-ff-heading, "DM Sans", sans-serif);
 }
 
-/* Content sits above the bg number */
-.a40-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Orange accent line at top */
+/* Orange accent line (first panel only) */
 .a40-accent-line {
-  width: 48px;
+  width: 56px;
   height: 3px;
   background: #f79c18;
   margin-bottom: 48px;
 }
 
-/* Paragraphs */
-.a40-paragraph {
-  font-size: 1.2rem;
-  line-height: 1.85;
-  color: var(--td-theme-primary, #1a1a1a);
-  margin-bottom: 28px;
-  font-weight: 400;
-  font-family: var(--td-ff-body, "DM Sans", sans-serif);
-}
-
-.a40-paragraph--lead {
-  font-size: 2rem;
-  line-height: 1.4;
-  font-weight: 600;
+/* Heading */
+.a40-panel-heading {
+  position: relative;
+  z-index: 1;
   margin-bottom: 40px;
+}
+
+.a40-heading-line {
   font-family: var(--td-ff-heading, "DM Sans", sans-serif);
-}
-
-/* Individual word — starts faded */
-.a40-word {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1a1a1a;
   display: inline;
-  color: rgba(26, 26, 26, 0.12);
-  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Word revealed */
-.a40-word--visible {
-  color: rgba(26, 26, 26, 1);
-}
-
-/* The "40" emphasis word */
-.a40-word--emphasis {
+/* "40" — huge orange number */
+.a40-heading-number {
+  font-size: clamp(5rem, 12vw, 10rem);
   font-weight: 900;
-  font-size: 1.15em;
-  letter-spacing: -0.02em;
+  color: #f79c18;
+  letter-spacing: -0.03em;
+  display: block;
+  line-height: 0.9;
+  margin-bottom: 12px;
 }
 
-.a40-word--emphasis.a40-word--visible {
+/* Accented word */
+.a40-heading-accent {
   color: #f79c18;
 }
 
-/* Closing years mark */
-.a40-closing-mark {
-  margin-top: 56px;
+/* Body text */
+.a40-panel-body {
+  position: relative;
+  z-index: 1;
+  font-family: var(--td-ff-body, "DM Sans", sans-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.8;
+  color: rgba(26, 26, 26, 0.7);
+  font-weight: 400;
+  max-width: 640px;
+}
+
+/* Footer / years */
+.a40-panel-footer {
+  margin-top: 64px;
   padding-top: 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .a40-closing-years {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(26, 26, 26, 0.35);
+  color: rgba(26, 26, 26, 0.3);
   font-family: var(--td-ff-body, "DM Sans", sans-serif);
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 991px) {
-  .a40-section {
-    padding: 100px 0 80px;
+  .a40-panel {
+    min-height: 70vh;
+    padding: 80px 0;
   }
-  .a40-paragraph--lead {
-    font-size: 1.6rem;
-  }
-  .a40-bg-number {
-    font-size: 220px;
+  .a40-heading-number {
+    font-size: 5rem;
   }
 }
 
 @media (max-width: 575px) {
-  .a40-section {
-    padding: 80px 0 60px;
+  .a40-panel {
+    min-height: 60vh;
+    padding: 60px 0;
   }
-  .a40-paragraph--lead {
-    font-size: 1.35rem;
+  .a40-heading-number {
+    font-size: 4rem;
   }
-  .a40-paragraph {
-    font-size: 1.05rem;
-  }
-  .a40-bg-number {
-    font-size: 160px;
+  .a40-panel-bg {
+    font-size: 200px;
   }
 }

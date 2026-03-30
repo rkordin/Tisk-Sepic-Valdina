@@ -5,7 +5,7 @@ import { ServiceAreaOne } from "../../components/service/ServiceAreaOne";
 import { AboutOne } from "../../components/about/AboutOne";
 import { AwardsOne } from "../../components/awards/AwardsOne";
 import { PortfolioOne } from "../../components/portfolio/PortfolioOne";
-import { TestimonialOne } from "../../components/testimonials/TestimonialOne";
+import { CircularTestimonials } from "../../components/testimonials/CircularTestimonials";
 import { BrandOne } from "../../components/brands/BrandOne";
 import { VideoAreaOne } from "../../components/video_areas/VideoAreaOne";
 import { CounterAreaOne } from "../../components/counter_areas/CounterAreaOne";
@@ -35,7 +35,7 @@ export const HomeOne = () => {
       <PortfolioOne />
 
       {/* testimonial section */}
-      <TestimonialOne />
+      <CircularTestimonials />
 
       {/* brands section */}
       <BrandOne />

@@ -12749,7 +12749,7 @@ input[type="color"] {
 /* ── Combined Hero + Scroll Section ── */
 .ts-scroll-combined {
   position: relative;
-  height: 380vh; /* extra height for hero + animation */
+  height: 300vh; /* reduced for faster scroll */
 }
 .ts-scroll-combined__sticky {
   position: sticky;
@@ -12759,10 +12759,10 @@ input[type="color"] {
   overflow: hidden;
 }
 @media (max-width: 1024px) {
-  .ts-scroll-combined { height: 320vh; }
+  .ts-scroll-combined { height: 260vh; }
 }
 @media (max-width: 768px) {
-  .ts-scroll-combined { height: 280vh; }
+  .ts-scroll-combined { height: 220vh; }
 }
 
 /* Hero overlay on top of canvas */

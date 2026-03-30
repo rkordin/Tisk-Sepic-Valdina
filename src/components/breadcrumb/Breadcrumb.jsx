@@ -7,6 +7,9 @@ export const Breadcrumb = ({ title, subtitle, bottomText }) => {
     <div
       className="td-breadcrumb-area td-breadcrumb-spacing fix bg-position"
       style={{ backgroundImage: `url(${BG})` }}
+      data-editable="breadcrumb-bg"
+      data-editable-type="bg-image"
+      data-dimensions="1920x600"
     >
       <div className="container">
         <div className="row align-items-center">
