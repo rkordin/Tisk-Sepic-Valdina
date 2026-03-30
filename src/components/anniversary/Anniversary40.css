@@ -1,33 +1,54 @@
 /* ============================================
-   40 Years Anniversary — 3-panel scroll reveal
+   40 Years — Sticky scroll, panel fade, word reveal
    ============================================ */
 
-.a40-section {
+/* Outer container: tall enough for 3 panels of scrolling */
+.a40-outer {
+  position: relative;
+  height: 300vh;
   background: #fff;
-  overflow: hidden;
 }
 
-/* Each panel = near full viewport height */
-.a40-panel {
-  position: relative;
-  min-height: 85vh;
+/* Sticky viewport */
+.a40-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 120px 0;
+  justify-content: center;
   overflow: hidden;
 }
 
-/* Background decorative element */
-.a40-panel-bg {
+/* Each panel stacks on top of each other */
+.a40-panel {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(300px, 45vw, 700px);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+/* Inner content — constrained width */
+.a40-panel__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  width: 100%;
+}
+
+/* Background decorative symbol */
+.a40-panel__bg {
+  position: absolute;
+  right: 8%;
+  bottom: 5%;
+  font-size: clamp(280px, 40vw, 550px);
   font-weight: 900;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.03);
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.035);
   letter-spacing: -0.04em;
   pointer-events: none;
   user-select: none;
@@ -35,67 +56,83 @@
   font-family: var(--td-ff-heading, "DM Sans", sans-serif);
 }
 
-/* Orange accent line (first panel only) */
-.a40-accent-line {
+/* Orange accent line */
+.a40-accent {
   width: 56px;
   height: 3px;
   background: #f79c18;
-  margin-bottom: 48px;
-}
-
-/* Heading */
-.a40-panel-heading {
-  position: relative;
-  z-index: 1;
   margin-bottom: 40px;
 }
 
-.a40-heading-line {
+/* Heading */
+.a40-heading {
   font-family: var(--td-ff-heading, "DM Sans", sans-serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: #1a1a1a;
-  display: inline;
+  margin-bottom: 36px;
+  line-height: 1.1;
 }
 
-/* "40" — huge orange number */
-.a40-heading-number {
-  font-size: clamp(5rem, 12vw, 10rem);
+.a40-heading__line {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.a40-heading--number {
+  display: block;
+  font-size: clamp(5rem, 13vw, 10rem);
   font-weight: 900;
   color: #f79c18;
   letter-spacing: -0.03em;
-  display: block;
-  line-height: 0.9;
-  margin-bottom: 12px;
+  line-height: 0.85;
+  margin-bottom: 8px;
 }
 
-/* Accented word */
-.a40-heading-accent {
+.a40-heading--accent {
   color: #f79c18;
 }
 
-/* Body text */
-.a40-panel-body {
-  position: relative;
-  z-index: 1;
+/* Body text — flex wrap for inline words */
+.a40-body {
+  display: flex;
+  flex-wrap: wrap;
   font-family: var(--td-ff-body, "DM Sans", sans-serif);
-  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  line-height: 1.8;
-  color: rgba(26, 26, 26, 0.7);
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  line-height: 1.85;
   font-weight: 400;
-  max-width: 640px;
+  max-width: 600px;
 }
 
-/* Footer / years */
-.a40-panel-footer {
-  margin-top: 64px;
-  padding-top: 32px;
+/* Word */
+.a40-word {
+  position: relative;
+  margin-right: 0.3em;
+  margin-bottom: 2px;
+}
+
+.a40-word__ghost {
+  visibility: visible;
+}
+
+.a40-word__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.a40-word--forty {
+  font-weight: 900;
+  font-size: 1.05em;
+}
+
+/* Footer */
+.a40-footer {
+  margin-top: 56px;
+  padding-top: 28px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.a40-closing-years {
-  font-size: 0.9rem;
+.a40-footer__years {
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -105,24 +142,29 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 991px) {
-  .a40-panel {
-    min-height: 70vh;
-    padding: 80px 0;
+  .a40-outer {
+    height: 280vh;
   }
-  .a40-heading-number {
-    font-size: 5rem;
+  .a40-heading--number {
+    font-size: 5.5rem;
+  }
+  .a40-panel__bg {
+    font-size: 240px;
   }
 }
 
 @media (max-width: 575px) {
-  .a40-panel {
-    min-height: 60vh;
-    padding: 60px 0;
+  .a40-outer {
+    height: 260vh;
   }
-  .a40-heading-number {
+  .a40-heading--number {
     font-size: 4rem;
   }
-  .a40-panel-bg {
-    font-size: 200px;
+  .a40-panel__bg {
+    font-size: 160px;
+    right: 4%;
+  }
+  .a40-body {
+    font-size: 1.05rem;
   }
 }
