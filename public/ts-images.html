@@ -125,6 +125,7 @@ a{color:var(--accent);text-decoration:none}
 <div id="app">
   <div class="topbar">
     <h1><img src="/img-originals/logo-white.svg" alt="Tisk Šepic" style="height:24px;vertical-align:middle;margin-right:10px"/>Image Manager</h1>
+    <button class="btn-back" id="fixUrlsBtn" style="background:#4CAF50;color:#fff;border-color:#4CAF50">⚡ Popravi in objavi</button>
     <a class="btn-back" href="/" target="_blank">Odpri stran ↗</a>
     <button class="btn-back" id="logoutBtn">Odjava</button>
   </div>
@@ -728,6 +729,44 @@ a{color:var(--accent);text-decoration:none}
   document.getElementById("modalSave").addEventListener("click", uploadAndSave);
   document.getElementById("upload-modal").addEventListener("click", function(e) { if (e.target === this) closeModal(); });
   document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeModal(); });
+
+  // Fix URLs + publish button
+  document.getElementById("fixUrlsBtn").addEventListener("click", function() {
+    var btn = document.getElementById("fixUrlsBtn");
+    btn.disabled = true;
+    btn.textContent = "⏳ Popravljam...";
+    fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + TOKEN },
+      body: JSON.stringify({ action: "fix_urls" }),
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        toast("Popravljenih " + data.fixed + " od " + data.total + " slik. Spremembe so zdaj vidne na strani!", "success");
+        // Reload overrides
+        var pages = Object.keys(IMAGE_REGISTRY);
+        var promises = pages.map(function(pageName) {
+          var pageId = IMAGE_REGISTRY[pageName].page_id;
+          return loadOverrides(pageId).then(function(overrides) {
+            overridesByPage[pageId] = overrides;
+          }).catch(function() {});
+        });
+        Promise.all(promises).then(function() {
+          if (activeTab) renderGrid(activeTab);
+        });
+      } else {
+        toast("Napaka: " + (data.error || "Neznana"), "error");
+      }
+      btn.disabled = false;
+      btn.textContent = "⚡ Popravi in objavi";
+    })
+    .catch(function(err) {
+      toast("Napaka: " + err.message, "error");
+      btn.disabled = false;
+      btn.textContent = "⚡ Popravi in objavi";
+    });
+  });
 
   // Auto-login if token in session
   var savedToken = sessionStorage.getItem("ts-editor-token");

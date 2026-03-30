@@ -74,7 +74,7 @@ export default async function handler(req, res) {
         overrides[row.element_id] = {
           type: row.content_type,
           content: row.content,
-          image_url: row.image_url,
+          image_url: row.image_url ? row.image_url.replace(/[\r\n]/g, "") : row.image_url,
           updated_at: row.updated_at,
         };
       }
@@ -133,6 +133,33 @@ export default async function handler(req, res) {
           }),
         });
         return res.status(200).json({ success: true, image_url: imageUrl });
+      } catch (err) {
+        return res.status(500).json({ error: err.message });
+      }
+    }
+
+    if (action === "fix_urls") {
+      try {
+        // Fetch all rows with image URLs
+        const allRows = await supaFetch(
+          `frontend_edits?content_type=eq.image&image_url=not.is.null&select=id,page_id,element_id,image_url`
+        );
+        let fixed = 0;
+        for (const row of allRows) {
+          if (row.image_url && /[\r\n]/.test(row.image_url)) {
+            const cleanUrl = row.image_url.replace(/[\r\n]/g, "");
+            await supaFetch(
+              `frontend_edits?id=eq.${row.id}`,
+              {
+                method: "PATCH",
+                write: true,
+                body: JSON.stringify({ image_url: cleanUrl }),
+              }
+            );
+            fixed++;
+          }
+        }
+        return res.status(200).json({ success: true, total: allRows.length, fixed });
       } catch (err) {
         return res.status(500).json({ error: err.message });
       }
