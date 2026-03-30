@@ -78,6 +78,9 @@ export const ServiceAreaOne = () => {
                 key={index}
                 className={`service-bg service-img-${index + 1}`}
                 style={{ backgroundImage: `url(${bg})` }}
+                data-editable={`service-${index}-bg`}
+                data-editable-type="bg-image"
+                data-dimensions="1920x1280"
               ></div>
             ))}
           </div>
@@ -101,11 +104,11 @@ export const ServiceAreaOne = () => {
                 </span>
                 <h2 className="td-service-number">{item.number}</h2>
                 <div className="td-service-content">
-                  <h4 className="td-service-title">
+                  <h4 className="td-service-title" data-editable={`service-${index}-title`}>
                     <Link to={item.link}>{item.title}</Link>
                   </h4>
                   <div className="td-service-content-inner">
-                    <p className="td-service-content-para mb-45">
+                    <p className="td-service-content-para mb-45" data-editable={`service-${index}-desc`}>
                       {item.description}
                     </p>
                     <div className="td-service-btn">

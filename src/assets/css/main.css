@@ -12749,7 +12749,7 @@ input[type="color"] {
 /* ── Combined Hero + Scroll Section ── */
 .ts-scroll-combined {
   position: relative;
-  height: 550vh; /* extra height for hero + animation */
+  height: 380vh; /* extra height for hero + animation */
 }
 .ts-scroll-combined__sticky {
   position: sticky;
@@ -12759,10 +12759,10 @@ input[type="color"] {
   overflow: hidden;
 }
 @media (max-width: 1024px) {
-  .ts-scroll-combined { height: 450vh; }
+  .ts-scroll-combined { height: 320vh; }
 }
 @media (max-width: 768px) {
-  .ts-scroll-combined { height: 380vh; }
+  .ts-scroll-combined { height: 280vh; }
 }
 
 /* Hero overlay on top of canvas */
@@ -13127,11 +13127,13 @@ input[type="color"] {
   height: auto;
 }
 
-/* Testimonial rotating logo icon */
+/* Testimonial logo icon — static, no rotation */
 .td-testimonial-qoute {
   width: 120px;
   height: 120px;
   object-fit: contain;
+  animation: none !important;
+  -webkit-animation: none !important;
 }
 
 /* Footer decorative logo */

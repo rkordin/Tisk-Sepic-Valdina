@@ -6,6 +6,7 @@ export const PortfolioOneItem = ({
   categories,
   title,
   wowDelay = ".3s",
+  editableId,
 }) => {
   return (
     <div
@@ -15,7 +16,7 @@ export const PortfolioOneItem = ({
     >
       <div className="td-portfolio-wrap">
         <div className="td-poerfolio-thumb mb-30">
-          <img className="w-100" src={imageSrc} alt={title} loading="lazy" />
+          <img className="w-100" src={imageSrc} alt={title} loading="lazy" data-editable={editableId} data-editable-type="image" data-dimensions="867x1200" />
         </div>
 
         <div className="td-portfolio-cetagory mb-20">

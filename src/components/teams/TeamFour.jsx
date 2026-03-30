@@ -86,9 +86,9 @@ export const TeamFour = () => {
               </div>
               <div className="td-team-5-content">
                 <h3 className="td-team-5-title">
-                  <Link to="/team-details">Gorazd Čerček</Link>
+                  <Link to="/team-details">Petra Novak</Link>
                 </h3>
-                <span className="td-team-5-position">Namestnik direktorice</span>
+                <span className="td-team-5-position">Komerciala</span>
               </div>
               <div className="td-team-5-social">
                 <span></span>

@@ -88,7 +88,7 @@ export const Blog = () => {
         {/* blogs */}
         <div className="td-postbox-wrapper td-postbox-wrapper-space">
           {blogs.map((blog, index) => (
-            <BlogItem key={index} {...blog} />
+            <BlogItem key={index} {...blog} editableId={`blog-list-${index}-img`} />
           ))}
         </div>
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import logoImage from "../../assets/img/logo/logo-icon.svg";
-import quoteImage from "../../assets/img/testimonial/qoute.png";
 import authorImage01 from "../../assets/img/testimonial/01.png";
 import authorImage02 from "../../assets/img/testimonial/02.png";
 import authorImage03 from "../../assets/img/testimonial/03.png";
@@ -144,16 +143,10 @@ export const TestimonialOne = () => {
 
   return (
     <div className="td-testimonial-area td-grey-bg pb-140 p-relative">
-      {/* rotating images */}
+      {/* logo icon */}
       <div className="td-testimonial-qoute-wrap">
         <div className="td-testimonial-qoute-thumb p-relative">
           <img className="td-testimonial-qoute" src={logoImage} alt="Company logo" loading="lazy" />
-          <img
-            className="td-testimonial-qoute-2"
-            src={quoteImage}
-            alt="Quote icon"
-            loading="lazy"
-          />
         </div>
       </div>
 
@@ -182,6 +175,7 @@ export const TestimonialOne = () => {
                         {testimonials.map((testimonial, index) => (
                           <TestimonialItem
                             key={index}
+                            index={index}
                             name={testimonial.name}
                             designation={testimonial.designation}
                             content={testimonial.content}
@@ -203,6 +197,7 @@ export const TestimonialOne = () => {
                         {authorImages.map((image, index) => (
                           <AuthorThumbnail
                             key={index}
+                            index={index}
                             imageSrc={image.src}
                             isOffset={image.offset}
                           />
@@ -220,19 +215,19 @@ export const TestimonialOne = () => {
   );
 };
 
-const TestimonialItem = ({ name, designation, content }) => (
+const TestimonialItem = ({ name, designation, content, index }) => (
   <div className="testimonial__item-9">
     <div className="td-testimonial-content text-center">
       <div className="td-testimonial-avatar mb-35">
-        <h4 className="td-testimonial-avatar-title m-0">{name}</h4>
-        <span className="td-testimonial-avatar-designation">{designation}</span>
+        <h4 className="td-testimonial-avatar-title m-0" data-editable={`testimonial-${index}-name`}>{name}</h4>
+        <span className="td-testimonial-avatar-designation" data-editable={`testimonial-${index}-role`}>{designation}</span>
       </div>
-      <p>{content}</p>
+      <p data-editable={`testimonial-${index}-content`}>{content}</p>
     </div>
   </div>
 );
 
-const AuthorThumbnail = ({ imageSrc, isOffset }) => (
+const AuthorThumbnail = ({ imageSrc, isOffset, index }) => (
   <div className={`testimonial__slider-9-thumb-nav${isOffset ? " mt-35" : ""}`}>
     <div className="tp-border-loader">
       <svg
@@ -256,6 +251,6 @@ const AuthorThumbnail = ({ imageSrc, isOffset }) => (
         ></circle>
       </svg>
     </div>
-    <img src={imageSrc} alt="Testimonial author" loading="lazy" />
+    <img src={imageSrc} alt="Testimonial author" loading="lazy" data-editable={`testimonial-author-${index}-img`} data-editable-type="image" data-dimensions="800x1198" />
   </div>
 );

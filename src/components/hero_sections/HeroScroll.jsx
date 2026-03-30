@@ -257,11 +257,11 @@ export const HeroScroll = () => {
             <div className="row align-items-end">
               <div className="col-lg-8">
                 <div className="ts-hero-content">
-                  <div className="ts-hero-badge">40+ let tradicije</div>
+                  <div className="ts-hero-badge" data-editable="hero-badge">40+ let tradicije</div>
                   <h1 className="ts-hero-title">
-                    <span className="ts-hero-title__line">ČISTA tehnologija.</span>
-                    <span className="ts-hero-title__line">ČISTI odnosi.</span>
-                    <span className="ts-hero-title__line ts-hero-title__line--accent">
+                    <span className="ts-hero-title__line" data-editable="hero-line1">ČISTA tehnologija.</span>
+                    <span className="ts-hero-title__line" data-editable="hero-line2">ČISTI odnosi.</span>
+                    <span className="ts-hero-title__line ts-hero-title__line--accent" data-editable="hero-line3">
                       ČISTO zadovoljstvo.
                     </span>
                   </h1>
@@ -269,7 +269,7 @@ export const HeroScroll = () => {
               </div>
               <div className="col-lg-4 d-none d-lg-block">
                 <div className="ts-hero-cta">
-                  <p className="ts-hero-cta__text">
+                  <p className="ts-hero-cta__text" data-editable="hero-expertise">
                     Celoten spekter tiskarskih in grafičnih storitev — od ideje do
                     končnega izdelka.
                   </p>

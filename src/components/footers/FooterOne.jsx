@@ -52,7 +52,7 @@ export const FooterOne = () => {
                     <img src={LOGO} alt="logo" />
                   </div>
                   <div className="td-footer-widget-content">
-                    <p className="td-footer-widget-para mb-30">
+                    <p className="td-footer-widget-para mb-30" data-editable="footer-tagline" data-editable-type="richtext">
                       {info.tagline}
                       <br />
                       {info.subtitle}
@@ -134,6 +134,7 @@ export const FooterOne = () => {
                         <a
                           href="https://www.google.com/maps/place/Livada+14,+8000+Novo+mesto"
                           target="_blank"
+                          data-editable="footer-address"
                         >
                           {info.address}
                         </a>
@@ -156,12 +157,13 @@ export const FooterOne = () => {
                         <a
                           href={`mailto:${info.email}`}
                           target="_blank"
+                          data-editable="footer-email"
                         >
                           {info.email}
                         </a>
                         <span>
                           Delovni čas:
-                          <span className="td-footer-bottom-phone">
+                          <span className="td-footer-bottom-phone" data-editable="footer-hours">
                             {info.hours}
                           </span>
                         </span>

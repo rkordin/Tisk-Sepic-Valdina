@@ -1,47 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import awardImage from "../../assets/img/awards/01.png";
+import { useCmsContent } from "../../hooks/useCmsContent";
 
-const awardsList = [
-  {
-    year: "2024",
-    title: "ISO 14001 — Okoljski certifikat",
-    location: "Novo Mesto, Slovenija",
-    delay: ".3s",
-  },
-  {
-    year: "2022",
-    title: "ISO 15378 — Farmacevtska embalaža",
-    location: "Novo Mesto, Slovenija",
-    delay: ".4s",
-  },
-  {
-    year: "2021",
-    title: "FSC Certifikat (FSC-C172697)",
-    location: "Trajnostno upravljanje",
-    delay: ".5s",
-  },
-  {
-    year: "2012",
-    title: "ISO 9001 — Sistem vodenja kakovosti",
-    location: "Novo Mesto, Slovenija",
-    delay: ".6s",
-  },
-  {
-    year: "2001",
-    title: "Ustanovitev TISK ŠEPIC d.o.o.",
-    location: "Novo Mesto, Slovenija",
-    delay: ".7s",
-  },
-  {
-    year: "1980",
-    title: "Začetek zgodbe — Žare Šepic",
-    location: "Novo Mesto, Slovenija",
-    delay: ".8s",
-  },
-];
+const DEFAULT_AWARDS = {
+  section_label: "Naša pot",
+  heading: "Certifikati in mejniki",
+  items: [
+    { year: "2024", title: "ISO 14001 — Okoljski certifikat", location: "Novo Mesto, Slovenija" },
+    { year: "2022", title: "ISO 15378 — Farmacevtska embalaža", location: "Novo Mesto, Slovenija" },
+    { year: "2021", title: "FSC Certifikat (FSC-C172697)", location: "Trajnostno upravljanje" },
+    { year: "2012", title: "ISO 9001 — Sistem vodenja kakovosti", location: "Novo Mesto, Slovenija" },
+    { year: "2001", title: "Ustanovitev TISK ŠEPIC d.o.o.", location: "Novo Mesto, Slovenija" },
+    { year: "1980", title: "Začetek zgodbe — Žare Šepic", location: "Novo Mesto, Slovenija" },
+  ],
+};
 
 export const AwardsOne = () => {
+  const { content } = useCmsContent("home");
+  const awards = content?.awards || DEFAULT_AWARDS;
+  const awardsList = (awards.items || DEFAULT_AWARDS.items).map((item, i) => ({
+    ...item,
+    delay: `${0.3 + i * 0.1}s`,
+  }));
+
   return (
     <div className="td-awards-area">
       <div className="container">
@@ -52,8 +34,12 @@ export const AwardsOne = () => {
               data-wow-delay=".3s"
               data-wow-duration="1s"
             >
-              <span className="td-section-title-pre mb-10">Naša pot</span>
-              <h2 className="td-section-title">Certifikati in mejniki</h2>
+              <span className="td-section-title-pre mb-10">
+                {awards.section_label || "Naša pot"}
+              </span>
+              <h2 className="td-section-title">
+                {awards.heading || "Certifikati in mejniki"}
+              </h2>
             </div>
           </div>
 

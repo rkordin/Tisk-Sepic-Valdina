@@ -295,6 +295,7 @@ export const PortfolioOne = () => {
                               categories={item.categories}
                               title={item.title}
                               delay={item.delay}
+                              editableId={`portfolio-${key}-${index}-img`}
                             />
                           </SwiperSlide>
                         ))}

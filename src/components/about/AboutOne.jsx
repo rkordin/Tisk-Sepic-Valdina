@@ -158,7 +158,7 @@ const AboutSlideshow = () => {
           key={i}
           className={`about-slideshow-slide ${i === currentIndex ? "active" : ""}`}
         >
-          <img src={slide.src} alt={slide.alt} loading={i < 2 ? "eager" : "lazy"} />
+          <img src={slide.src} alt={slide.alt} loading={i < 2 ? "eager" : "lazy"} data-editable={`about-slideshow-${i}-img`} data-editable-type="image" data-dimensions="1200x800" />
         </div>
       ))}
 
@@ -244,7 +244,7 @@ export const AboutOne = () => {
                       <div className="td-panel-item">
                         <div className="td-panel-content">
                           <span>{x.id}.</span>
-                          <h4 className={`td-panel-title ${x.childClass}`}>
+                          <h4 className={`td-panel-title ${x.childClass}`} data-editable={`about-panel-${i}-title`}>
                             {x.title}
                           </h4>
                         </div>
@@ -252,14 +252,14 @@ export const AboutOne = () => {
                       <div className="td-panel-item-2">
                         <div className="td-panel-content-2">
                           <div className="td-panel-thumb">
-                            <img className="w-100" src={x.image} alt={x.title || "About panel"} loading="lazy" />
+                            <img className="w-100" src={x.image} alt={x.title || "About panel"} loading="lazy" data-editable={`about-panel-${i}-img`} data-editable-type="image" data-dimensions="1200x800" />
                           </div>
                           <div className="td-panel-content-inner fix p-relative">
                             <span className="td-panel-shape">{x.id}</span>
                             <h4 className="td-panel-title-2 mb-10">
                               <Link to="/about">{x.linkTitle}</Link>
                             </h4>
-                            <p className="mb-160">{x.description}</p>
+                            <p className="mb-160" data-editable={`about-panel-${i}-desc`}>{x.description}</p>
                             <div className="td-panel-btn">
                               <Link
                                 className="td-btn td-left-right"
@@ -297,14 +297,14 @@ export const AboutOne = () => {
               data-wow-delay=".4s"
               data-wow-duration="1s"
             >
-              <span className="td-section-title-pre mb-10">
+              <span className="td-section-title-pre mb-10" data-editable="about-label">
                 {about.section_label || "O nas"}
               </span>
-              <h2 className="td-section-title td-about-right-space">
+              <h2 className="td-section-title td-about-right-space" data-editable="about-heading">
                 {about.heading}
               </h2>
               <AboutSlideshow />
-              <p className="td-about-para pr-10" style={{ marginTop: 30 }}>
+              <p className="td-about-para pr-10" data-editable="about-paragraph" style={{ marginTop: 30 }}>
                 {about.paragraph}
               </p>
             </div>

@@ -78,6 +78,49 @@ const rows = [
     },
   },
   {
+    page: "home",
+    section: "team",
+    content: {
+      section_label: "Ekipa",
+      heading: "Naša ekipa",
+      members: [
+        { name: "Tjaša Šepic", designation: "Direktorica" },
+        { name: "Danijela Klemenčič", designation: "Direktorica kakovosti" },
+        { name: "Vanja Potočar", designation: "Računovodstvo" },
+        { name: "Katja Kren", designation: "Administracija" },
+      ],
+    },
+  },
+  {
+    page: "home",
+    section: "awards",
+    content: {
+      section_label: "Naša pot",
+      heading: "Certifikati in mejniki",
+      items: [
+        { year: "2024", title: "ISO 14001 — Okoljski certifikat", location: "Novo Mesto, Slovenija" },
+        { year: "2022", title: "ISO 15378 — Farmacevtska embalaža", location: "Novo Mesto, Slovenija" },
+        { year: "2021", title: "FSC Certifikat (FSC-C172697)", location: "Trajnostno upravljanje" },
+        { year: "2012", title: "ISO 9001 — Sistem vodenja kakovosti", location: "Novo Mesto, Slovenija" },
+        { year: "2001", title: "Ustanovitev TISK ŠEPIC d.o.o.", location: "Novo Mesto, Slovenija" },
+        { year: "1980", title: "Začetek zgodbe — Žare Šepic", location: "Novo Mesto, Slovenija" },
+      ],
+    },
+  },
+  {
+    page: "home",
+    section: "counter",
+    content: {
+      paragraph: "Naš fokus je na zagotavljanju vrhunske vrednosti za naše stranke. Ponujamo trajnostne rešitve, ki nadgrajujejo vaše poslovanje. Od strategije do izvedbe smo tukaj, da zagotovimo uspeh vašega projekta. Z izkušnjami že več kot 40 let.",
+      paragraph2: "Nenehno premikamo meje z najsodobnejšo tehnologijo in inovativnimi pristopi. Nemogoče danes postane samoumevno jutri.",
+      cta_text: "Kontaktirajte nas",
+      stats: [
+        { value: 40, suffix: "+", label: "Let izkušenj v\ntiskarski industriji" },
+        { value: 37, suffix: "", label: "Zaposlenih" },
+      ],
+    },
+  },
+  {
     page: "footer",
     section: "info",
     content: {

@@ -18,8 +18,8 @@ import { ThemeSwitcher } from "../components/theme_switcher/ThemeSwitcher";
 
 export const Layout = ({
   children,
-  header = 3,
-  footer = 3,
+  header = 1,
+  footer = 1,
   breadcrumbTitle,
   breadcrumbSubtitle,
 }) => {

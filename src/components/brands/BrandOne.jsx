@@ -49,7 +49,7 @@ export const BrandOne = ({ className = "" }) => {
                       <SwiperSlide key={brand.id}>
                         <div className="td-brand-single-logo text-center">
                           <a href={brand.link}>
-                            <img src={brand.imageSrc} alt={brand.alt} loading="lazy" />
+                            <img src={brand.imageSrc} alt={brand.alt} loading="lazy" data-editable={`brand-${brand.id}-img`} data-editable-type="image" data-dimensions="350x200" />
                           </a>
                         </div>
                       </SwiperSlide>

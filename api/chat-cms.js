@@ -11,6 +11,9 @@ const SECTION_LABELS = {
   "home/services": "Storitve (items[{category, number, title, description, link}])",
   "home/testimonials": "Mnenja strank (items[{name, designation, content}])",
   "home/blog": "Blog sekcija (section_label, heading, posts[{title, meta, link}])",
+  "home/team": "Ekipa (section_label, heading, members[{name, designation}])",
+  "home/awards": "Certifikati in mejniki (section_label, heading, items[{year, title, location}])",
+  "home/counter": "Statistika (paragraph, paragraph2, cta_text, stats[{value, suffix, label}])",
   "footer/info": "Noga strani (tagline, subtitle, cta_text, company, address, phone, email, hours)",
 };
 
@@ -29,7 +32,7 @@ export default async function handler(req, res) {
   const { data: rows, error: fetchErr } = await supabase
     .from("page_content")
     .select("page, section, content")
-    .in("page", ["home", "footer"]);
+    .in("page", [...new Set(Object.keys(SECTION_LABELS).map(k => k.split("/")[0]))]);
 
   if (fetchErr) return res.status(500).json({ error: fetchErr.message });
 

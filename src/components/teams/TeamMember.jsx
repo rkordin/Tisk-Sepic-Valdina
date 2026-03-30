@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const TeamMember = ({ delay, src, href, title, designation }) => {
+export const TeamMember = ({ delay, src, href, title, designation, editableId }) => {
   return (
     <div
       className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
@@ -10,7 +10,7 @@ export const TeamMember = ({ delay, src, href, title, designation }) => {
     >
       <div className="td-team-5-wrap mb-75">
         <div className="td-team-5-thumb mb-40">
-          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" />
+          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" data-editable={editableId} data-editable-type="image" data-dimensions="800x1208" />
         </div>
         <div className="td-team-5-content">
           <h3 className="td-team-5-title">

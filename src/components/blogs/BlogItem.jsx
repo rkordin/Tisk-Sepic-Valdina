@@ -12,11 +12,12 @@ export const BlogItem = ({
   date,
   likes,
   shares,
+  editableId,
 }) => {
   return (
     <article className="td-postbox-item mb-60">
       <div className="td-postbox-thumb p-relative mb-40">
-        <img className="w-100" src={src} alt={title || "Blog post"} loading="lazy" />
+        <img className="w-100" src={src} alt={title || "Blog post"} loading="lazy" data-editable={editableId} data-editable-type="image" data-dimensions="1030x1200" />
         <span className="td-postbox-badge">{tag}</span>
       </div>
       <div className="td-postbox-content">

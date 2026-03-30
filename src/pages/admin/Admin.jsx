@@ -3,7 +3,7 @@ import { getAllContent, updateContent } from "../../lib/supabase";
 import { clearCmsCache } from "../../hooks/useCmsContent";
 
 const ADMIN_USER = "Tisk";
-const ADMIN_PASS = "Sepic2026";
+const ADMIN_PASS = "x12345y";
 
 const SECTION_LABELS = {
   home: {
@@ -13,6 +13,9 @@ const SECTION_LABELS = {
     services: "Storitve",
     testimonials: "Mnenja strank",
     blog: "Blog sekcija",
+    team: "Ekipa",
+    awards: "Certifikati in mejniki",
+    counter: "Statistika",
   },
   footer: {
     _page: "Noga strani",

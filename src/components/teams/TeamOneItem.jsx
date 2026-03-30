@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const TeamOneItem = ({ delay, src, title, designation }) => {
+export const TeamOneItem = ({ delay, src, title, designation, index }) => {
   return (
     <div className="col-lg-3 col-md-6 col-sm-6 mb-35">
       <div
@@ -10,7 +10,7 @@ export const TeamOneItem = ({ delay, src, title, designation }) => {
         data-wow-duration="1s"
       >
         <div className="td-team-thumb mb-35 p-relative">
-          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" />
+          <img className="w-100" src={src} alt={`Team member ${title}`} loading="lazy" data-editable={`team-${index}-img`} data-editable-type="image" data-dimensions="800x1208" />
 
           {/* icons */}
           <div className="td-team-social">
@@ -47,10 +47,10 @@ export const TeamOneItem = ({ delay, src, title, designation }) => {
         </div>
 
         <div className="td-team-content text-center">
-          <h3 className="td-team-title">
+          <h3 className="td-team-title" data-editable={`team-${index}-name`}>
             <Link to="/team-details">{title}</Link>
           </h3>
-          <span className="td-team-designation">{designation}</span>
+          <span className="td-team-designation" data-editable={`team-${index}-role`}>{designation}</span>
         </div>
       </div>
     </div>

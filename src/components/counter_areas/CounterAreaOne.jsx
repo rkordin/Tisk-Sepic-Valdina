@@ -2,8 +2,25 @@ import React from "react";
 import IMG from "../../assets/img/counter/map.png";
 import IMG2 from "../../assets/img/counter/bg.jpg";
 import { Link } from "react-router-dom";
+import { useCmsContent } from "../../hooks/useCmsContent";
+
+const DEFAULT_COUNTER = {
+  paragraph:
+    "Naš fokus je na zagotavljanju vrhunske vrednosti za naše stranke. Ponujamo trajnostne rešitve, ki nadgrajujejo vaše poslovanje. Od strategije do izvedbe smo tukaj, da zagotovimo uspeh vašega projekta. Z izkušnjami že več kot 40 let.",
+  paragraph2:
+    "Nenehno premikamo meje z najsodobnejšo tehnologijo in inovativnimi pristopi. Nemogoče danes postane samoumevno jutri.",
+  cta_text: "Kontaktirajte nas",
+  stats: [
+    { value: 40, suffix: "+", label: "Let izkušenj v\ntiskarski industriji" },
+    { value: 37, suffix: "", label: "Zaposlenih" },
+  ],
+};
 
 export const CounterAreaOne = () => {
+  const { content } = useCmsContent("home");
+  const counter = content?.counter || DEFAULT_COUNTER;
+  const stats = counter.stats || DEFAULT_COUNTER.stats;
+
   return (
     <div className="td-counter-area fix p-relative">
       <img className="td-counter-map" src={IMG} alt="map" loading="lazy" />
@@ -11,7 +28,7 @@ export const CounterAreaOne = () => {
         <div className="row gx-0">
           <div className="col-xl-4 col-lg-6">
             <div className="td-counter-thumb p-relative">
-              <img className="w-100" src={IMG2} alt="Counter section background" loading="lazy" />
+              <img className="w-100" src={IMG2} alt="Counter section background" loading="lazy" data-editable="counter-bg-img" data-editable-type="image" data-dimensions="424x457" />
               <div className="td-counter-logo d-none d-sm-block td-pulse-border">
                 <h3>TŠ</h3>
               </div>
@@ -20,22 +37,12 @@ export const CounterAreaOne = () => {
 
           <div className="col-xl-5 col-lg-6 mb-40">
             <div className="td-counter-content ml-110 mr-150">
-              <p className="mb-45">
-                Naš fokus je na zagotavljanju vrhunske vrednosti za naše
-                stranke. Ponujamo trajnostne <span>rešitve</span>, ki
-                nadgrajujejo vaše poslovanje. Od strategije do izvedbe smo
-                tukaj, da zagotovimo <span>uspeh</span> vašega projekta.
-                Z izkušnjami že več kot <span>40 let.</span>
-              </p>
-              <p className="mb-35">
-                Nenehno premikamo meje z najsodobnejšo tehnologijo in
-                inovativnimi pristopi. <span>Nemogoče</span> danes postane
-                samoumevno jutri.
-              </p>
+              <p className="mb-45" data-editable="counter-paragraph">{counter.paragraph || DEFAULT_COUNTER.paragraph}</p>
+              <p className="mb-35" data-editable="counter-paragraph2">{counter.paragraph2 || DEFAULT_COUNTER.paragraph2}</p>
 
               <div className="td-counter-btn">
                 <Link className="td-btn td-btn-3 td-left-right" to="/contact">
-                  Kontaktirajte nas
+                  {counter.cta_text || DEFAULT_COUNTER.cta_text}
                   <span className="td-arrow-angle ml-10">
                     <svg
                       className="td-arrow-svg-top-right"
@@ -55,36 +62,29 @@ export const CounterAreaOne = () => {
 
           <div className="col-xl-3 col-lg-6 mb-40">
             <div className="td-counter-count-wrap">
-              <div className="td-counter-single td-counter-single-border mb-35">
-                <h2 className="td-counter-count">
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className={`td-counter-single${i < stats.length - 1 ? " td-counter-single-border mb-35" : ""}`}
+                >
+                  <h2 className="td-counter-count">
+                    <span
+                      data-purecounter-duration="1"
+                      data-purecounter-end={String(stat.value)}
+                      className="purecounter"
+                    >
+                      0
+                    </span>
+                    {stat.suffix || ""}
+                  </h2>
                   <span
-                    data-purecounter-duration="1"
-                    data-purecounter-end="40"
-                    className="purecounter"
-                  >
-                    0
-                  </span>
-                  +
-                </h2>
-                <span className="td-counter-count-para">
-                  Let izkušenj v <br />
-                  tiskarski industriji
-                </span>
-              </div>
-
-              <div className="td-counter-single">
-                <h2 className="td-counter-count">
-                  <span
-                    data-purecounter-duration="1"
-                    data-purecounter-end="37"
-                    className="purecounter"
-                  >
-                    0
-                  </span>
-
-                </h2>
-                <span className="td-counter-count-para">Zaposlenih</span>
-              </div>
+                    className="td-counter-count-para"
+                    dangerouslySetInnerHTML={{
+                      __html: (stat.label || "").replace(/\n/g, "<br />"),
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

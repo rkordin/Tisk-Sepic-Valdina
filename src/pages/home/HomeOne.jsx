@@ -11,6 +11,7 @@ import { VideoAreaOne } from "../../components/video_areas/VideoAreaOne";
 import { CounterAreaOne } from "../../components/counter_areas/CounterAreaOne";
 import { TeamOne } from "../../components/teams/TeamOne";
 import { BlogOne } from "../../components/blogs/BlogOne";
+import { Anniversary40 } from "../../components/anniversary/Anniversary40";
 
 export const HomeOne = () => {
   return (
@@ -20,6 +21,9 @@ export const HomeOne = () => {
 
       {/* about section */}
       <AboutOne />
+
+      {/* 40 years anniversary */}
+      <Anniversary40 />
 
       {/* service area section */}
       <ServiceAreaOne />

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tisk Šepic — Image Manager</title>
+<link rel="icon" href="/favicon.png"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#111;--card:#1a1a1a;--border:rgba(255,255,255,.08);--text:#eee;--muted:rgba(255,255,255,.45);--accent:#c4a87c;--accent-dim:rgba(196,168,124,.15);--green:#4CAF50;--red:#E53935}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+/* Login */
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+.login-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px 40px;width:400px;max-width:100%;text-align:center}
+.login-box h1{font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+.login-box p{color:var(--muted);font-size:13px;margin-bottom:32px}
+.login-box input{width:100%;padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.login-box input:focus{border-color:var(--accent)}
+.login-box button{width:100%;padding:14px;margin-top:16px;background:var(--accent);color:#111;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
+.login-box button:hover{opacity:.85}
+.login-error{color:var(--red);font-size:12px;margin-top:12px;display:none}
+
+/* Main Layout */
+#app{display:none}
+.topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:16px 32px;background:rgba(17,17,17,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.topbar h1{font-size:18px;font-weight:800;letter-spacing:-.5px;flex:1}
+.topbar .btn-back{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:8px 16px;border-radius:8px;cursor:pointer;background:none;font-family:inherit;transition:all .2s}
+.topbar .btn-back:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;padding:16px 32px 0;flex-wrap:wrap}
+.tab{padding:10px 20px;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);background:none;border:1px solid transparent;border-radius:8px 8px 0 0;cursor:pointer;font-family:inherit;transition:all .2s}
+.tab:hover{color:#fff;background:rgba(255,255,255,.04)}
+.tab.active{color:var(--accent);border-color:var(--border);border-bottom-color:var(--bg);background:var(--bg)}
+
+/* Grid */
+.grid-wrap{padding:0 32px 48px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:24px 0 12px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:32px}
+
+/* Card */
+.img-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
+.img-card:hover{border-color:rgba(196,168,124,.4);transform:translateY(-2px)}
+.img-card .thumb{width:100%;aspect-ratio:4/3;background:#0a0a0a;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.img-card .thumb img{width:100%;height:100%;object-fit:contain}
+.img-card .thumb .placeholder{color:var(--muted);font-size:11px;text-align:center;padding:16px}
+.img-card .thumb .override-badge{position:absolute;top:8px;right:8px;background:var(--green);color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.img-card .info{padding:12px 14px}
+.img-card .info .name{font-size:12px;font-weight:600;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.img-card .info .dims{font-size:10px;color:var(--muted)}
+.img-card .info .dims span{color:var(--accent);font-weight:600}
+.img-card .actions{display:flex;gap:8px;padding:0 14px 12px}
+.img-card .actions button{flex:1;padding:8px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:all .2s}
+.img-card .actions .btn-replace{background:var(--accent-dim);color:var(--accent)}
+.img-card .actions .btn-replace:hover{background:rgba(196,168,124,.25)}
+.img-card .actions .btn-reset{background:rgba(255,255,255,.06);color:var(--muted);display:none}
+.img-card .actions .btn-reset:hover{color:var(--red)}
+.img-card.has-override .actions .btn-reset{display:block}
+
+/* Upload Modal */
+#upload-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(8px)}
+#upload-modal.active{display:flex}
+.modal-inner{background:var(--card);border:1px solid var(--border);border-radius:14px;width:560px;max-width:92vw;max-height:90vh;overflow:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:16px;font-weight:700}
+.modal-close{background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;padding:4px 8px}
+.modal-close:hover{color:#fff}
+.modal-body{padding:24px}
+.drop-zone{border:2px dashed rgba(196,168,124,.3);border-radius:10px;padding:48px 24px;text-align:center;cursor:pointer;transition:all .25s}
+.drop-zone:hover,.drop-zone.dragover{border-color:var(--accent);background:var(--accent-dim)}
+.drop-zone .dz-icon{font-size:40px;margin-bottom:12px;opacity:.5}
+.drop-zone .dz-text{font-size:13px;color:var(--muted);margin-bottom:4px}
+.drop-zone .dz-dims{font-size:11px;color:rgba(255,255,255,.3)}
+.preview{margin-top:20px;text-align:center;display:none}
+.preview img{max-width:100%;max-height:300px;border:1px solid var(--border);border-radius:8px}
+.preview-info{margin-top:12px;font-size:11px;color:var(--muted)}
+.preview-warn{color:var(--accent);font-weight:600}
+.preview-ok{color:var(--green);font-weight:600}
+.modal-actions{display:flex;gap:12px;margin-top:20px;justify-content:flex-end}
+.modal-actions button{padding:12px 28px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-cancel{background:rgba(255,255,255,.06);color:var(--muted)}
+.btn-cancel:hover{color:#fff}
+.btn-save{background:var(--accent);color:#111}
+.btn-save:hover{opacity:.85}
+.btn-save:disabled{opacity:.3;cursor:default}
+
+/* Toast */
+#toast-wrap{position:fixed;bottom:24px;right:24px;z-index:2000;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{padding:12px 20px;font-size:13px;font-weight:500;color:#fff;background:rgba(26,23,21,.95);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:8px;transform:translateX(120%);transition:transform .3s;pointer-events:auto}
+.toast.show{transform:translateX(0)}
+.toast.success{border-left:3px solid var(--green)}
+.toast.error{border-left:3px solid var(--red)}
+
+/* Saving overlay */
+.saving-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;border-radius:12px;z-index:5;display:none}
+.saving-overlay.active{display:flex}
+.saving-overlay .spinner{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Responsive */
+@media(max-width:768px){
+  .tabs,.grid-wrap{padding-left:16px;padding-right:16px}
+  .topbar{padding:12px 16px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="login-screen">
+  <div class="login-box">
+    <img src="/img-originals/logo-white.svg" alt="Tisk Šepic" style="height:36px;margin-bottom:16px"/>
+    <h1>Image Manager</h1>
+    <p>Upravljanje slik spletnega mesta Tisk Šepic</p>
+    <input type="password" id="tokenInput" placeholder="Vnesite uredniški žeton" autocomplete="off"/>
+    <button id="loginBtn">Prijava</button>
+    <div class="login-error" id="loginError">Napačen žeton</div>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="app">
+  <div class="topbar">
+    <h1><img src="/img-originals/logo-white.svg" alt="Tisk Šepic" style="height:24px;vertical-align:middle;margin-right:10px"/>Image Manager</h1>
+    <a class="btn-back" href="/" target="_blank">Odpri stran ↗</a>
+    <button class="btn-back" id="logoutBtn">Odjava</button>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid-wrap" id="gridWrap"></div>
+</div>
+
+<!-- Upload Modal -->
+<div id="upload-modal">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <h3 id="modalTitle">Zamenjaj sliko</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="drop-zone" id="dropZone">
+        <div class="dz-icon">📷</div>
+        <div class="dz-text">Povlecite sliko sem ali kliknite za izbiro</div>
+        <div class="dz-dims" id="dzDims">Priporočene dimenzije: --</div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none"/>
+      </div>
+      <div class="preview" id="preview">
+        <img id="previewImg" alt="Predogled"/>
+        <div class="preview-info" id="previewInfo"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="modalCancel">Prekliči</button>
+        <button class="btn-save" id="modalSave" disabled>Naloži in zamenjaj</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast-wrap"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var API = "/api/frontend-editor";
+  var TOKEN = "";
+
+  // Static original image base path (v= cache buster)
+  var O = "/img-originals/";
+  var V = "?v=" + Date.now();
+
+  // ──────────────────────────────────────────────
+  // IMAGE REGISTRY — all editable images by page
+  // ──────────────────────────────────────────────
+  var IMAGE_REGISTRY = {
+    "Domov": {
+      page_id: "/",
+      sections: {
+        "O nas — paneli": [
+          { id: "about-panel-0-img", label: "Panel 1 — Tradicija", dims: "1200x800", src: O+"about-panel-0.jpg" },
+          { id: "about-panel-1-img", label: "Panel 2 — Tehnologija", dims: "1200x800", src: O+"about-panel-1.jpg" },
+          { id: "about-panel-2-img", label: "Panel 3 — Kakovost", dims: "1200x800", src: O+"about-panel-2.jpg" },
+        ],
+        "O nas — slideshow": [
+          { id: "about-slideshow-0-img", label: "Tiskarska linija", dims: "1200x800", src: O+"slideshow-0.jpg" },
+          { id: "about-slideshow-1-img", label: "Tipografski tisk", dims: "1200x800", src: O+"slideshow-1.jpg" },
+          { id: "about-slideshow-2-img", label: "Kontrola kakovosti", dims: "1200x800", src: O+"slideshow-2.jpg" },
+          { id: "about-slideshow-3-img", label: "Tiskarski stroj", dims: "1200x800", src: O+"slideshow-3.jpg" },
+          { id: "about-slideshow-4-img", label: "Pantone vzorčnik", dims: "1200x800", src: O+"slideshow-4.jpg" },
+          { id: "about-slideshow-5-img", label: "Heidelberg Cylinder", dims: "1200x800", src: O+"slideshow-5.jpg" },
+          { id: "about-slideshow-6-img", label: "Moderna oprema", dims: "1200x800", src: O+"slideshow-6.jpg" },
+          { id: "about-slideshow-7-img", label: "Tiskar pri delu", dims: "1200x800", src: O+"slideshow-7.jpg" },
+        ],
+        "Storitve — ozadja": [
+          { id: "service-0-bg", label: "Digitalni & Offset", dims: "1920x1280", src: O+"service-0.jpg" },
+          { id: "service-1-bg", label: "Nalepke", dims: "1920x1280", src: O+"service-1.jpg" },
+          { id: "service-2-bg", label: "Reklamni izdelki", dims: "1920x1280", src: O+"service-2.jpg" },
+          { id: "service-3-bg", label: "Napisi in table", dims: "1920x1280", src: O+"service-3.jpg" },
+          { id: "service-4-bg", label: "Embalaža", dims: "1920x1280", src: O+"service-4.jpg" },
+        ],
+        "Portfolio — Tisk": [
+          { id: "portfolio-home-0-img", label: "Katalogi in brošure", dims: "867x1200", src: O+"portfolio-home-0.jpg" },
+          { id: "portfolio-home-1-img", label: "Plakati in posterji", dims: "867x1200", src: O+"portfolio-home-1.jpg" },
+          { id: "portfolio-home-2-img", label: "Zloženke in letaki", dims: "867x1200", src: O+"portfolio-home-2.jpg" },
+          { id: "portfolio-home-3-img", label: "Letaki in flyerji", dims: "867x1200", src: O+"portfolio-home-3.jpg" },
+        ],
+        "Portfolio — Embalaža": [
+          { id: "portfolio-profile-0-img", label: "Kartonska embalaža", dims: "867x1200", src: O+"portfolio-profile-0.jpg" },
+          { id: "portfolio-profile-1-img", label: "Blisterji in sasheji", dims: "867x1200", src: O+"portfolio-profile-1.jpg" },
+          { id: "portfolio-profile-2-img", label: "Večslojne etikete", dims: "867x1200", src: O+"portfolio-profile-2.jpg" },
+          { id: "portfolio-profile-3-img", label: "Vrečke in pakiranje", dims: "867x1200", src: O+"portfolio-profile-3.jpg" },
+        ],
+        "Portfolio — Nalepke": [
+          { id: "portfolio-messages-0-img", label: "Samolepilne nalepke", dims: "867x1200", src: O+"portfolio-messages-0.jpg" },
+          { id: "portfolio-messages-1-img", label: "Stenske in talne folije", dims: "867x1200", src: O+"portfolio-messages-1.jpg" },
+          { id: "portfolio-messages-2-img", label: "Polepitev vozil", dims: "867x1200", src: O+"portfolio-messages-2.jpg" },
+          { id: "portfolio-messages-3-img", label: "Folije za steklo", dims: "867x1200", src: O+"portfolio-messages-3.jpg" },
+        ],
+        "Portfolio — Reklama": [
+          { id: "portfolio-settings-0-img", label: "Reklamna stojala", dims: "867x1200", src: O+"portfolio-settings-0.jpg" },
+          { id: "portfolio-settings-1-img", label: "Zastave in transparenti", dims: "867x1200", src: O+"portfolio-settings-1.jpg" },
+          { id: "portfolio-settings-2-img", label: "Reklamne zastave", dims: "867x1200", src: O+"portfolio-settings-2.jpg" },
+          { id: "portfolio-settings-3-img", label: "Promocijski pultovi", dims: "867x1200", src: O+"portfolio-settings-3.jpg" },
+        ],
+        "Portfolio — 3D & CNC": [
+          { id: "portfolio-settings2-0-img", label: "3D napisi in logotipi", dims: "867x1200", src: O+"portfolio-settings2-0.jpg" },
+          { id: "portfolio-settings2-1-img", label: "CNC in laserski izrez", dims: "867x1200", src: O+"portfolio-settings2-1.jpg" },
+          { id: "portfolio-settings2-2-img", label: "Stenske grafike", dims: "867x1200", src: O+"portfolio-settings2-2.jpg" },
+          { id: "portfolio-settings2-3-img", label: "Jedilniki in ceniki", dims: "867x1200", src: O+"portfolio-settings2-3.jpg" },
+        ],
+        "Video sekcija": [
+          { id: "video-bg-img", label: "Video ozadje", dims: "1200x474", src: O+"video-bg.jpg" },
+        ],
+        "Števci": [
+          { id: "counter-bg-img", label: "Ozadje sekcije", dims: "424x457", src: O+"counter-bg.jpg" },
+        ],
+        "Ekipa": [
+          { id: "team-0-img", label: "Član ekipe 1", dims: "800x1208", src: O+"team-1.jpg" },
+          { id: "team-1-img", label: "Član ekipe 2", dims: "800x1208", src: O+"team-2.jpg" },
+          { id: "team-2-img", label: "Član ekipe 3", dims: "800x1208", src: O+"team-3.jpg" },
+          { id: "team-3-img", label: "Član ekipe 4", dims: "800x1208", src: O+"team-4.jpg" },
+        ],
+        "Mnenja — avtorji": [
+          { id: "testimonial-author-0-img", label: "Avtor mnenja 1", dims: "800x1198", src: O+"testimonial-1.png" },
+          { id: "testimonial-author-1-img", label: "Avtor mnenja 2", dims: "800x1198", src: O+"testimonial-2.png" },
+          { id: "testimonial-author-2-img", label: "Avtor mnenja 3", dims: "800x1198", src: O+"testimonial-3.png" },
+          { id: "testimonial-author-3-img", label: "Avtor mnenja 4", dims: "800x1198", src: O+"testimonial-4.png" },
+          { id: "testimonial-author-4-img", label: "Avtor mnenja 5", dims: "800x1198", src: O+"testimonial-5.png" },
+          { id: "testimonial-author-5-img", label: "Avtor mnenja 6", dims: "800x1198", src: O+"testimonial-6.png" },
+          { id: "testimonial-author-6-img", label: "Avtor mnenja 7", dims: "800x1198", src: O+"testimonial-7.png" },
+        ],
+        "Blog": [
+          { id: "blog-0-img", label: "Blog slika 1", dims: "600x450", src: O+"blog-list-1.jpg" },
+          { id: "blog-1-img", label: "Blog slika 2", dims: "600x450", src: O+"blog-list-2.jpg" },
+          { id: "blog-2-img", label: "Blog slika 3", dims: "600x450", src: O+"blog-list-3.jpg" },
+        ],
+        "Certifikati": [
+          { id: "brand-1-img", label: "ISO 9001", dims: "350x200", src: O+"brand-1.png" },
+          { id: "brand-2-img", label: "ISO 14001", dims: "350x200", src: O+"brand-2.png" },
+          { id: "brand-3-img", label: "ISO 15378", dims: "350x200", src: O+"brand-3.png" },
+          { id: "brand-4-img", label: "FSC", dims: "350x200", src: O+"brand-4.png" },
+          { id: "brand-5-img", label: "Tisk Šepic", dims: "350x200", src: O+"brand-5.png" },
+        ],
+      }
+    },
+    "O nas": {
+      page_id: "/about",
+      sections: {
+        "Slideshow": [
+          { id: "about-slide-0-img", label: "Slide 1", dims: "1200x1092", src: O+"about-slide-0.jpg" },
+          { id: "about-slide-1-img", label: "Slide 2", dims: "1200x1092", src: O+"about-slide-1.jpg" },
+          { id: "about-slide-2-img", label: "Slide 3", dims: "1200x1092", src: O+"about-slide-2.jpg" },
+          { id: "about-slide-3-img", label: "Slide 4", dims: "1200x1092", src: O+"about-slide-3.jpg" },
+        ]
+      }
+    },
+    "Ekipa": {
+      page_id: "/team",
+      sections: {
+        "Člani ekipe": [
+          { id: "team-list-0-img", label: "Tjaša Šepic — Direktorica", dims: "800x1208", src: O+"team-1.jpg" },
+          { id: "team-list-1-img", label: "Gorazd Čerček — Namestnik", dims: "800x1208", src: O+"team-2.jpg" },
+          { id: "team-list-2-img", label: "Danijela Klemenčič — Dir. kakovosti", dims: "800x1208", src: O+"team-3.jpg" },
+          { id: "team-list-3-img", label: "Vanja Potočar — Računovodstvo", dims: "800x1208", src: O+"team-4.jpg" },
+          { id: "team-list-4-img", label: "Katja Kren — Administracija", dims: "800x1208", src: O+"team-5.jpg" },
+          { id: "team-list-5-img", label: "Ivana Jurič — Nabava in prodaja", dims: "800x1208", src: O+"team-6.jpg" },
+          { id: "team-list-6-img", label: "Boris Mikać — Komercialist", dims: "800x1208", src: O+"team-7.jpg" },
+          { id: "team-list-7-img", label: "Marjetka Tratar — Grafična obl.", dims: "800x1208", src: O+"team-8.jpg" },
+        ]
+      }
+    },
+    "Blog": {
+      page_id: "/blog",
+      sections: {
+        "Blog članki": [
+          { id: "blog-list-0-img", label: "Tisk na steklo", dims: "1030x1200", src: O+"blog-list-1.jpg" },
+          { id: "blog-list-1-img", label: "Izbira prave tiskarne", dims: "1030x1200", src: O+"blog-list-2.jpg" },
+          { id: "blog-list-2-img", label: "Zakaj oglaševanje ne deluje", dims: "1030x1200", src: O+"blog-list-3.jpg" },
+          { id: "blog-list-3-img", label: "Digitalni ali offset tisk", dims: "1030x1200", src: O+"blog-list-4.jpg" },
+          { id: "blog-list-4-img", label: "Oglaševanje na vozilih", dims: "1030x1200", src: O+"blog-list-5.jpg" },
+        ]
+      }
+    },
+    "Storitve": {
+      page_id: "/service-details",
+      sections: {
+        "Podrobnosti storitve": [
+          { id: "svc-detail-thumb", label: "Glavna slika storitve", dims: "586x600" },
+        ]
+      }
+    },
+    "Portfolio": {
+      page_id: "/portfolio-details",
+      sections: {
+        "Podrobnosti projekta": [
+          { id: "portfolio-detail-bg", label: "Glavna slika projekta", dims: "1920x1277" },
+          { id: "portfolio-detail-chart", label: "Graf/Diagram", dims: "831x507" },
+        ]
+      }
+    },
+    "Ekipa (podrobnosti)": {
+      page_id: "/team-details",
+      sections: {
+        "Podrobnosti člana": [
+          { id: "team-detail-img", label: "Slika člana ekipe", dims: "1200x800" },
+        ]
+      }
+    },
+    "Blog (članek)": {
+      page_id: "/blog-details",
+      sections: {
+        "Blog članek": [
+          { id: "blog-detail-thumb", label: "Naslovna slika", dims: "595x440" },
+          { id: "blog-detail-thumb2", label: "Slika v članku 1", dims: "1200x800" },
+          { id: "blog-detail-thumb3", label: "Slika v članku 2", dims: "1200x960" },
+        ]
+      }
+    },
+  };
+
+  // ──────────────────────────────────────────────
+  // STATE
+  // ──────────────────────────────────────────────
+  var overridesByPage = {};  // { pageId: { elementId: { image_url, ... } } }
+  var currentUpload = null;  // { pageId, elementId, dims, label }
+  var currentFile = null;
+  var activeTab = null;
+
+  // ──────────────────────────────────────────────
+  // AUTH
+  // ──────────────────────────────────────────────
+  function login(token) {
+    return fetch("/api/verify-editor", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: token }),
+    }).then(function(r){ return r.json(); });
+  }
+
+  // ──────────────────────────────────────────────
+  // API
+  // ──────────────────────────────────────────────
+  function loadOverrides(pageId) {
+    return fetch(API + "?page=" + encodeURIComponent(pageId))
+      .then(function(r){ return r.ok ? r.json() : { overrides: {} }; })
+      .then(function(d){ return d.overrides || {}; });
+  }
+
+  function saveImage(pageId, elementId, base64, contentType, fileName) {
+    return fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + TOKEN },
+      body: JSON.stringify({
+        action: "save_image",
+        page_id: pageId,
+        element_id: elementId,
+        image_data: base64,
+        image_type: contentType,
+        image_name: fileName,
+      }),
+    }).then(function(r){ return r.json(); });
+  }
+
+  function deleteOverride(pageId, elementId) {
+    return fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + TOKEN },
+      body: JSON.stringify({
+        action: "delete",
+        page_id: pageId,
+        element_id: elementId,
+      }),
+    }).then(function(r){ return r.json(); });
+  }
+
+  // ──────────────────────────────────────────────
+  // TOAST
+  // ──────────────────────────────────────────────
+  function toast(msg, type) {
+    var wrap = document.getElementById("toast-wrap");
+    var t = document.createElement("div");
+    t.className = "toast " + (type || "");
+    t.textContent = msg;
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add("show"); });
+    setTimeout(function(){
+      t.classList.remove("show");
+      setTimeout(function(){ t.remove(); }, 300);
+    }, 3000);
+  }
+
+  // ──────────────────────────────────────────────
+  // RENDER
+  // ──────────────────────────────────────────────
+  function renderTabs() {
+    var tabsEl = document.getElementById("tabs");
+    tabsEl.innerHTML = "";
+    var pages = Object.keys(IMAGE_REGISTRY);
+    pages.forEach(function(pageName, i) {
+      var btn = document.createElement("button");
+      btn.className = "tab" + (i === 0 ? " active" : "");
+      btn.textContent = pageName;
+      btn.onclick = function() {
+        document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
+        btn.classList.add("active");
+        activeTab = pageName;
+        renderGrid(pageName);
+      };
+      tabsEl.appendChild(btn);
+    });
+    activeTab = pages[0];
+    renderGrid(pages[0]);
+  }
+
+  function renderGrid(pageName) {
+    var wrap = document.getElementById("gridWrap");
+    wrap.innerHTML = "";
+    var pageData = IMAGE_REGISTRY[pageName];
+    var pageId = pageData.page_id;
+    var pageOverrides = overridesByPage[pageId] || {};
+
+    Object.keys(pageData.sections).forEach(function(sectionName) {
+      var items = pageData.sections[sectionName];
+
+      var label = document.createElement("div");
+      label.className = "section-label";
+      label.textContent = sectionName + " (" + items.length + ")";
+      wrap.appendChild(label);
+
+      var grid = document.createElement("div");
+      grid.className = "grid";
+
+      items.forEach(function(item) {
+        var override = pageOverrides[item.id];
+        var hasOverride = override && override.image_url;
+
+        var card = document.createElement("div");
+        card.className = "img-card" + (hasOverride ? " has-override" : "");
+        card.id = "card-" + item.id;
+
+        var thumb = document.createElement("div");
+        thumb.className = "thumb";
+
+        // Show override image, or original image, or placeholder
+        var showSrc = hasOverride ? override.image_url : (item.src || null);
+        if (showSrc) {
+          var img = document.createElement("img");
+          img.src = showSrc + (showSrc.indexOf("?") === -1 ? V : "");
+          img.alt = item.label;
+          img.loading = "lazy";
+          thumb.appendChild(img);
+          if (hasOverride) {
+            var badge = document.createElement("div");
+            badge.className = "override-badge";
+            badge.textContent = "Prilagojeno";
+            thumb.appendChild(badge);
+          }
+        } else {
+          var ph = document.createElement("div");
+          ph.className = "placeholder";
+          ph.textContent = "Originalna slika\n(ni predogleda)";
+          thumb.appendChild(ph);
+        }
+
+        var info = document.createElement("div");
+        info.className = "info";
+        info.innerHTML = '<div class="name">' + escHtml(item.label) + '</div>'
+          + '<div class="dims">Dimenzije: <span>' + item.dims + ' px</span></div>';
+
+        var actions = document.createElement("div");
+        actions.className = "actions";
+
+        var replaceBtn = document.createElement("button");
+        replaceBtn.className = "btn-replace";
+        replaceBtn.textContent = "Zamenjaj";
+        replaceBtn.onclick = function(e) {
+          e.stopPropagation();
+          openModal(pageData.page_id, item);
+        };
+
+        var resetBtn = document.createElement("button");
+        resetBtn.className = "btn-reset";
+        resetBtn.textContent = "Ponastavi";
+        resetBtn.onclick = function(e) {
+          e.stopPropagation();
+          if (!confirm("Ponastavite sliko na original?")) return;
+          resetBtn.disabled = true;
+          deleteOverride(pageData.page_id, item.id).then(function() {
+            delete pageOverrides[item.id];
+            renderGrid(activeTab);
+            toast("Slika ponastavljena", "success");
+          }).catch(function() {
+            toast("Napaka pri ponastavitvi", "error");
+            resetBtn.disabled = false;
+          });
+        };
+
+        actions.appendChild(replaceBtn);
+        actions.appendChild(resetBtn);
+
+        card.appendChild(thumb);
+        card.appendChild(info);
+        card.appendChild(actions);
+        grid.appendChild(card);
+      });
+
+      wrap.appendChild(grid);
+    });
+  }
+
+  function escHtml(s) {
+    var d = document.createElement("div");
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // ──────────────────────────────────────────────
+  // UPLOAD MODAL
+  // ──────────────────────────────────────────────
+  function openModal(pageId, item) {
+    currentUpload = { pageId: pageId, id: item.id, dims: item.dims, label: item.label };
+    currentFile = null;
+    document.getElementById("modalTitle").textContent = "Zamenjaj: " + item.label;
+    document.getElementById("dzDims").textContent = "Priporočene dimenzije: " + item.dims + " px";
+    document.getElementById("preview").style.display = "none";
+    document.getElementById("modalSave").disabled = true;
+    document.getElementById("fileInput").value = "";
+    document.getElementById("upload-modal").classList.add("active");
+  }
+
+  function closeModal() {
+    document.getElementById("upload-modal").classList.remove("active");
+    currentUpload = null;
+    currentFile = null;
+  }
+
+  function handleFile(file) {
+    if (!file || !file.type.startsWith("image/")) { toast("Izberite slikovno datoteko", "error"); return; }
+    if (file.size > 10 * 1024 * 1024) { toast("Slika je prevelika (max 10 MB)", "error"); return; }
+    currentFile = file;
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var img = new Image();
+      img.onload = function() {
+        document.getElementById("previewImg").src = e.target.result;
+        document.getElementById("preview").style.display = "";
+
+        var info = img.naturalWidth + " × " + img.naturalHeight + " px";
+        var sizeKB = Math.round(file.size / 1024);
+        info += " | " + (sizeKB > 1024 ? (sizeKB / 1024).toFixed(1) + " MB" : sizeKB + " KB");
+
+        if (currentUpload.dims) {
+          var parts = currentUpload.dims.split("x").map(Number);
+          var reqW = parts[0], reqH = parts[1];
+          if (reqW && reqH) {
+            var ratioDiff = Math.abs((reqW / reqH) - (img.naturalWidth / img.naturalHeight));
+            if (ratioDiff > 0.15) {
+              info += '<br><span class="preview-warn">⚠ Razmerje stranic se ne ujema (' + reqW + '×' + reqH + ')</span>';
+            } else if (img.naturalWidth < reqW * 0.5) {
+              info += '<br><span class="preview-warn">⚠ Slika je premajhna (min. ' + reqW + 'px širine)</span>';
+            } else {
+              info += '<br><span class="preview-ok">✓ Dimenzije ustrezajo</span>';
+            }
+          }
+        }
+        document.getElementById("previewInfo").innerHTML = info;
+        document.getElementById("modalSave").disabled = false;
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function uploadAndSave() {
+    if (!currentUpload || !currentFile) return;
+    var saveBtn = document.getElementById("modalSave");
+    saveBtn.disabled = true;
+    saveBtn.textContent = "Nalagam...";
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var base64 = e.target.result.split(",")[1];
+      saveImage(currentUpload.pageId, currentUpload.id, base64, currentFile.type, currentFile.name)
+        .then(function(data) {
+          if (data.success && data.image_url) {
+            if (!overridesByPage[currentUpload.pageId]) overridesByPage[currentUpload.pageId] = {};
+            overridesByPage[currentUpload.pageId][currentUpload.id] = {
+              type: "image",
+              image_url: data.image_url,
+            };
+            renderGrid(activeTab);
+            toast("Slika uspešno zamenjana!", "success");
+          } else {
+            toast("Napaka: " + (data.error || "Neznana napaka"), "error");
+          }
+          closeModal();
+          saveBtn.textContent = "Naloži in zamenjaj";
+        })
+        .catch(function(err) {
+          toast("Napaka: " + err.message, "error");
+          saveBtn.disabled = false;
+          saveBtn.textContent = "Naloži in zamenjaj";
+        });
+    };
+    reader.readAsDataURL(currentFile);
+  }
+
+  // ──────────────────────────────────────────────
+  // INIT
+  // ──────────────────────────────────────────────
+  function initApp() {
+    // Render tabs immediately so UI is never blank
+    renderTabs();
+
+    // Then load overrides in the background and re-render
+    var pages = Object.keys(IMAGE_REGISTRY);
+    var promises = pages.map(function(pageName) {
+      var pageId = IMAGE_REGISTRY[pageName].page_id;
+      return loadOverrides(pageId).then(function(overrides) {
+        overridesByPage[pageId] = overrides;
+      }).catch(function() { /* ignore per-page errors */ });
+    });
+
+    Promise.all(promises).then(function() {
+      if (activeTab) renderGrid(activeTab);
+    }).catch(function() {});
+  }
+
+  // Event bindings
+  document.getElementById("loginBtn").addEventListener("click", function() {
+    var token = document.getElementById("tokenInput").value.trim();
+    if (!token) return;
+    login(token).then(function(data) {
+      if (data.valid) {
+        TOKEN = token;
+        sessionStorage.setItem("ts-editor-token", token);
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        initApp();
+      } else {
+        document.getElementById("loginError").style.display = "";
+      }
+    }).catch(function() {
+      document.getElementById("loginError").style.display = "";
+    });
+  });
+
+  document.getElementById("tokenInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") document.getElementById("loginBtn").click();
+    document.getElementById("loginError").style.display = "none";
+  });
+
+  document.getElementById("logoutBtn").addEventListener("click", function() {
+    sessionStorage.removeItem("ts-editor-token");
+    location.reload();
+  });
+
+  // Modal events
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  dropZone.addEventListener("click", function() { fileInput.click(); });
+  fileInput.addEventListener("change", function() { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
+  dropZone.addEventListener("dragover", function(e) { e.preventDefault(); dropZone.classList.add("dragover"); });
+  dropZone.addEventListener("dragleave", function() { dropZone.classList.remove("dragover"); });
+  dropZone.addEventListener("drop", function(e) { e.preventDefault(); dropZone.classList.remove("dragover"); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalCancel").addEventListener("click", closeModal);
+  document.getElementById("modalSave").addEventListener("click", uploadAndSave);
+  document.getElementById("upload-modal").addEventListener("click", function(e) { if (e.target === this) closeModal(); });
+  document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeModal(); });
+
+  // Auto-login if token in session
+  var savedToken = sessionStorage.getItem("ts-editor-token");
+  if (savedToken) {
+    login(savedToken).then(function(data) {
+      if (data.valid) {
+        TOKEN = savedToken;
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        initApp();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

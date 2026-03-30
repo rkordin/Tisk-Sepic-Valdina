@@ -32,7 +32,7 @@ export const VideoAreaOne = () => {
               </h2>
 
               <div className="td-video-thumb p-relative">
-                <img className="w-100" src={IMG} alt="Video preview" loading="lazy" />
+                <img className="w-100" src={IMG} alt="Video preview" loading="lazy" data-editable="video-bg-img" data-editable-type="image" data-dimensions="1200x474" />
 
                 <div className="td-video-popup">
                   <Popup

@@ -16,7 +16,7 @@ export const PortfolioDetails = () => {
             <div className="col-lg-12">
               <div className="td-portfolio-details-content-wrap mb-40">
                 <div className="td-portfolio-details-thumb mb-80">
-                  <img className="w-100" src={portfolioDetailsBg} alt="Portfolio project" loading="lazy" />
+                  <img className="w-100" src={portfolioDetailsBg} alt="Portfolio project" loading="lazy" data-editable="portfolio-detail-bg" data-editable-type="image" data-dimensions="1920x1277" />
                 </div>
 
                 {/* title */}

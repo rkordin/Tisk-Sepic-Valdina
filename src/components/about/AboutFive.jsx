@@ -76,6 +76,9 @@ export const AboutFive = () => {
                             src={slide.imgSrc}
                             alt="Portfolio slide"
                             loading="lazy"
+                            data-editable={`about-slide-${index}-img`}
+                            data-editable-type="image"
+                            data-dimensions="1200x1092"
                           />
                         </div>
                       </div>

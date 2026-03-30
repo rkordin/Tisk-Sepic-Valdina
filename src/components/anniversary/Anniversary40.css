@@ -1,0 +1,128 @@
+/* ============================================
+   40 Years Anniversary Section
+   Scroll-reveal word highlighting on white
+   ============================================ */
+
+.a40-section {
+  position: relative;
+  background: #fff;
+  padding: 160px 0 140px;
+  overflow: hidden;
+}
+
+/* Giant background "40" */
+.a40-bg-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(280px, 40vw, 600px);
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.04);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  font-family: var(--td-ff-heading, "DM Sans", sans-serif);
+}
+
+/* Content sits above the bg number */
+.a40-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Orange accent line at top */
+.a40-accent-line {
+  width: 48px;
+  height: 3px;
+  background: #f79c18;
+  margin-bottom: 48px;
+}
+
+/* Paragraphs */
+.a40-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: var(--td-theme-primary, #1a1a1a);
+  margin-bottom: 28px;
+  font-weight: 400;
+  font-family: var(--td-ff-body, "DM Sans", sans-serif);
+}
+
+.a40-paragraph--lead {
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-family: var(--td-ff-heading, "DM Sans", sans-serif);
+}
+
+/* Individual word — starts faded */
+.a40-word {
+  display: inline;
+  color: rgba(26, 26, 26, 0.12);
+  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Word revealed */
+.a40-word--visible {
+  color: rgba(26, 26, 26, 1);
+}
+
+/* The "40" emphasis word */
+.a40-word--emphasis {
+  font-weight: 900;
+  font-size: 1.15em;
+  letter-spacing: -0.02em;
+}
+
+.a40-word--emphasis.a40-word--visible {
+  color: #f79c18;
+}
+
+/* Closing years mark */
+.a40-closing-mark {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.a40-closing-years {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.35);
+  font-family: var(--td-ff-body, "DM Sans", sans-serif);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .a40-section {
+    padding: 100px 0 80px;
+  }
+  .a40-paragraph--lead {
+    font-size: 1.6rem;
+  }
+  .a40-bg-number {
+    font-size: 220px;
+  }
+}
+
+@media (max-width: 575px) {
+  .a40-section {
+    padding: 80px 0 60px;
+  }
+  .a40-paragraph--lead {
+    font-size: 1.35rem;
+  }
+  .a40-paragraph {
+    font-size: 1.05rem;
+  }
+  .a40-bg-number {
+    font-size: 160px;
+  }
+}

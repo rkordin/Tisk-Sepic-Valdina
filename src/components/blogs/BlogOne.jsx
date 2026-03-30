@@ -56,7 +56,7 @@ export const BlogOne = () => {
               </div>
               <div className="td-blog-content">
                 <div className="td-blog-thumb mb-30">
-                  <img className="w-100" src={blog01} alt="Blog post about glass printing" loading="lazy" />
+                  <img className="w-100" src={blog01} alt="Blog post about glass printing" loading="lazy" data-editable="blog-0-img" data-editable-type="image" data-dimensions="600x450" />
                 </div>
                 <span className="td-blog-meta">Tisk / Primerjava</span>
                 <h3 className="td-blog-title mb-65">
@@ -95,7 +95,7 @@ export const BlogOne = () => {
             >
               <div className="td-blog-content mb-30">
                 <div className="td-blog-thumb mb-30">
-                  <img className="w-100" src={blog02} alt="Blog post about choosing a print shop" loading="lazy" />
+                  <img className="w-100" src={blog02} alt="Blog post about choosing a print shop" loading="lazy" data-editable="blog-1-img" data-editable-type="image" data-dimensions="600x450" />
                 </div>
                 <span className="td-blog-meta">Marketing / Nasveti</span>
                 <h3 className="td-blog-title mb-65">
@@ -190,7 +190,7 @@ export const BlogOne = () => {
               </div>
               <div className="td-blog-content">
                 <div className="td-blog-thumb mb-30">
-                  <img className="w-100" src={blog03} alt="Blog post about vehicle advertising" loading="lazy" />
+                  <img className="w-100" src={blog03} alt="Blog post about vehicle advertising" loading="lazy" data-editable="blog-2-img" data-editable-type="image" data-dimensions="600x450" />
                 </div>
                 <span className="td-blog-meta">Vozila / Oglaševanje</span>
                 <h3 className="td-blog-title mb-65">

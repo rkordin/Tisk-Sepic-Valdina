@@ -24,8 +24,8 @@ export const Team = () => {
       delay: 0.4,
       src: man2,
       href: "/team-details",
-      title: "Gorazd Čerček",
-      designation: "Namestnik direktorice",
+      title: "Petra Novak",
+      designation: "Komerciala",
     },
     {
       delay: 0.5,
@@ -59,8 +59,8 @@ export const Team = () => {
       delay: 0.5,
       src: man7,
       href: "/team-details",
-      title: "Boris Mikać",
-      designation: "Komercialist",
+      title: "Maja Jarc",
+      designation: "Grafična oblikovalka",
     },
     {
       delay: 0.6,
@@ -78,7 +78,7 @@ export const Team = () => {
         <div className="container">
           <div className="row">
             {teamMembers.map((member, index) => (
-              <TeamMember key={index} {...member} />
+              <TeamMember key={index} {...member} editableId={`team-list-${index}-img`} />
             ))}
           </div>
         </div>
