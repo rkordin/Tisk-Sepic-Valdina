@@ -1,9 +1,9 @@
 // Tisk Šepic Frontend Editor — Save/Load content overrides + image upload
 // Vercel serverless function — zero npm deps
 
-const SUPABASE_URL  = process.env.VITE_SUPABASE_URL  || "https://pwwalwcqwikzpxtwavuq.supabase.co";
-const SUPABASE_ANON = process.env.VITE_SUPABASE_KEY  || "sb_publishable_FqxdrFY_Op3nI_KgQPYIZw_iJ3pyLhN";
-const SUPABASE_SVC  = process.env.SUPABASE_SECRET_KEY;
+const SUPABASE_URL  = (process.env.VITE_SUPABASE_URL  || "https://pwwalwcqwikzpxtwavuq.supabase.co").trim();
+const SUPABASE_ANON = (process.env.VITE_SUPABASE_KEY  || "sb_publishable_FqxdrFY_Op3nI_KgQPYIZw_iJ3pyLhN").trim();
+const SUPABASE_SVC  = (process.env.SUPABASE_SECRET_KEY || "").trim() || undefined;
 const EDITOR_SECRET = process.env.EDITOR_SECRET;
 
 async function supaFetch(path, options = {}) {

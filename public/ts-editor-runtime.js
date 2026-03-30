@@ -23,15 +23,16 @@
     if (!el) return false;
 
     if (override.type === "image" && override.image_url) {
+      var imgUrl = override.image_url.replace(/[\r\n]/g, "");
       var editType = el.getAttribute("data-editable-type");
       if (el.tagName === "IMG") {
-        el.src = override.image_url;
+        el.src = imgUrl;
       } else if (editType === "bg-image") {
-        el.style.backgroundImage = "url(" + override.image_url + ")";
+        el.style.backgroundImage = "url(" + imgUrl + ")";
       } else {
         var childImg = el.querySelector("img");
-        if (childImg) childImg.src = override.image_url;
-        else el.style.backgroundImage = "url(" + override.image_url + ")";
+        if (childImg) childImg.src = imgUrl;
+        else el.style.backgroundImage = "url(" + imgUrl + ")";
       }
     } else if (override.content) {
       var editType2 = el.getAttribute("data-editable-type");
