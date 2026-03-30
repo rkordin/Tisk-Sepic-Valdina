@@ -33,72 +33,70 @@ const SECTIONS = [
   },
 ];
 
-/* One word that reveals via scroll progress */
-const Word = ({ children, progress, range, isForty }) => {
-  const opacity = useTransform(progress, range, [0.15, 1]);
-  const color = isForty ? "#f79c18" : "#1a1a1a";
-  const ghostColor = isForty ? "rgba(247,156,24,0.1)" : "rgba(26,26,26,0.1)";
-
+/* Word that reveals via scroll */
+const Word = ({ children, progress, range }) => {
+  const opacity = useTransform(progress, range, [0.12, 1]);
   return (
-    <span className={`a40-word${isForty ? " a40-word--forty" : ""}`}>
-      <span className="a40-word__ghost" style={{ color: ghostColor }}>{children}</span>
-      <motion.span className="a40-word__fill" style={{ opacity, color }}>{children}</motion.span>
+    <span className="a40-word">
+      <span className="a40-word__ghost">{children}</span>
+      <motion.span className="a40-word__fill" style={{ opacity }}>{children}</motion.span>
     </span>
   );
 };
 
-/* One panel inside the sticky container */
+/* Single panel — all hooks called unconditionally */
 const Panel = ({ section, index, totalSections, scrollYProgress }) => {
-  const sectionSize = 1 / totalSections;
-  const start = index * sectionSize;
-  const end = start + sectionSize;
-  const mid = start + sectionSize * 0.5;
-
-  // Panel fades in over first 15%, stays, fades out over last 15%
-  // Last panel doesn't fade out
+  const size = 1 / totalSections;
+  const start = index * size;
+  const end = start + size;
+  const isFirst = index === 0;
   const isLast = index === totalSections - 1;
-  const fadeIn = useTransform(scrollYProgress, [start, start + sectionSize * 0.12], [0, 1]);
-  const fadeOut = useTransform(
-    scrollYProgress,
-    [end - sectionSize * 0.12, end],
-    [1, 0]
-  );
-  const panelOpacity = isLast ? fadeIn : useTransform(
-    scrollYProgress,
-    [start, start + sectionSize * 0.12, end - sectionSize * 0.15, end],
-    [0, 1, 1, 0]
+
+  // Fade in: first panel starts visible, others fade in
+  const fadeInRange = isFirst
+    ? [0, 0]        // already visible
+    : [start, start + size * 0.15];
+  const fadeInValues = isFirst ? [1, 1] : [0, 1];
+
+  // Fade out: last panel stays, others fade out
+  const fadeOutRange = isLast
+    ? [1, 1]         // never fades out
+    : [end - size * 0.15, end];
+  const fadeOutValues = isLast ? [1, 1] : [1, 0];
+
+  const fadeInProgress = useTransform(scrollYProgress, fadeInRange, fadeInValues);
+  const fadeOutProgress = useTransform(scrollYProgress, fadeOutRange, fadeOutValues);
+
+  // Combine: multiply fade in × fade out
+  const panelOpacity = useTransform(
+    [fadeInProgress, fadeOutProgress],
+    ([fi, fo]) => fi * fo
   );
 
-  // Slide up slightly as it enters
+  // Slide up on enter
   const panelY = useTransform(
     scrollYProgress,
-    [start, start + sectionSize * 0.15],
-    [40, 0]
+    isFirst ? [0, 0] : [start, start + size * 0.15],
+    isFirst ? [0, 0] : [50, 0]
   );
 
   // Background symbol parallax
   const bgY = useTransform(scrollYProgress, [start, end], [60, -60]);
 
-  // Word highlight: map over the body portion of the scroll range
-  const wordStart = start + sectionSize * 0.15;
-  const wordEnd = start + sectionSize * 0.85;
+  // Word highlight range
+  const wordStart = start + size * 0.1;
+  const wordEnd = start + size * 0.9;
   const words = section.body.split(" ");
 
   return (
-    <motion.div
-      className="a40-panel"
-      style={{ opacity: panelOpacity, y: panelY }}
-    >
-      {/* Background decorative symbol */}
+    <motion.div className="a40-panel" style={{ opacity: panelOpacity, y: panelY }}>
       <motion.div className="a40-panel__bg" style={{ y: bgY }} aria-hidden="true">
         {section.bgSymbol}
       </motion.div>
 
       <div className="a40-panel__inner">
-        {/* Accent line on first panel */}
-        {index === 0 && <div className="a40-accent" />}
+        {isFirst && <div className="a40-accent" />}
 
-        {/* Heading */}
         <h2 className="a40-heading">
           {section.lines.map((line, i) => (
             <span
@@ -110,20 +108,14 @@ const Panel = ({ section, index, totalSections, scrollYProgress }) => {
           ))}
         </h2>
 
-        {/* Body with word-by-word scroll highlight */}
         <p className="a40-body">
           {words.map((word, i) => {
-            const wStart = wordStart + (i / words.length) * (wordEnd - wordStart);
-            const wEnd = wordStart + ((i + 1) / words.length) * (wordEnd - wordStart);
-            return (
-              <Word key={i} progress={scrollYProgress} range={[wStart, wEnd]}>
-                {word}
-              </Word>
-            );
+            const wS = wordStart + (i / words.length) * (wordEnd - wordStart);
+            const wE = wordStart + ((i + 1) / words.length) * (wordEnd - wordStart);
+            return <Word key={i} progress={scrollYProgress} range={[wS, wE]}>{word}</Word>;
           })}
         </p>
 
-        {/* Footer on last panel */}
         {section.footer && (
           <div className="a40-footer">
             <span className="a40-footer__years">{section.footer}</span>
@@ -135,21 +127,20 @@ const Panel = ({ section, index, totalSections, scrollYProgress }) => {
 };
 
 export const Anniversary40 = () => {
-  const containerRef = useRef(null);
-
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: ref,
     offset: ["start start", "end end"],
   });
 
   return (
-    <section className="a40-outer" ref={containerRef}>
+    <section className="a40-outer" ref={ref}>
       <div className="a40-sticky">
-        {SECTIONS.map((section, index) => (
+        {SECTIONS.map((section, i) => (
           <Panel
             key={section.id}
             section={section}
-            index={index}
+            index={i}
             totalSections={SECTIONS.length}
             scrollYProgress={scrollYProgress}
           />
